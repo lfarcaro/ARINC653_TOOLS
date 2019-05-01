@@ -15,11 +15,16 @@ import java.util.regex.Pattern;
 import arinc653.configuration.tools.TargetPlatform;
 
 /**
- * AM335X make tests class.
+ * Test building class - AM335X.
  * 
  * @author Luís Fernando Arcaro
  */
-public class MakeTests_AM335X {
+public class TestsBuild_AM335X {
+
+	/**
+	 * ARINC653 directory.
+	 */
+	private static final File flARINC653Directory = new File("/CCSWorkspace/ARINC653_AM335X");
 
 	/**
 	 * Main method.
@@ -45,7 +50,7 @@ public class MakeTests_AM335X {
 			try {
 
 				// Gets tests
-				List<String> lsTests = TestUtilities.getTests();
+				List<String> lsTests = Tests.getTests();
 
 				// Sorts tests
 				Collections.sort(lsTests);
@@ -95,10 +100,10 @@ public class MakeTests_AM335X {
 					System.out.println("Making test '" + stTest + "' (" + stTestNumber + ")...");
 
 					// Pushes test
-					TestUtilities.cmdPushTest(stTest, TargetPlatform.AM335X, new File(CurrentTest.flARINC653Directory, "Application/module.xml"), new File(CurrentTest.flARINC653Directory, "Application"));
+					Tests.cmdPushTest(stTest, TargetPlatform.AM335X, new File(flARINC653Directory, "Application/module.xml"), new File(flARINC653Directory, "Application"));
 
 					// Output file
-					File flOutput = new File(CurrentTest.flARINC653Directory, "Release/APP");
+					File flOutput = new File(flARINC653Directory, "Release/APP");
 
 					// Verifies output file
 					if (flOutput.exists()) {
@@ -129,7 +134,7 @@ public class MakeTests_AM335X {
 					// Makes
 					{
 						System.out.println("Making...");
-						Process prProcess = Runtime.getRuntime().exec(new String[] {"cmd", "/c", "MAKE_RELEASE"}, null, CurrentTest.flARINC653Directory);
+						Process prProcess = Runtime.getRuntime().exec(new String[] { "cmd", "/c", "MAKE_RELEASE" }, null, flARINC653Directory);
 						BufferedReader brOutput = new BufferedReader(new InputStreamReader(prProcess.getInputStream()));
 						while (true) {
 							String stLine = brOutput.readLine();

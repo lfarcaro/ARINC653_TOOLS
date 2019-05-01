@@ -25,7 +25,7 @@ import arinc653.configuration.parser.WindowSchedule;
  * 
  * @author Luís Fernando Arcaro
  */
-public class GenerateTestsSchedule {
+public class TestsGenerateSchedule {
 
 	/**
 	 * Seconds decimal format.
@@ -60,7 +60,7 @@ public class GenerateTestsSchedule {
 			List<Color> lsColor = Arrays.asList(new Color[] { new Color(34, 177, 76), new Color(0, 128, 255), new Color(255, 128, 128), new Color(181, 181, 181), Color.BLUE, Color.YELLOW, Color.RED, Color.CYAN });
 
 			// Iterates tests
-			Iterator<String> itTest = TestUtilities.getTests().iterator();
+			Iterator<String> itTest = Tests.getTests().iterator();
 			while (itTest.hasNext()) {
 
 				// Gets next test

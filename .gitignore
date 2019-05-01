@@ -1,3 +1,4 @@
+bin
 configure
 jars
 launch
@@ -5,3 +6,7 @@ libraries
 resources
 tools
 build.xml
+Test/Output
+Test_AM335X/*/*.c
+Test_AM335X/*/*.h
+Test_AM335X/*/*.cmd

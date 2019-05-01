@@ -1,5 +1,6 @@
 package arinc653.test;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -12,7 +13,7 @@ import arinc653.configuration.tools.TargetPlatform;
  * 
  * @author Luís Fernando Arcaro
  */
-public class PushTests {
+public class TestsPush {
 
 	/**
 	 * Main method.
@@ -27,7 +28,7 @@ public class PushTests {
 			List<TargetPlatform> lsTargetPlatform = new LinkedList<TargetPlatform>(Arrays.asList(TargetPlatform.values()));
 
 			// Iterates tests
-			Iterator<String> itTest = TestUtilities.getTests().iterator();
+			Iterator<String> itTest = Tests.getTests().iterator();
 			while (itTest.hasNext()) {
 
 				// Gets next test
@@ -44,13 +45,21 @@ public class PushTests {
 					TargetPlatform tpTargetPlatform = itTargetPlatform.next();
 
 					// Verifies target platform compatibility
-					if (TestUtilities.isCompatibleTargetPlatform(stTest, tpTargetPlatform)) {
+					if (Tests.isCompatibleTargetPlatform(stTest, tpTargetPlatform)) {
 
 						// Pushes test
-						TestUtilities.cmdPushTest(stTest, tpTargetPlatform, null, null);
+						Tests.cmdPushTest(stTest, tpTargetPlatform, null, null);
 					}
 				}
 			}
+
+			// Pushes special tests
+			Tests.cmdPushSpecialTest(new File(Tests.flSpecialTestDirectory_AM335X, "QUEUINGPORT_PSEUDO_MODULE1"), TargetPlatform.AM335X);
+			Tests.cmdPushSpecialTest(new File(Tests.flSpecialTestDirectory_AM335X, "QUEUINGPORT_PSEUDO_MODULE2"), TargetPlatform.AM335X);
+			Tests.cmdPushSpecialTest(new File(Tests.flSpecialTestDirectory_AM335X, "QUEUINGPORT_PSEUDO_MODULE3"), TargetPlatform.AM335X);
+			Tests.cmdPushSpecialTest(new File(Tests.flSpecialTestDirectory_AM335X, "SAMPLINGPORT_PSEUDO_MODULE1"), TargetPlatform.AM335X);
+			Tests.cmdPushSpecialTest(new File(Tests.flSpecialTestDirectory_AM335X, "SAMPLINGPORT_PSEUDO_MODULE2"), TargetPlatform.AM335X);
+			Tests.cmdPushSpecialTest(new File(Tests.flSpecialTestDirectory_AM335X, "SAMPLINGPORT_PSEUDO_MODULE3"), TargetPlatform.AM335X);
 		} catch (Throwable t) {
 
 			// Prints error

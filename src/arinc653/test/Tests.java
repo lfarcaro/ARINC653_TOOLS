@@ -19,11 +19,21 @@ import arinc653.templatemanager.Language_XML;
 import arinc653.templatemanager.Mask;
 
 /**
- * Test utilities.
+ * Tests.
  * 
  * @author Luís Fernando Arcaro
  */
-public class TestUtilities {
+public class Tests {
+
+	/*
+	 * Tests' directories.
+	 */
+	public static File flTestDirectory = new File("Test");
+	public static File flScenarioDirectory = new File(flTestDirectory, "Scenario");
+	public static File flTemplateDirectory = new File(flTestDirectory, "Template");
+	public static File flOutputDirectory = new File(flTestDirectory, "Output");
+	public static File flModule = new File(flScenarioDirectory, "Module.xml");
+	public static File flSpecialTestDirectory_AM335X = new File("Test_AM335X");
 
 	/**
 	 * Scenario.
@@ -298,13 +308,6 @@ public class TestUtilities {
 		return mpTestScenario.get(stTest);
 	}
 
-	// Parameters
-	private static File flTestDirectory = new File("Test");
-	private static File flScenarioDirectory = new File(flTestDirectory, "Scenario");
-	private static File flTemplateDirectory = new File(flTestDirectory, "Template");
-	private static File flOutputDirectory = new File(flTestDirectory, "Output");
-	private static File flModule = new File(flScenarioDirectory, "Module.xml");
-
 	/**
 	 * Compatible target platform verifier.
 	 * 
@@ -398,6 +401,32 @@ public class TestUtilities {
 			// Expands
 			msTest.cmdExpand(Language_C.INSTANCE, flFile, flFile);
 		}
+	}
+
+	/**
+	 * Push special test method.
+	 * 
+	 * @param flTestDirectory
+	 *            Test directory.
+	 * @param tpTargetPlatform
+	 *            Target platform.
+	 */
+	public static void cmdPushSpecialTest(File flTestDirectory, TargetPlatform tpTargetPlatform) throws Throwable {
+
+		// Parameters
+		File flTestModule = new File(flTestDirectory, "module.xml");
+
+		// Creates template generator
+		TemplateGenerator tgTemplateGenerator = TemplateGenerator.getInstance(tpTargetPlatform);
+
+		// Generates template
+		tgTemplateGenerator.cmdGenerateTemplate(flTestModule, tpTargetPlatform, flTestDirectory, null, null);
+
+		// Loads artifact
+		Artifact arArtifact = Artifact.cmdLoad(null, new File(flTestDirectory, "Template.art"));
+
+		// Expands artifact
+		arArtifact.cmdExpand(new Language_C(), flTestDirectory, ".*\\.c", "configuration\\.c", true);
 	}
 
 	/**

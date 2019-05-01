@@ -9,7 +9,7 @@ import arinc653.configuration.tools.TargetPlatform;
  * 
  * @author Luís Fernando Arcaro
  */
-public class PullTests {
+public class TestsPull {
 
 	/**
 	 * Main method.
@@ -24,7 +24,7 @@ public class PullTests {
 			TargetPlatform tpTargetPlatform = TargetPlatform.AM335X;
 
 			// Iterates tests
-			Iterator<String> itTest = TestUtilities.getTests().iterator();
+			Iterator<String> itTest = Tests.getTests().iterator();
 			while (itTest.hasNext()) {
 
 				// Gets next test
@@ -34,7 +34,7 @@ public class PullTests {
 				System.out.println("Test: " + stTest);
 
 				// Pulls test
-				TestUtilities.cmdPullTest(stTest, tpTargetPlatform, null);
+				Tests.cmdPullTest(stTest, tpTargetPlatform, null);
 			}
 		} catch (Throwable t) {
 
