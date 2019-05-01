@@ -1,0 +1,11 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+A cada liberação o processo PROCESS1 liga o \textbf{LED1}, aguarda por 400ms, desliga o \textbf{LED1}, solicita postergação de seu \textit{deadline} por 400ms, liga o \textbf{LED1}, aguarda por mais 300ms, desliga o \textbf{LED1} novamente e então aguarda por sua próxima liberação. A cada liberação, o processo PROCESS2 liga o \textbf{LED2}, aguarda por 150ms, desliga o \textbf{LED2}, solicita postergação de seu \textit{deadline} por 300ms, liga o \textbf{LED2}, aguarda por mais 200ms, desliga o \textbf{LED2} novamente e então aguarda por sua próxima liberação.
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+O \textbf{LED1} deve permanecer ligado por aproximadamente 700ms a cada 1000ms, e o \textbf{LED2} por aproximadamente 350ms a cada 500ms. Ou seja, ambos os processos executam por um período maior que suas capacidades de tempo nominais, porém nenhum \textit{deadline} deve ser perdido pois ambos os processos solicitam postergação. Se um \textit{deadline} for perdido, o processo tratador de erros da partição PARTITION1 será alcançado e ambos os \acp{LED} permanecerão desligados indefinidamente.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar o funcionamento do serviço \textbf{REPLENISH}.
+SNIPPET_END
+MASK_END

@@ -1,0 +1,18 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+A partição ociosa e os processos ociosos das partições repetidamente desligam ambos os \acp{LED}. O processo PROCESS1 pisca o \textbf{LED1} e, após $n$ liberações, gera um erro de estouro de pilha que faz com que o processo tratador de erros da partição PARTITION1 seja iniciado. O processo tratador de erros da partição PARTITION1 liga o \textbf{LED1} por um longo período e então gera um erro de estouro de pilha, causando a inicialização do \textit{HM callback} da partição. O \textit{HM callback} da partição PARTITION1 liga o \textbf{LED2} por um longo período e gera um erro de estouro de pilha, fazendo com que o \textit{HM callback} do módulo seja iniciado. O \textit{HM callback} do módulo liga ambos os \acp{LED} durante um longo período e gera um erro de estouro de pilha, fazendo com que a ação definida para tratamento desse tipo de erro a nível de sistema seja imediatamente executada, no caso a reinicialização do módulo, fazendo com que a sequência seja repetida indefinidamente.
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+O seguinte padrão deve ser apresentado repetidamente:
+
+\begin{itemize*}
+\item{O \textbf{LED1} deve piscar algumas vezes, até que o processo PROCESS1 lance um erro;}
+\item{Apenas o \textbf{LED1} deve permanecer ligado por algum tempo, \textbf{RESPEITANDO O PARTICIONAMENTO} (processo tratador de erros da partição PARTITION1);}
+\item{Apenas o \textbf{LED2} deve permanecer ligado por algum tempo, \textbf{RESPEITANDO O PARTICIONAMENTO} (\textit{HM callback} da partição PARTITION1);}
+\item{Ambos os \acp{LED} devem permanecer ligados por algum tempo, \textbf{SEM RESPEITAR O PARTICIONAMENTO} (\textit{HM callback} do módulo).}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar o correto funcionamento do mecanismo de monitoramento (\textit{health monitoring}) do \ac{SO}, utilizando para isso erros de estouro de pilha gerados a partir de todas as tarefas do módulo através da chamada de uma recursão infinita. Em conjunto com o \textbf{Teste 404}, demonstra ainda o funcionamento da diferenciação entre erros de estouro de pilha e de violação de memória.
+SNIPPET_END
+MASK_END

@@ -1,0 +1,26 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+O processo PROCESS2, que tem a menor prioridade, executa um laço de duração maior que o período do processo PROCESS1, mas não suficiente para causar uma perda de \textit{deadline}. Durante a execução desse laço, o processo PROCESS2 bloqueia a interrupção por outros processos, e portanto o processo PROCESS1 -- mesmo tendo maior prioridade -- não deve interrompê-lo. Os padrões de \acp{LED} utilizados pelas tarefas são os seguintes:
+
+\begin{itemize*}
+\item{Processo PROCESS1 da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+A seguinte sequência de padrões deve ser exibida repetidamente:
+
+\begin{itemize*}
+\item{\textbf{LED1} piscando (de acordo com a escala de partições) por um curto período;}
+\item{Ambos \acp{LED} desligados por algum tempo;}
+\item{\textbf{LED2} piscando (de acordo com a escala de partições) por um intervalo mais longo que o período do processo PROCESS1.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar o correto funcionamento da utilização conjunta dos serviços \textbf{LOCK\_PREEMPTION} e \textbf{UNLOCK\_PREEMPTION}.
+SNIPPET_END
+MASK_END

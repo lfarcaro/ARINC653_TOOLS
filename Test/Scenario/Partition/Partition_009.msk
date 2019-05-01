@@ -1,0 +1,16 @@
+MASK_START
+SNIPPET_START PARTITION
+<Partition EntryPoint="PARTITION1_DEFAULTPROCESS" PartitionIdentifier="1" PartitionName="PARTITION1">
+<Process Name="PROCESS1" StackSize="256">
+<Proc_Ext:Extension BasePriority="30" PeriodSeconds="0.500" TimeCapacitySeconds="0.010" Deadline="HARD" SuppressSuspension="true"/>
+</Process>
+<PartitionExt:Extension StackSize="256" ErrorHandler="PARTITION1_ERRORHANDLER" ErrorHandlerStackSize="256"/>
+</Partition>
+<Partition EntryPoint="PARTITION2_DEFAULTPROCESS" PartitionIdentifier="2" PartitionName="PARTITION2">
+<PartitionExt:Extension StackSize="256" ErrorHandler="PARTITION2_ERRORHANDLER" ErrorHandlerStackSize="256"/>
+</Partition>
+<Partition EntryPoint="PARTITION3_DEFAULTPROCESS" PartitionIdentifier="3" PartitionName="PARTITION3">
+<PartitionExt:Extension StackSize="256" ErrorHandler="PARTITION3_ERRORHANDLER" ErrorHandlerStackSize="256"/>
+</Partition>
+SNIPPET_END
+MASK_END

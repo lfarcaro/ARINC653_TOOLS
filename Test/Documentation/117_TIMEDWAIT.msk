@@ -1,0 +1,20 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+A cada liberação o processo PROCESS1 aguarda por no mínimo 150ms e pisca o \textbf{LED1}. A cada liberação o processo PROCESS2 pisca o \textbf{LED2}, aguarda por no mínimo 50ms e pisca o \textbf{LED2} novamente. Os padrões de \acp{LED} utilizados pelas tarefas são os seguintes:
+
+\begin{itemize*}
+\item{Processo PROCESS1 da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+O \textbf{LED1} deve piscar a cada 500ms, e o \textbf{LED2} deve piscar duas vezes a cada 250ms com um intervalo de 50ms. Já que o \textbf{LED1} é ligado 150ms mais tarde em relação ao momento de liberação do processo PROCESS1, durante esse atraso o processo PROCESS2 poderá ser executado. Portanto, o \textbf{LED2} deve piscar antes que o \textbf{LED1} em relação ao momento de liberação de ambos os processos quando esses encontram-se em fase, ou seja, na ordem oposta àquela esperada de acordo com a atribuição de prioridades.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar o correto funcionamento do serviço \textbf{TIMED\_WAIT}.
+SNIPPET_END
+MASK_END

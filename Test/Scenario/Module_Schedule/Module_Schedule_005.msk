@@ -1,0 +1,20 @@
+MASK_START
+SNIPPET_START MODULE_SCHEDULE
+<Module_Schedule MajorFrameSeconds="0.100">
+<Partition_Schedule PartitionIdentifier="1" PartitionName="PARTITION1" PeriodDurationSeconds="0.025" PeriodSeconds="0.050">
+<Window_Schedule PartitionPeriodStart="true" WindowDurationSeconds="0.025" WindowIdentifier="101" WindowStartSeconds="0.000"/>
+<Window_Schedule PartitionPeriodStart="true" WindowDurationSeconds="0.025" WindowIdentifier="102" WindowStartSeconds="0.050"/>
+</Partition_Schedule>
+<Partition_Schedule PartitionIdentifier="2" PartitionName="PARTITION2" PeriodDurationSeconds="0.010" PeriodSeconds="0.050">
+<Window_Schedule PartitionPeriodStart="true" WindowDurationSeconds="0.010" WindowIdentifier="201" WindowStartSeconds="0.025"/>
+<Window_Schedule PartitionPeriodStart="true" WindowDurationSeconds="0.010" WindowIdentifier="202" WindowStartSeconds="0.075"/>
+</Partition_Schedule>
+<Partition_Schedule PartitionIdentifier="3" PartitionName="PARTITION3" PeriodDurationSeconds="0.010" PeriodSeconds="0.100">
+<Window_Schedule PartitionPeriodStart="true" WindowDurationSeconds="0.010" WindowIdentifier="301" WindowStartSeconds="0.035"/>
+</Partition_Schedule>
+<Partition_Schedule PartitionIdentifier="4" PartitionName="SYSTEMPARTITION_IO" PeriodDurationSeconds="0.010" PeriodSeconds="0.100">
+<Window_Schedule PartitionPeriodStart="true" WindowDurationSeconds="0.010" WindowIdentifier="401" WindowStartSeconds="0.085"/>
+</Partition_Schedule>
+</Module_Schedule>
+SNIPPET_END
+MASK_END

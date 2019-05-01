@@ -1,0 +1,28 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+Os seguintes padrões são repetidamente atribuídos pelas tarefas do módulo aos \acp{LED}:
+
+\begin{itemize*}
+\item{Processo ocioso da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partição PARTITION3: \textbf{LED1} ligado, \textbf{LED2} ligado;}
+\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+Os \acp{LED} devem apresentar, repetidamente, o seguinte comportamento:
+
+\begin{itemize*}
+\item{Apenas \textbf{LED1} ligado durante 25ms (PARTITION1);}
+\item{Apenas \textbf{LED2} ligado durante 10ms (PARTITION2);}
+\item{Ambos \acp{LED} ligados durante 10ms (PARTITION3);}
+\item{Ambos \acp{LED} desligados durante 5ms (partição ociosa);}
+\item{Apenas \textbf{LED1} ligado durante 25ms (PARTITION1);}
+\item{Apenas \textbf{LED2} ligado durante 10ms (PARTITION2);}
+\item{Ambos \acp{LED} desligados durante 15ms (partição ociosa).}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar a corretude temporal do escalonamento de partições em velocidade adequada ao escalonamento de processos.
+SNIPPET_END
+MASK_END

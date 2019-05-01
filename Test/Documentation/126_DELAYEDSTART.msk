@@ -1,0 +1,30 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+O processo PROCESS1 é iniciado com atraso de 2s, e o processo PROCESS2 com atraso de 5s, evitando que esses sejam liberados em fase. Os padrões de \acp{LED} utilizados pelas tarefas são os seguintes:
+
+\begin{itemize*}
+\item{Processo PROCESS1 da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+A seguinte sequência de padrões deve ser exibida repetidamente, iniciando a partir do início do segundo período da partição PARTITION1 (que inicia 500ms após a inicialização do módulo):
+
+\begin{itemize*}
+\item{Ambos \acp{LED} desligados por 2s (atraso de início de PROCESS1);}
+\item{Apenas \textbf{LED1} ligado por um curto período (PROCESS1);}
+\item{Ambos \acp{LED} desligados até 5s a partir do início da sequência (atraso de início de PROCESS2);}
+\item{Apenas \textbf{LED2} ligado por um curto período (PROCESS2);}
+\item{Ambos \acp{LED} desligados até 7s a partir do início da sequência;}
+\item{Apenas \textbf{LED1} ligado por um curto período (PROCESS1);}
+\item{Ambos \acp{LED} desligados até 10s a partir do início da sequência.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar o correto funcionamento do serviço \textbf{DELAYED\_START}.
+SNIPPET_END
+MASK_END

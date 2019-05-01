@@ -1,0 +1,20 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+Cada tarefa repetidamente atribui um diferente padrão aos \acp{LED}. Após algumas liberações o processo PROCESS1 entra em um laço infinito, perdendo assim seu \textit{deadline} e fazendo com que o processo tratador de erros da partição PARTITION1 seja iniciado. O processo tratador de erros dispara um erro de aplicação, fazendo com que o \textit{HM callback} da partição seja iniciado. O \textit{HM callback} atribui o modo de operação da partição para \textbf{IDLE}, parando qualquer processamento nela. Mais tarde, os processos ociosos das partições PARTITION2 e PARTITION3 também atribuem o modo de suas partições para \textbf{IDLE}, nessa ordem e em momentos diferentes. Os padrões de \acp{LED} utilizados pelas tarefas são os seguintes:
+
+\begin{itemize*}
+\item{Processo PROCESS1 da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partição PARTITION3: \textbf{LED1} ligado, \textbf{LED2} ligado;}
+\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+Os \acp{LED} devem, inicialmente, apresentar repetidamente o padrão de escalonamento. Após algum tempo o padrão do processo PROCESS1 deve ser exibido por um período relativamente longo (causando uma perda de \textit{deadline}), e então as partições PARTITION1, PARTITION2 e PARTITION3 são paradas, nessa ordem e em diferentes momentos. O padrão apresentado nos \acp{LED} deve refletir esses eventos, e finalmente apenas a partição ociosa deve permanecer em execução e, portanto, ambos os \acp{LED} devem ficar permanentemente desligados.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar o correto funcionamento do serviço \textbf{SET\_PARTITION\_MODE} quando solicitada transição para o modo de operação \textbf{IDLE} a partir de um \textit{HM callback} de partição.
+SNIPPET_END
+MASK_END

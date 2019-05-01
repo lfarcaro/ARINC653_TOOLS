@@ -1,0 +1,20 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+Cada tarefa repetidamente atribui um diferente padrão aos \acp{LED}, invoca \textbf{GET\_PROCESS\_STATUS} para dois processos, verifica o resultado e, caso uma falha seja detectada, entra em um laço infinito. Os padrões de \acp{LED} utilizados pelas tarefas são os seguintes:
+
+\begin{itemize*}
+\item{Processo PROCESS1 da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partição PARTITION3: \textbf{LED1} ligado, \textbf{LED2} ligado;}
+\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+Os \acp{LED} devem apresentar repetidamente o padrão de escalonamento (nenhum laço infinito deve ser alcançado).
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar o correto funcionamento do serviço \textbf{GET\_PROCESS\_STATUS}.
+SNIPPET_END
+MASK_END

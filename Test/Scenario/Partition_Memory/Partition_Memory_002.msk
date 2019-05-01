@@ -1,0 +1,16 @@
+MASK_START
+SNIPPET_START PARTITION_MEMORY
+<Partition_Memory PartitionIdentifier="1" PartitionName="PARTITION1">
+<Memory_Requirements Access="READ_WRITE" SizeBytes="0" Type="DUMMY"/>
+</Partition_Memory>
+<Partition_Memory PartitionIdentifier="2" PartitionName="PARTITION2">
+<Memory_Requirements Access="READ_WRITE" SizeBytes="0" Type="DUMMY"/>
+</Partition_Memory>
+<Partition_Memory PartitionIdentifier="3" PartitionName="PARTITION3">
+<Memory_Requirements Access="READ_WRITE" SizeBytes="0" Type="DUMMY"/>
+</Partition_Memory>
+<Partition_Memory PartitionIdentifier="4" PartitionName="SYSTEMPARTITION_IO">
+<Memory_Requirements Access="READ_WRITE" SizeBytes="0" Type="DUMMY"/>
+</Partition_Memory>
+SNIPPET_END
+MASK_END

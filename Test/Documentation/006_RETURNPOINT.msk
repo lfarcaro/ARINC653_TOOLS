@@ -1,0 +1,23 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+Os processos PROCESS1 e PROCESS2 piscam o \textbf{LED1}, disparam um erro de aplicação, desligam ambos os \acp{LED} e então retornam. O processo tratador de erros da partição PARTITION1 pisca o \textbf{LED2}, lê todas as entradas de erro, dispara um erro de aplicação, desliga ambos os \acp{LED} e então retorna. Os processos ociosos de partições, após a inicialização, disparam um erro de aplicação, desligam ambos os \acp{LED} e então retornam. Os padrões de \acp{LED} utilizados pelas tarefas são os seguintes:
+
+\begin{itemize*}
+\item{Processo PROCESS1 da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo tratador de erros da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo tratador de erros da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partição PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo tratador de erros da partição PARTITION3: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+O comportamento deste teste deve ser verificado através de depuração a nível de instruções de máquina. Todas as tarefas, ao retornar, devem alcançar o ponto de retorno correspondente e, assim, executar o tratamento adequado. Visualmente, os \acp{LED} devem piscar rapidamente antes que todas as tarefas sejam concluídas, e então os \acp{LED} devem ficar permanentemente desligados.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Garantir que os pontos de retorno, que são funções alcançadas quando os métodos que implementam as tarefas do sistema terminam ou retornam, são corretamente executados.
+SNIPPET_END
+MASK_END

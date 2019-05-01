@@ -1,0 +1,5 @@
+MASK_START
+SNIPPET_START MODEXT
+<ModExt:Extension DefaultStackSize="256"/>
+SNIPPET_END
+MASK_END

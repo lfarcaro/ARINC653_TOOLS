@@ -1,0 +1,20 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+O processo PROCESS1 repetidamente aguarda por um recurso por tempo indeterminado, e então pisca o \textbf{LED1}. O processo PROCESS2 repetidamente pisca o \textbf{LED2} a cada 250ms e, a cada $n$ iterações, libera o recurso. Os padrões de \acp{LED} utilizados pelas tarefas são os seguintes:
+
+\begin{itemize*}
+\item{Processo PROCESS1 da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+O \textbf{LED2} deve piscar aproximadamente a cada 250ms e, após $n$ iterações do processo PROCESS2, o \textbf{LED1} deve piscar uma vez, reiniciando a sequência.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar o correto funcionamento da utilização conjunta dos serviços internos \textbf{WAIT\_RESOURCE} (com espera por tempo indeterminado) e \textbf{SIGNAL\_RESOURCE}.
+SNIPPET_END
+MASK_END

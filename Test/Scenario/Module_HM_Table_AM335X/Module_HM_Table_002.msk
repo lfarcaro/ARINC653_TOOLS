@@ -1,0 +1,66 @@
+MASK_START
+SNIPPET_START MODULE_HM_TABLE
+<Module_HM_Table ModuleCallback="MODULE_HMCALLBACK">
+<System_State_Entry SystemState="1" Description="Module HM callback">
+<Error_ID_Action Description="Application error" ErrorIdentifier="2" Action="IGNORE"/>
+<Error_ID_Action Description="Numeric error" ErrorIdentifier="3" Action="IGNORE"/>
+<Error_ID_Action Description="Illegal request" ErrorIdentifier="4" Action="IGNORE"/>
+<Error_ID_Action Description="Stack overflow" ErrorIdentifier="5" Action="IGNORE"/>
+<Error_ID_Action Description="Memory violation" ErrorIdentifier="6" Action="IGNORE"/>
+<Error_ID_Action Description="Hardware fault" ErrorIdentifier="7" Action="IGNORE"/>
+<Error_ID_Action Description="Power fail" ErrorIdentifier="8" Action="IGNORE"/>
+
+<Error_ID_Action Description="Translation fault" ErrorIdentifier="100" Action="IGNORE"/>
+<Error_ID_Action Description="Memory alignment fault" ErrorIdentifier="101" Action="IGNORE"/>
+<Error_ID_Action Description="Memory access fault" ErrorIdentifier="102" Action="IGNORE"/>
+<Error_ID_Action Description="Cache fault" ErrorIdentifier="103" Action="IGNORE"/>
+<Error_ID_Action Description="Undefined instruction" ErrorIdentifier="104" Action="IGNORE"/>
+</System_State_Entry>
+<System_State_Entry SystemState="2" Description="Module default partition">
+<Error_ID_Action Description="Application error" ErrorIdentifier="2" Action="IGNORE"/>
+<Error_ID_Action Description="Numeric error" ErrorIdentifier="3" Action="IGNORE"/>
+<Error_ID_Action Description="Illegal request" ErrorIdentifier="4" Action="IGNORE"/>
+<Error_ID_Action Description="Stack overflow" ErrorIdentifier="5" Action="IGNORE"/>
+<Error_ID_Action Description="Memory violation" ErrorIdentifier="6" Action="IGNORE"/>
+<Error_ID_Action Description="Hardware fault" ErrorIdentifier="7" Action="IGNORE"/>
+<Error_ID_Action Description="Power fail" ErrorIdentifier="8" Action="IGNORE"/>
+
+<Error_ID_Action Description="Translation fault" ErrorIdentifier="100" Action="IGNORE"/>
+<Error_ID_Action Description="Memory alignment fault" ErrorIdentifier="101" Action="IGNORE"/>
+<Error_ID_Action Description="Memory access fault" ErrorIdentifier="102" Action="IGNORE"/>
+<Error_ID_Action Description="Cache fault" ErrorIdentifier="103" Action="IGNORE"/>
+<Error_ID_Action Description="Undefined instruction" ErrorIdentifier="104" Action="IGNORE"/>
+</System_State_Entry>
+<System_State_Entry SystemState="3" Description="Module idle partition">
+<Error_ID_Action Description="Application error" ErrorIdentifier="2" Action="IGNORE"/>
+<Error_ID_Action Description="Numeric error" ErrorIdentifier="3" Action="IGNORE"/>
+<Error_ID_Action Description="Illegal request" ErrorIdentifier="4" Action="IGNORE"/>
+<Error_ID_Action Description="Stack overflow" ErrorIdentifier="5" Action="IGNORE"/>
+<Error_ID_Action Description="Memory violation" ErrorIdentifier="6" Action="IGNORE"/>
+<Error_ID_Action Description="Hardware fault" ErrorIdentifier="7" Action="IGNORE"/>
+<Error_ID_Action Description="Power fail" ErrorIdentifier="8" Action="IGNORE"/>
+
+<Error_ID_Action Description="Translation fault" ErrorIdentifier="100" Action="IGNORE"/>
+<Error_ID_Action Description="Memory alignment fault" ErrorIdentifier="101" Action="IGNORE"/>
+<Error_ID_Action Description="Memory access fault" ErrorIdentifier="102" Action="IGNORE"/>
+<Error_ID_Action Description="Cache fault" ErrorIdentifier="103" Action="IGNORE"/>
+<Error_ID_Action Description="Undefined instruction" ErrorIdentifier="104" Action="IGNORE"/>
+</System_State_Entry>
+<System_State_Entry SystemState="4" Description="Partition HM callback">
+<Error_ID_Action Description="Application error" ErrorIdentifier="2" Action="IGNORE"/>
+<Error_ID_Action Description="Numeric error" ErrorIdentifier="3" Action="IGNORE"/>
+<Error_ID_Action Description="Illegal request" ErrorIdentifier="4" Action="IGNORE"/>
+<Error_ID_Action Description="Stack overflow" ErrorIdentifier="5" Action="IGNORE"/>
+<Error_ID_Action Description="Memory violation" ErrorIdentifier="6" Action="IGNORE"/>
+<Error_ID_Action Description="Hardware fault" ErrorIdentifier="7" Action="IGNORE"/>
+<Error_ID_Action Description="Power fail" ErrorIdentifier="8" Action="IGNORE"/>
+
+<Error_ID_Action Description="Translation fault" ErrorIdentifier="100" Action="IGNORE"/>
+<Error_ID_Action Description="Memory alignment fault" ErrorIdentifier="101" Action="IGNORE"/>
+<Error_ID_Action Description="Memory access fault" ErrorIdentifier="102" Action="IGNORE"/>
+<Error_ID_Action Description="Cache fault" ErrorIdentifier="103" Action="IGNORE"/>
+<Error_ID_Action Description="Undefined instruction" ErrorIdentifier="104" Action="IGNORE"/>
+</System_State_Entry>
+</Module_HM_Table>
+SNIPPET_END
+MASK_END

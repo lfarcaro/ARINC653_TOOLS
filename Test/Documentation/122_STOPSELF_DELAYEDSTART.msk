@@ -1,0 +1,20 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+A cada liberação o processo PROCESS2 pisca o \textbf{LED2}, e após $n$ liberações invoca o serviço \textbf{STOP\_SELF}, terminando sua própria execução. A cada liberação o processo PROCESS1 pisca o \textbf{LED1}, e após $m$ liberações invoca o serviço \textbf{DELAYED\_START} para o processo PROCESS2, reiniciando sua execução com um atraso de 100ms. Os padrões de \acp{LED} utilizados pelas tarefas são os seguintes:
+
+\begin{itemize*}
+\item{Processo PROCESS1 da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+O \textbf{LED1} deve piscar a cada 500ms, e o \textbf{LED2} deve piscar $n$ vezes a cada 250ms e então permanecer desligado. Após $m$ liberações do processo PROCESS1, o \textbf{LED2} deve voltar a piscar, reiniciando a sequência. Visualmente o atraso de início do processo PROCESS2 é dificilmente percebido, portanto deve ser utilizado um osciloscópio a fim de verificar que a cada vez que o processo PROCESS2 é reiniciado ele é liberado com um atraso de 100ms em relação ao desligamento do \textbf{LED1}.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar o correto funcionamento da utilização conjunta dos serviços \textbf{STOP\_SELF} e \textbf{DELAYED\_START}.
+SNIPPET_END
+MASK_END

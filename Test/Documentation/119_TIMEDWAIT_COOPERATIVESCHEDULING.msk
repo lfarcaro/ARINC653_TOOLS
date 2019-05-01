@@ -1,0 +1,25 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+O processo PROCESS1 liga o \textbf{LED1} por um longo período e então cede o processamento ao processo PROCESS2, que também liga o \textbf{LED2} por um longo período e então cede o processamento ao processo PROCESS1. Os padrões de \acp{LED} utilizados pelas tarefas são os seguintes:
+
+\begin{itemize*}
+\item{Processo PROCESS1 da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+A seguinte sequência de padrões de \acp{LED} deve ser exibida repetidamente:
+
+\begin{itemize*}
+\item{\textbf{LED1} piscando de acordo com o padrão de escalonamento por algum tempo;}
+\item{\textbf{LED2} piscando de acordo com o padrão de escalonamento por algum tempo.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar o funcionamento do serviço \textbf{TIMED\_WAIT} para a realização de escalonamento cooperativo, que baseia-se na cessão voluntária de recursos de processamento \citeX[p.6-6]{arpaci2012} e que é possível quando dois ou mais processos possuem a mesma prioridade.
+SNIPPET_END
+MASK_END

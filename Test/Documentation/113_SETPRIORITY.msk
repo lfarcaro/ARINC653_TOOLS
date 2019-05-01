@@ -1,0 +1,20 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+A cada liberação os processos PROCESS1 e PROCESS2 atribuem um diferente padrão aos \acp{LED} por um curto período. Após algumas liberações, o processo PROCESS1 atribui a prioridade do processo PROCESS2 para um valor maior que sua prioridade, e após mais algumas liberações restaura a prioridade original desse processo. Os padrões de \acp{LED} utilizados pelas tarefas são os seguintes:
+
+\begin{itemize*}
+\item{Processo PROCESS1 da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+Durante a execução dos processos com as prioridades originais, o \textbf{LED1} deve piscar precisamente a cada 500ms e o \textbf{LED2} deve piscar uma vez logo após o \textbf{LED1} e outra 250ms após o \textbf{LED1} ser ligado. Após a alteração da prioridade do processo PROCESS2 o \textbf{LED2} deve piscar precisamente a cada 250ms, enquanto o \textbf{LED1} deve piscar uma vez sim e uma vez não logo após o \textbf{LED2}. Em outras palavras, a ordem na qual os \acp{LED} piscam quando os processos PROCESS1 e PROCESS2 estão em fase deve ser invertida quando a prioridade do processo PROCESS2 é alterada.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar o correto funcionamento do serviço \textbf{SET\_PRIORITY}.
+SNIPPET_END
+MASK_END

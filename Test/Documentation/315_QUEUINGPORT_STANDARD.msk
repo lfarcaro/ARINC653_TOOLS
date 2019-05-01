@@ -1,0 +1,11 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+O processo PROCESS1 da partição PARTITION1 envia em duas diferentes portas de enfileiramento a cada 500ms (uma conectada à partição PARTITION2 e outra à partição PARTITION3). Os processos chamados PROCESS1 das partições PARTITION2 e PARTITION3 solicitam recebimento da porta de enfileiramento atribuída às suas partições a cada 250ms com limite de tempo de 100ms e, se uma a mensagem é recebida corretamente, piscam o \textit{LED1} e, se o tempo de espera expira ou a mensagem está incorreta, piscam o \textit{LED2}.
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+Os \acp{LED} devem piscar alternadamente a cada 250ms, já que os envios ocorrem a cada 500ms e os recebimentos a cada 250ms e, portanto, os recebimentos expiram a cada 500ms.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar o correto funcionamento de portas de enfileiramento (mecanismo de comunicação interpartição) conectadas a partições do mesmo módulo.
+SNIPPET_END
+MASK_END

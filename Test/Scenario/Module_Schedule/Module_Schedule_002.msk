@@ -1,0 +1,17 @@
+MASK_START
+SNIPPET_START MODULE_SCHEDULE
+<Module_Schedule MajorFrameSeconds="4.000">
+<Partition_Schedule PartitionIdentifier="1" PartitionName="PARTITION1" PeriodDurationSeconds="1.000" PeriodSeconds="2.000">
+<Window_Schedule PartitionPeriodStart="true" WindowDurationSeconds="1.000" WindowIdentifier="101" WindowStartSeconds="0.000"/>
+<Window_Schedule PartitionPeriodStart="true" WindowDurationSeconds="1.000" WindowIdentifier="102" WindowStartSeconds="2.000"/>
+</Partition_Schedule>
+<Partition_Schedule PartitionIdentifier="2" PartitionName="PARTITION2" PeriodDurationSeconds="0.500" PeriodSeconds="2.000">
+<Window_Schedule PartitionPeriodStart="true" WindowDurationSeconds="0.500" WindowIdentifier="201" WindowStartSeconds="1.000"/>
+<Window_Schedule PartitionPeriodStart="true" WindowDurationSeconds="0.500" WindowIdentifier="202" WindowStartSeconds="3.000"/>
+</Partition_Schedule>
+<Partition_Schedule PartitionIdentifier="3" PartitionName="PARTITION3" PeriodDurationSeconds="0.250" PeriodSeconds="4.000">
+<Window_Schedule PartitionPeriodStart="true" WindowDurationSeconds="0.250" WindowIdentifier="301" WindowStartSeconds="1.500"/>
+</Partition_Schedule>
+</Module_Schedule>
+SNIPPET_END
+MASK_END

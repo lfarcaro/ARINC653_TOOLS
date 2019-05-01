@@ -1,0 +1,13 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+O processo PROCESS1 da partição PARTITION1 inicializa a saída \ac{PWM} do processador chamada \textbf{EHRPWM1A} (pino \textbf{P9.14} da plataforma \textit{BeagleBone}) e então, a cada 100ms, lê a amostra atual da porta de amostragem e, se válida, atribui o \textit{duty cycle} da saída \ac{PWM} de acordo com a amostra e pisca o \textbf{LED1}, senão atribui \textit{duty cycle} zero e pisca o \textbf{LED2}. Este teste deve ser utilizado em conjunto com o teste \textbf{SAMPLINGPORT\_SENSOR\_MODULE1}.
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+Enquanto os módulos estiverem \textbf{desconectados} o \textbf{LED2} deve piscar a cada 100ms, pois a porta de amostragem não estará sendo atualizada e, portanto, seu valor será considerado inválido.
+
+Enquanto os módulos estiverem \textbf{conectados} o \textbf{LED1} deve piscar a cada 100ms e o \textit{duty cycle} da saída \ac{PWM} deve variar de acordo com as amostras coletadas pelo módulo emissor, pois a porta de amostragem estará sendo atualizada e, portanto, seu valor será considerado válido.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar a utilização prática de portas de amostragem (mecanismo de comunicação interpartição) conectadas a partições de dois módulos diferentes para transmissão de amostras de um sensor (utilizado em conjunto com o teste \textbf{SAMPLINGPORT\_SENSOR\_MODULE1}).
+SNIPPET_END
+MASK_END

@@ -1,0 +1,91 @@
+MASK_START
+SNIPPET_START PARTITION_HM_TABLE
+<Partition_HM_Table PartitionIdentifier="1" PartitionCallback="PARTITION1_HMCALLBACK">
+<System_State_Entry SystemState="5" Description="Partition error handler">
+<Error_ID_Action Description="Application error" ErrorIdentifier="2" Action="IGNORE"/>
+<Error_ID_Action Description="Numeric error" ErrorIdentifier="3" Action="IGNORE"/>
+<Error_ID_Action Description="Illegal request" ErrorIdentifier="4" Action="IGNORE"/>
+<Error_ID_Action Description="Stack overflow" ErrorIdentifier="5" Action="IGNORE"/>
+<Error_ID_Action Description="Memory violation" ErrorIdentifier="6" Action="IGNORE"/>
+<Error_ID_Action Description="Hardware fault" ErrorIdentifier="7" Action="IGNORE"/>
+<Error_ID_Action Description="Power fail" ErrorIdentifier="8" Action="IGNORE"/>
+</System_State_Entry>
+<System_State_Entry SystemState="6" Description="Partition default process">
+<Error_ID_Action Description="Application error" ErrorIdentifier="2" Action="IGNORE"/>
+<Error_ID_Action Description="Numeric error" ErrorIdentifier="3" Action="IGNORE"/>
+<Error_ID_Action Description="Illegal request" ErrorIdentifier="4" Action="IGNORE"/>
+<Error_ID_Action Description="Stack overflow" ErrorIdentifier="5" Action="IGNORE"/>
+<Error_ID_Action Description="Memory violation" ErrorIdentifier="6" Action="IGNORE"/>
+<Error_ID_Action Description="Hardware fault" ErrorIdentifier="7" Action="IGNORE"/>
+<Error_ID_Action Description="Power fail" ErrorIdentifier="8" Action="IGNORE"/>
+</System_State_Entry>
+<System_State_Entry SystemState="9" Description="Operating system">
+<Error_ID_Action Description="Numeric error" ErrorIdentifier="3" Action="IGNORE"/>
+<Error_ID_Action Description="Illegal request" ErrorIdentifier="4" Action="IGNORE"/>
+<Error_ID_Action Description="Stack overflow" ErrorIdentifier="5" Action="IGNORE"/>
+<Error_ID_Action Description="Memory violation" ErrorIdentifier="6" Action="IGNORE"/>
+<Error_ID_Action Description="Hardware fault" ErrorIdentifier="7" Action="IGNORE"/>
+<Error_ID_Action Description="Power fail" ErrorIdentifier="8" Action="IGNORE"/>
+</System_State_Entry>
+<Part_HM_Ext:Extension PartitionCallbackStackSize="256" />
+</Partition_HM_Table>
+<Partition_HM_Table PartitionIdentifier="2" PartitionCallback="PARTITION2_HMCALLBACK">
+<System_State_Entry SystemState="5" Description="Partition error handler">
+<Error_ID_Action Description="Application error" ErrorIdentifier="2" Action="IGNORE"/>
+<Error_ID_Action Description="Numeric error" ErrorIdentifier="3" Action="IGNORE"/>
+<Error_ID_Action Description="Illegal request" ErrorIdentifier="4" Action="IGNORE"/>
+<Error_ID_Action Description="Stack overflow" ErrorIdentifier="5" Action="IGNORE"/>
+<Error_ID_Action Description="Memory violation" ErrorIdentifier="6" Action="IGNORE"/>
+<Error_ID_Action Description="Hardware fault" ErrorIdentifier="7" Action="IGNORE"/>
+<Error_ID_Action Description="Power fail" ErrorIdentifier="8" Action="IGNORE"/>
+</System_State_Entry>
+<System_State_Entry SystemState="6" Description="Partition default process">
+<Error_ID_Action Description="Application error" ErrorIdentifier="2" Action="IGNORE"/>
+<Error_ID_Action Description="Numeric error" ErrorIdentifier="3" Action="IGNORE"/>
+<Error_ID_Action Description="Illegal request" ErrorIdentifier="4" Action="IGNORE"/>
+<Error_ID_Action Description="Stack overflow" ErrorIdentifier="5" Action="IGNORE"/>
+<Error_ID_Action Description="Memory violation" ErrorIdentifier="6" Action="IGNORE"/>
+<Error_ID_Action Description="Hardware fault" ErrorIdentifier="7" Action="IGNORE"/>
+<Error_ID_Action Description="Power fail" ErrorIdentifier="8" Action="IGNORE"/>
+</System_State_Entry>
+<System_State_Entry SystemState="9" Description="Operating system">
+<Error_ID_Action Description="Numeric error" ErrorIdentifier="3" Action="IGNORE"/>
+<Error_ID_Action Description="Illegal request" ErrorIdentifier="4" Action="IGNORE"/>
+<Error_ID_Action Description="Stack overflow" ErrorIdentifier="5" Action="IGNORE"/>
+<Error_ID_Action Description="Memory violation" ErrorIdentifier="6" Action="IGNORE"/>
+<Error_ID_Action Description="Hardware fault" ErrorIdentifier="7" Action="IGNORE"/>
+<Error_ID_Action Description="Power fail" ErrorIdentifier="8" Action="IGNORE"/>
+</System_State_Entry>
+<Part_HM_Ext:Extension PartitionCallbackStackSize="256" />
+</Partition_HM_Table>
+<Partition_HM_Table PartitionIdentifier="3" PartitionCallback="PARTITION3_HMCALLBACK">
+<System_State_Entry SystemState="5" Description="Partition error handler">
+<Error_ID_Action Description="Application error" ErrorIdentifier="2" Action="IGNORE"/>
+<Error_ID_Action Description="Numeric error" ErrorIdentifier="3" Action="IGNORE"/>
+<Error_ID_Action Description="Illegal request" ErrorIdentifier="4" Action="IGNORE"/>
+<Error_ID_Action Description="Stack overflow" ErrorIdentifier="5" Action="IGNORE"/>
+<Error_ID_Action Description="Memory violation" ErrorIdentifier="6" Action="IGNORE"/>
+<Error_ID_Action Description="Hardware fault" ErrorIdentifier="7" Action="IGNORE"/>
+<Error_ID_Action Description="Power fail" ErrorIdentifier="8" Action="IGNORE"/>
+</System_State_Entry>
+<System_State_Entry SystemState="6" Description="Partition default process">
+<Error_ID_Action Description="Application error" ErrorIdentifier="2" Action="IGNORE"/>
+<Error_ID_Action Description="Numeric error" ErrorIdentifier="3" Action="IGNORE"/>
+<Error_ID_Action Description="Illegal request" ErrorIdentifier="4" Action="IGNORE"/>
+<Error_ID_Action Description="Stack overflow" ErrorIdentifier="5" Action="IGNORE"/>
+<Error_ID_Action Description="Memory violation" ErrorIdentifier="6" Action="IGNORE"/>
+<Error_ID_Action Description="Hardware fault" ErrorIdentifier="7" Action="IGNORE"/>
+<Error_ID_Action Description="Power fail" ErrorIdentifier="8" Action="IGNORE"/>
+</System_State_Entry>
+<System_State_Entry SystemState="9" Description="Operating system">
+<Error_ID_Action Description="Numeric error" ErrorIdentifier="3" Action="IGNORE"/>
+<Error_ID_Action Description="Illegal request" ErrorIdentifier="4" Action="IGNORE"/>
+<Error_ID_Action Description="Stack overflow" ErrorIdentifier="5" Action="IGNORE"/>
+<Error_ID_Action Description="Memory violation" ErrorIdentifier="6" Action="IGNORE"/>
+<Error_ID_Action Description="Hardware fault" ErrorIdentifier="7" Action="IGNORE"/>
+<Error_ID_Action Description="Power fail" ErrorIdentifier="8" Action="IGNORE"/>
+</System_State_Entry>
+<Part_HM_Ext:Extension PartitionCallbackStackSize="256" />
+</Partition_HM_Table>
+SNIPPET_END
+MASK_END

@@ -1,0 +1,11 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+Os processos PROCESS1 e PROCESS2 repetidamente esperam no semáforo e então piscam o \textbf{LED1} e o \textbf{LED2} (respectivamente). O processo ocioso da partição PARTITION1 repetidamente obtém o identificador do semáforo por seu nome, aguarda durante um período curto, libera o semáforo e, finalmente, obtém e verifica o estado do semáforo.
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+O semáforo tem valor inicial 2, portanto espera-se que inicialmente o \textbf{LED1} pisque duas vezes seguidas (visualmente percebido como se piscasse apenas uma vez), já que o processo PROCESS1 possui a maior prioridade e, portanto, o processo PROCESS2 não é iniciado até que PROCESS1 seja bloqueado. Após algum tempo o semáforo é liberado e, assim, o \textbf{LED1} deve piscar mais uma vez (já que o processo PROCESS1 consumiu os dois recursos iniciais do semáforo e solicitou aguardo por mais um, quando foi bloqueado). Mais tarde o semáforo é liberado novamente e, uma vez que sua política de enfileiramento é \ac{FIFO}, desta vez o \textbf{LED2} deve piscar. A partir deste ponto, os \acp{LED} devem piscar alternadamente a cada vez que o semáforo é liberado.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar a utilização e o correto funcionamento de semáforos (mecanismo de comunicação intrapartição) quando empregada política \ac{FIFO} de enfileiramento de processos.
+SNIPPET_END
+MASK_END

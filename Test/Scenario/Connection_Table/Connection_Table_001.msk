@@ -1,0 +1,10 @@
+MASK_START
+SNIPPET_START CONNECTION_TABLE
+<Connection_Table>
+<Channel ChannelIdentifier="-1" ChannelName="Dummy channel">
+<Source/>
+<Destination/>
+</Channel>
+</Connection_Table>
+SNIPPET_END
+MASK_END

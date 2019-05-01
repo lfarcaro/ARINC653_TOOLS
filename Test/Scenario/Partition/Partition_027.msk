@@ -1,0 +1,24 @@
+MASK_START
+SNIPPET_START PARTITION
+<Partition EntryPoint="PARTITION1_DEFAULTPROCESS" PartitionIdentifier="1" PartitionName="PARTITION1" SystemPartition="true">
+<Sampling_Port Direction="SOURCE" MaxMessageSize="16" RefreshRateSeconds="0.500" Name="SENSOR_S"/>
+<Process Name="PROCESS1" StackSize="256">
+<Proc_Ext:Extension BasePriority="10" PeriodSeconds="0.100" TimeCapacitySeconds="0.050" Deadline="HARD"/>
+</Process>
+</Partition>
+<Partition EntryPoint="PARTITION2_DEFAULTPROCESS" PartitionIdentifier="2" PartitionName="PARTITION2" SystemPartition="false"/>
+<Partition EntryPoint="PARTITION3_DEFAULTPROCESS" PartitionIdentifier="3" PartitionName="PARTITION3" SystemPartition="false"/>
+<Partition EntryPoint="SYSTEMPARTITION_IO" PartitionIdentifier="4" PartitionName="SYSTEMPARTITION_IO" SystemPartition="true">
+<Process Name="SAMPLINGPORTS" StackSize="256">
+<Proc_Ext:Extension BasePriority="10" Deadline="SOFT" EntryPoint="SAMPLINGPORTS"/>
+</Process>
+<Process Name="QUEUINGPORTS" StackSize="256">
+<Proc_Ext:Extension BasePriority="10" Deadline="SOFT" EntryPoint="QUEUINGPORTS"/>
+</Process>
+<Process Name="ETHERNET" StackSize="256">
+<Proc_Ext:Extension BasePriority="10" Deadline="SOFT" EntryPoint="ETHERNET"/>
+</Process>
+<PartitionExt:Extension StackSize="256" ErrorHandler="ERRORHANDLER" ErrorHandlerStackSize="256" PredefinedSystemPartition="true"/>
+</Partition>
+SNIPPET_END
+MASK_END

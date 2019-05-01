@@ -1,0 +1,20 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+A cada liberação o processo PROCESS1 pisca o \textbf{LED1}. A cada liberação o processo PROCESS2 pisca o \textbf{LED2} com a interrupção por outros processos bloqueada, e após $n$ liberações executa um laço por tempo suficiente para causar uma perda de \textit{deadline} -- e portanto o disparo do processo tratador de erros -- enquanto essa interrupção ainda encontra-se bloqueada. O processo tratador de erros lê as entradas de erro e invoca \textbf{STOP\_SELF}, devendo então ser retomada a execução do processo PROCESS2. O processo tratador de erros é executado novamente quando o processo PROCESS1 perde seu \textit{deadline}, devendo ser retomada mais uma vez a execução do processo PROCESS2. O processo PROCESS2 então termina a execução do longo (mas não infinito) laço, desbloqueando a interrupção de processos e retornando ao comportamento inicial. Os padrões de \acp{LED} utilizados pelas tarefas são os seguintes:
+
+\begin{itemize*}
+\item{Processo PROCESS1 da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+Os \acp{LED} devem inicialmente piscar de acordo com a escala de processos. Após $n$ liberações do processo PROCESS2 o \textbf{LED2} deve permanecer ligado durante todo o tempo alocado à partição PARTITION1, mesmo quando os \textit{deadlines} dos processos PROCESS1 e PROCESS2 forem perdidos, e após o desligamento do \textbf{LED2} a sequência deve ser reiniciada.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar o correto funcionamento do serviço \textbf{STOP\_SELF} se utilizado por um processo tratador de erros após uma chamada ao serviço \textbf{LOCK\_PREEMPTION}, situação na qual o serviço \textbf{STOP\_SELF} deve continuar a execução do processo interrompido pelo processo tratador de erros \citeX[p.55]{ARINC_653_P1_2_2006}.
+SNIPPET_END
+MASK_END

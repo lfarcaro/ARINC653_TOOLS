@@ -1,0 +1,11 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+O processo PROCESS1 repetidamente obtém o identificador do \textit{buffer} por seu nome, envia uma mensagem nele e, finalmente, obtém e verifica seu estado. Os processos PROCESS2 e PROCESS3 repetidamente recebem uma mensagem do \textit{buffer} e então piscam o \textbf{LED1} e o \textbf{LED2} (respectivamente).
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+A cada 500ms o \textbf{LED1} e o \textbf{LED2} devem piscar alternadamente, iniciando com o \textbf{LED1} pois o processo PROCESS2 tem prioridade mais alta que o processo PROCESS3 e a política de enfileiramento do \textit{buffer} é \ac{FIFO}. Esse comportamento deve ser repetido indefinidamente.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar a utilização e o correto funcionamento de \textit{buffers} (mecanismo de comunicação intrapartição) quando empregada política \ac{FIFO} de enfileiramento de processos.
+SNIPPET_END
+MASK_END

@@ -1,0 +1,11 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+A cada liberação o processo PROCESS1 pisca o \textbf{LED1}, espera pelo semáforo SEMAPHORE1, cede o processamento (através do serviço \textbf{TIMED\_WAIT}), espera pelo semáforo SEMAPHORE2, pisca o \textbf{LED1} novamente e libera ambos os semáforos. A cada liberação o processo PROCESS2 pisca o \textbf{LED2}, espera pelo semáforo SEMAPHORE2, cede o processamento (através do serviço \textbf{TIMED\_WAIT}), espera pelo semáforo SEMAPHORE1, pisca o \textbf{LED2} novamente e libera ambos os semáforos.
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+Este exemplo causa um \textit{deadlock}, pois o processo PROCESS1 adquire o semáforo SEMAPHORE1 e o processo PROCESS2 adquire o semáforo SEMAPHORE2, e portanto o processo PROCESS1 aguardará por tempo indeterminado por SEMAPHORE2 e o processo PROCESS2 aguardará por tempo indeterminado por SEMAPHORE1. Portanto, inicialmente os \acp{LED} devem piscar uma vez e, então, ambos devem desligar permanentemente.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar a ocorrência de \textit{deadlock} através da utilização de semáforos (mecanismo de comunicação intrapartição).
+SNIPPET_END
+MASK_END

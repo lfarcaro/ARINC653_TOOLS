@@ -1,0 +1,18 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+A cada liberação o processo PROCESS1 liga o \textbf{LED1} e entra em um laço infinito, perdendo seu \textit{deadline} e fazendo com que o processo tratador de erros da partição PARTITION1 seja iniciado. O processo tratador de erros liga o \textbf{LED2} e reinicia o processo PROCESS1. Os padrões de \acp{LED} utilizados pelas tarefas são os seguintes:
+
+\begin{itemize*}
+\item{Processo PROCESS1 da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo tratador de erros da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+Um osciloscópio deve ser utilizado para verificar que o momentos nos quais o \textbf{LED1} é ligado estão corretamente alinhados em relação à escala da partição PARTITION1, levando em conta as janelas de tempo de início de período. Visualmente nenhuma observação é conclusiva.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar a corretude do momento da primeira liberação de processos periódicos, levando em conta as janelas de tempo de início de período da partição.
+SNIPPET_END
+MASK_END

@@ -1,0 +1,11 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+O processo PROCESS2 repetidamente aguarda por um recurso por tempo indeterminado (até que seja liberado), e então pisca o \textbf{LED2}. A cada liberação o processo PROCESS1 pisca o \textbf{LED1} e, a cada $n$ liberações, alternadamente suspende o processo PROCESS2, continua o processo PROCESS2 ou libera o recurso (nessa ordem).
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+O \textbf{LED1} deve piscar a cada 500ms, e o \textbf{LED2} deve piscar a cada $3n$ liberações do processo PROCESS1. Em outras palavras, o \textbf{LED2} só deve piscar depois que o processo PROCESS1 liberar o recurso, pois quando o processo PROCESS2 é continuado o recurso ainda não foi liberado.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar o correto funcionamento da utilização conjunta dos serviços \textbf{WAIT\_RESOURCE}, \textbf{SIGNAL\_RESOURCE}, \textbf{SUSPEND} e \textbf{RESUME} quando um processo é suspenso e continuado enquanto encontra-se bloqueado à espera de um recurso, situação na qual esse deve continuar sua execução apenas quando o recurso for liberado.
+SNIPPET_END
+MASK_END

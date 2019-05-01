@@ -1,0 +1,20 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+O processo PROCESS1 repetidamente aguarda por um recurso por no máximo 2s e, quando adquire o recurso ou quando o tempo limite é excedido, pisca o \textbf{LED1}. A cada liberação o processo PROCESS2 pisca o \textbf{LED2}, após $n$ liberações suspende o processo PROCESS1 e após $m \approx 3n$ liberações continua esse mesmo processo. Os valores de $n$, de $m$, do período do processo PROCESS2 e do tempo limite de espera pelo recurso são definidos de forma que o tempo limite de espera expire enquanto o processo PROCESS1 encontra-se suspenso. Os padrões de \acp{LED} utilizados pelas tarefas são os seguintes:
+
+\begin{itemize*}
+\item{Processo PROCESS1 da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+O \textbf{LED2} deve piscar aproximadamente a cada 250ms, e o \textbf{LED1} deve piscar uma vez a cada $m$ liberações do processo PROCESS2, permanecendo desligado quando o tempo máximo de espera pelo recurso expirar já que nesse momento o processo PROCESS1 encontra-se suspenso.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar o correto funcionamento da utilização conjunta dos serviços \textbf{WAIT\_RESOURCE} (com espera por tempo limitado), \textbf{SUSPEND} e \textbf{RESUME} quando o tempo limite de espera por um recurso expira enquanto o processo encontra-se suspenso, situação na qual esse deve permanecer suspenso até que seja continuado por outro processo.
+SNIPPET_END
+MASK_END

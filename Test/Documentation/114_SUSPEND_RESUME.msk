@@ -1,0 +1,22 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+A cada liberação o processo PROCESS1 liga o \textbf{LED1} durante um curto período, e alternadamente suspende ou continua o processo PROCESS2, que repetidamente liga o \textbf{LED2}. Os padrões de \acp{LED} utilizados pelas tarefas são os seguintes:
+
+\begin{itemize*}
+\item{Processo PROCESS1 da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+O \textbf{LED2} deve permanecer ligado durante todo o tempo alocado à partição PARTITION1 até que o processo PROCESS1 seja liberado, suspendendo o processo PROCESS2 e permanecendo, portanto, o \textbf{LED2} desligado até que PROCESS1 seja liberado novamente, continuando PROCESS2 e reiniciando a sequência. Essa sequência deve ser repetida indefinidamente.
+
+NOTA: Quando o módulo é ativado o processo PROCESS2 deve iniciar sua execução antes do processo PROCESS1, já que processos aperiódicos são liberados imediatamente que iniciados e processos periódicos são liberados apenas no início do próximo período da partição.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar o correto funcionamento da utilização conjunta dos serviços \textbf{SUSPEND} e \textbf{RESUME}.
+SNIPPET_END
+MASK_END

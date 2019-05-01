@@ -1,0 +1,11 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+O processo PROCESS1 repetidamente obtém o identificador do \textit{buffer} por seu nome, envia uma mensagem nele e, finalmente, obtém e verifica seu estado. Os processos PROCESS2 e PROCESS3 repetidamente recebem uma mensagem do \textit{buffer} com limite de tempo de 250ms e 100ms (respectivamente) e piscam o \textbf{LED1} e o \textbf{LED2} (respectivamente).
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+O \textbf{LED1} deve piscar no mínimo a cada 500ms, podendo piscar antes quando o processo PROCESS2 recebe uma mensagem. O \textbf{LED2} deve piscar no mínimo a cada 250ms, podendo piscar antes quando o processo PROCESS3 recebe uma mensagem. Esse comportamento deve ser repetido indefinidamente.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar a utilização e o correto funcionamento de \textit{buffers} (mecanismo de comunicação intrapartição) com espera pelo recebimento de mensagens por tempo limitado.
+SNIPPET_END
+MASK_END

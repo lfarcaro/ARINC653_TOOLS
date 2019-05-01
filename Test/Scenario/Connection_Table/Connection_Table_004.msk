@@ -1,0 +1,56 @@
+MASK_START
+SNIPPET_START CONNECTION_TABLE
+<Connection_Table>
+<Channel ChannelIdentifier="11" ChannelName="CHANNEL1_1">
+<Source>
+<Standard_Partition PartitionIdentifier="1" PartitionName="PARTITION1" PortName="SENSOR_S"/>
+</Source>
+<Destination>
+<Pseudo_Partition PhysicalAddress="0x000000020202020220200120"/>
+</Destination>
+</Channel>
+<Channel ChannelIdentifier="12" ChannelName="CHANNEL1_2">
+<Source>
+<Pseudo_Partition PhysicalAddress="0x0120"/>
+</Source>
+<Destination>
+<Standard_Partition PartitionIdentifier="1" PartitionName="PARTITION1" PortName="SENSOR_D"/>
+</Destination>
+</Channel>
+
+<Channel ChannelIdentifier="21" ChannelName="CHANNEL2_1">
+<Source>
+<Standard_Partition PartitionIdentifier="2" PartitionName="PARTITION2" PortName="SENSOR_S"/>
+</Source>
+<Destination>
+<Pseudo_Partition PhysicalAddress="0x000000020202020220200220"/>
+</Destination>
+</Channel>
+<Channel ChannelIdentifier="22" ChannelName="CHANNEL2_2">
+<Source>
+<Pseudo_Partition PhysicalAddress="0x0220"/>
+</Source>
+<Destination>
+<Standard_Partition PartitionIdentifier="2" PartitionName="PARTITION2" PortName="SENSOR_D"/>
+</Destination>
+</Channel>
+
+<Channel ChannelIdentifier="31" ChannelName="CHANNEL3_1">
+<Source>
+<Standard_Partition PartitionIdentifier="3" PartitionName="PARTITION3" PortName="SENSOR_S"/>
+</Source>
+<Destination>
+<Pseudo_Partition PhysicalAddress="0x000000020202020220200320"/>
+</Destination>
+</Channel>
+<Channel ChannelIdentifier="32" ChannelName="CHANNEL3_2">
+<Source>
+<Pseudo_Partition PhysicalAddress="0x0320"/>
+</Source>
+<Destination>
+<Standard_Partition PartitionIdentifier="3" PartitionName="PARTITION3" PortName="SENSOR_D"/>
+</Destination>
+</Channel>
+</Connection_Table>
+SNIPPET_END
+MASK_END

@@ -1,0 +1,23 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+Os processos ociosos das partições e a partição ociosa repetidamente desligam ambos os \acp{LED}. A cada liberação o processo PROCESS1 atribui um determinado padrão aos \acp{LED} durante um diferente período, de acordo com as constantes de temporização utilizadas nos casos de teste.
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+A cada liberação do processo PROCESS1 os \acp{LED} devem apresentar um dos seguintes padrões:
+
+\begin{itemize*}
+\item{Apenas \textbf{LED1} ligado por $\approx$1ms;}
+\item{Apenas \textbf{LED1} ligado por $\approx$5ms;}
+\item{Apenas \textbf{LED1} ligado por $\approx$10ms;}
+\item{Apenas \textbf{LED1} ligado por $\approx$25ms;}
+\item{Apenas \textbf{LED1} ligado por $\approx$50ms;}
+\item{Apenas \textbf{LED1} ligado por $\approx$100ms;}
+\item{Apenas \textbf{LED1} ligado por $\approx$250ms;}
+\item{Apenas \textbf{LED1} ligado por $\approx$750ms;}
+\item{Apenas \textbf{LED1} ligado por $\approx$1s.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Simplificar o processo de calibração das constantes de temporização utilizadas nos casos de teste.
+SNIPPET_END
+MASK_END

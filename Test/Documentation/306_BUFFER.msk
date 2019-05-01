@@ -1,0 +1,25 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+O processo PROCESS1 repetidamente obtém o identificador do \textit{buffer} por seu nome, envia uma mensagem nele e, finalmente, obtém e verifica seu estado. Os processos PROCESS2 e PROCESS3 repetidamente recebem uma mensagem do \textit{buffer} e então piscam o \textbf{LED1} e o \textbf{LED2} (respectivamente).
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+O seguinte comportamento deve ser observado ao longo dos primeiros 2s de execução:
+
+\begin{itemize*}
+\item{No tempo 0ms o processo PROCESS1 envia uma mensagem, que será consumida pelo processo PROCESS2 logo depois que o processo PROCESS1 aguardar por seu próximo período (fazendo com que o \textbf{LED1} pisque), e quando o processo PROCESS2 esperar por seu próximo período o processo PROCESS3 tenta receber uma mensagem mas o \textit{buffer} está vazio, portanto o processo PROCESS3 será bloqueado;}
+\item{No tempo 250ms o processo PROCESS1 envia outra mensagem, liberando o processo PROCESS3 (fazendo com que o \textbf{LED2} pisque);}
+\item{No tempo 500ms o processo PROCESS1 envia uma nova mensagem, que será consumida pelo processo PROCESS2 logo depois que o processo PROCESS1 aguardar por seu próximo período (fazendo com que o \textbf{LED1} pisque novamente);}
+\item{No tempo 750ms o processo PROCESS1 envia mais uma mensagem, porém nenhum processo aguarda por ela e portanto nenhum \ac{LED} é acionado;}
+\item{No tempo 1000ms o processo PROCESS1 envia mais uma mensagem, e portanto os processos PROCESS2 e PROCESS3 consomem mensagens (piscando o \textbf{LED1} e, em seguida, o \textbf{LED2});}
+\item{No tempo 1250ms o processo PROCESS1 envia mais uma mensagem;}
+\item{No tempo 1500ms o processo PROCESS1 envia mais uma mensagem e o processo PROCESS2 consome uma das mensagens enfileiradas (piscando o \textbf{LED1});}
+\item{No tempo 1750ms o processo PROCESS1 envia mais uma mensagem;}
+\item{No tempo 2000ms mais uma mensagem é enviada e os processos PROCESS2 e PROCESS3 consomem duas mensagens, piscando o \textbf{LED1} e, depois, o \textbf{LED2}.}
+\end{itemize*}
+
+Uma vez que o processo PROCESS1 envia uma nova mensagem a cada 250ms e os processos PROCESS2 e PROCESS3, que as consomem, têm períodos mais longos que esse, o \textit{buffer} irá em algum momento ser completamente preenchido. Portanto, o comportamento a ser observado a longo prazo nos \acp{LED} é o padrão imposto pelo escalonamento do conjunto de processos da partição PARTITION1.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar a utilização e o correto funcionamento de \textit{buffers} (mecanismo de comunicação intrapartição).
+SNIPPET_END
+MASK_END

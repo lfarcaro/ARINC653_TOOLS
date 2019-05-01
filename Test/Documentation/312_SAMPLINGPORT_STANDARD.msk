@@ -1,0 +1,11 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+O processo PROCESS1 da partição PARTITION1 escreve em uma porta de amostragem a cada 500ms, enquanto os processos PROCESS1 das partições PARTITION2 e PARTITION3 leem de portas de amostragem a cada 250ms e, se o valor é válido, piscam o \textit{LED1} e, se inválido, piscam o \textit{LED2}.
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+Os \acp{LED} devem piscar duas vezes alternadamente a cada 250ms (uma vez para a partição PARTITION2 e outra para a partição PARTITION3). Isso porque a porta é escrita a cada 500ms mas seu período de atualização é de 250ms e, por isso, o valor lido apenas é considerado válido a cada 500ms.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar o correto funcionamento de portas de amostragem (mecanismo de comunicação interpartição) conectadas a partições do mesmo módulo.
+SNIPPET_END
+MASK_END

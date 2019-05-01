@@ -1,0 +1,17 @@
+MASK_START
+SNIPPET_START CONNECTION_TABLE
+<Connection_Table>
+<Channel ChannelIdentifier="1" ChannelName="CHANNEL1">
+<Source>
+<Standard_Partition PartitionIdentifier="1" PartitionName="PARTITION1" PortName="SENSOR_S"/>
+</Source>
+<Destination>
+<Standard_Partition PartitionIdentifier="2" PartitionName="PARTITION2" PortName="SENSOR_D1"/>
+</Destination>
+<Destination>
+<Standard_Partition PartitionIdentifier="3" PartitionName="PARTITION3" PortName="SENSOR_D2"/>
+</Destination>
+</Channel>
+</Connection_Table>
+SNIPPET_END
+MASK_END

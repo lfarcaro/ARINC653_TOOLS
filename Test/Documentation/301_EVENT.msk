@@ -1,0 +1,11 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+Os processos PROCESS1 e PROCESS2 repetidamente esperam pelo evento, piscam o \textbf{LED1} e o \textbf{LED2} (respectivamente) e aguardam 500ms e 250ms (respectivamente). O processo ocioso da partição PARTITION1 repetidamente obtém o identificador do evento por seu nome, aguarda durante um período longo, alternadamente habilita ou desabilita o evento (atribui seu estado para \textit{up} ou \textit{down}, respectivamente) e, finalmente, obtém e verifica o estado do evento.
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+Inicialmente o evento encontra-se em estado \textit{down}, portanto ambos os \acp{LED} devem permanecer desligados. Após algum tempo o evento é ativado (assume estado \textit{up}) e, portanto, o \textbf{LED1} deve piscar aproximadamente a cada 500ms e o \textbf{LED2} aproximadamente a cada 250ms. Mais tarde o evento é restaurado, voltando ao estado \textit{down}, e portanto ambos os processos devem terminar o processamento atual e bloquear, reiniciando a sequência.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar a utilização e o correto funcionamento de eventos (mecanismo de comunicação intrapartição).
+SNIPPET_END
+MASK_END

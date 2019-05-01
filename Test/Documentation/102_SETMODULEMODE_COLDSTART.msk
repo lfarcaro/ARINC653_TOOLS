@@ -1,0 +1,20 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+Após um determinado número de liberações, o processo PROCESS2 da partição PARTITION1 atribui o modo de operação do módulo para \textbf{COLD\_START}, reiniciando sua execução. Os padrões de \acp{LED} utilizados pelas tarefas são os seguintes:
+
+\begin{itemize*}
+\item{Processo PROCESS1 da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partição PARTITION3: \textbf{LED1} ligado, \textbf{LED2} ligado;}
+\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+Os \acp{LED} devem apresentar repetidamente o padrão de escalonamento, com pequenos intervalos durante os quais o módulo é reiniciado.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar o correto funcionamento do serviço \textbf{SET\_MODULE\_MODE} quando solicitada transição para o modo de operação \textbf{COLD\_START}.
+SNIPPET_END
+MASK_END

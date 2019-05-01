@@ -1,0 +1,13 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+Os processos denominados PROCESS1 das partições PARTITION1, PARTITION2 e PARTITION3 enviam em portas de amostragem a cada 500ms, enquanto os processos denominados PROCESS2 dessas mesmas partições solicitam recebimento em portas de amostragem também a cada 500ms com limite de tempo de 100ms e, se um valor válido é recebido, piscam o \textit{LED1} e, em caso contrário, piscam o \textit{LED2}. As tabelas de conexão dos módulos envolvidos neste teste definem que o processo PROCESS1 de todas as partições envia na porta em que o processo PROCESS2 da partição de mesmo nome no módulo oposto solicita recebimento. Este teste deve ser utilizado em conjunto com o teste \textbf{QUEUINGPORT\_PSEUDO\_MODULE2}.
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+Enquanto os módulos estiverem \textbf{desconectados}, o \textbf{LED2} deve piscar três vezes a cada 500ms (uma vez para cada partição), pois as portas de destino não estarão sendo alimentadas e, portanto, as solicitações de recebimento expirarão.
+
+Enquanto os módulos estiverem \textbf{conectados}, o \textbf{LED1} deve piscar três vezes a cada 500ms (uma vez para cada partição), pois as portas de destino estarão sendo alimentadas e, portanto, as mensagens serão recebidas com sucesso.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar o correto funcionamento de portas de enfileiramento (mecanismo de comunicação interpartição) conectadas a partições de dois módulos diferentes (utilizado em conjunto com o teste \textbf{QUEUINGPORT\_PSEUDO\_MODULE2}).
+SNIPPET_END
+MASK_END

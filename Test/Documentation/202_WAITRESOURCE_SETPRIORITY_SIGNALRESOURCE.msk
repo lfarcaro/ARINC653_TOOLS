@@ -1,0 +1,20 @@
+MASK_START
+SNIPPET_START DESCRIPTION
+O processo PROCESS1 repetidamente aguarda por um recurso por tempo indeterminado, e então pisca o \textbf{LED1}. O processo PROCESS2 repetidamente aguarda pelo mesmo recurso por tempo indeterminado, e então pisca o \textbf{LED2}. O processo ocioso da partição PARTITION1 aguarda durante um longo período e então libera o recurso e, alternadamente, atribui a prioridade do processo PROCESS2 para um valor maior ou menor que a prioridade do processo PROCESS1. Os padrões de \acp{LED} utilizados pelas tarefas são os seguintes:
+
+\begin{itemize*}
+\item{Processo PROCESS1 da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partição PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\end{itemize*}
+SNIPPET_END
+SNIPPET_START EXPECTED_BEHAVIOR
+Os \acp{LED} devem piscar de forma alternada, indicando que a alteração da prioridade do processo PROCESS2 afeta sua ordem de atendimento em relação ao processo PROCESS1.
+SNIPPET_END
+SNIPPET_START OBJECTIVE
+Demonstrar o correto funcionamento da utilização conjunta dos serviços internos \textbf{WAIT\_RESOURCE} (com espera por tempo indeterminado) e \textbf{SIGNAL\_RESOURCE} quando a prioridade de um processo bloqueado é alterada antes de sua liberação, caso no qual a ordem de atendimento dos processos bloqueados deve mudar de acordo com essa alteração.
+SNIPPET_END
+MASK_END

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ARINC_653_Module
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="../../../Schema/A653_Part1_revA.xsd"
+	xmlns:Memory_Ext="Memory_Ext"
+	xmlns:Window_Sched_Ext="Window_Sched_Ext"
+	xmlns:Part_Sched_Ext="Part_Sched_Ext"
+	xmlns:ModExt="ModExt"
+	xmlns:PortExt="PortExt"
+	xmlns:Proc_Ext="Proc_Ext"
+	xmlns:PartitionExt="PartitionExt"
+	xmlns:Ext_Error_Action="Ext_Error_Action"
+	xmlns:Part_HM_Ext="Part_HM_Ext"
+	xmlns:Mod_HM_Ext="Mod_HM_Ext"
+	xmlns:SysHM_Ext="SysHM_Ext"
+	xmlns:PortMap_Ext="PortMap_Ext"
+	xsi:schemaLocation="Memory_Ext ../../../Schema/Memory_Ext.xsd
+						Window_Sched_Ext ../../../Schema/Window_Sched_Ext.xsd
+						Part_Sched_Ext ../../../Schema/Part_Sched_Ext.xsd
+						ModExt ../../../Schema/ModExt.xsd
+						PortExt ../../../Schema/PortExt.xsd
+						Proc_Ext ../../../Schema/Proc_Ext.xsd
+						PartitionExt ../../../Schema/PartitionExt.xsd
+						Ext_Error_Action ../../../Schema/Ext_Error_Action.xsd
+						Part_HM_Ext ../../../Schema/Part_HM_Ext.xsd
+						Mod_HM_Ext ../../../Schema/Mod_HM_Ext.xsd
+						SysHM_Ext ../../../Schema/SysHM_Ext.xsd
+						PortMap_Ext ../../../Schema/PortMap_Ext.xsd"
+	ModuleId="1" ModuleName="MODULE" ModuleVersion="1.0">
+<!-- SNIPPET SYSTEM_HM_TABLE -->
+<!-- SNIPPET MODULE_HM_TABLE -->
+<!-- SNIPPET PARTITION -->
+<!-- SNIPPET PARTITION_MEMORY -->
+<!-- SNIPPET MODULE_SCHEDULE -->
+<!-- SNIPPET PARTITION_HM_TABLE -->
+<!-- SNIPPET CONNECTION_TABLE -->
+<!-- SNIPPET MODEXT -->
+</ARINC_653_Module>
