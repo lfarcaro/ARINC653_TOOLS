@@ -1,6 +1,9 @@
 package arinc653.test;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.InputStreamReader;
+import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -12,6 +15,7 @@ import java.util.Map;
 import java.util.Set;
 
 import arinc653.configuration.tools.TargetPlatform;
+import arinc653.configuration.tools.schedulegenerator.ScheduleGenerator;
 import arinc653.configuration.tools.templategenerator.TemplateGenerator;
 import arinc653.templatemanager.Artifact;
 import arinc653.templatemanager.Language_C;
@@ -21,9 +25,19 @@ import arinc653.templatemanager.Mask;
 /**
  * Tests.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public class Tests {
+
+	/**
+	 * ARMV7A AM335X serial port name.
+	 */
+	public static final String stARMV7A_AM335X_SerialPort = "COM8";
+
+	/**
+	 * ARINC653 directory.
+	 */
+	public static final File flARINC653Directory = new File("D:\\CCSWorkspace\\ARINC653_AM335X");
 
 	/*
 	 * Tests' directories.
@@ -33,12 +47,13 @@ public class Tests {
 	public static File flTemplateDirectory = new File(flTestDirectory, "Template");
 	public static File flOutputDirectory = new File(flTestDirectory, "Output");
 	public static File flModule = new File(flScenarioDirectory, "Module.xml");
-	public static File flSpecialTestDirectory_AM335X = new File("Test_AM335X");
+	public static File flSpecialTestDirectory_ARMV7A_AM335X = new File("Test_ARMV7A_AM335X");
+	public static File flSpecialTestDirectory_ARMV7A_Z7000 = new File("Test_ARMV7A_Z7000");
 
 	/**
 	 * Scenario.
 	 * 
-	 * @author Luís Fernando Arcaro
+	 * @author LuÃ­s Fernando Arcaro
 	 */
 	public static class Scenario {
 
@@ -214,7 +229,7 @@ public class Tests {
 		mpTestScenario.put("003_SLOWPROCESSSCHEDULING", new Scenario("System_HM_Table_001", "Module_HM_Table_001", "Partition_015", "Partition_Memory_001", "Module_Schedule_002", "Partition_HM_Table_001", "Connection_Table_001", "ModExt_001"));
 		mpTestScenario.put("004_FASTPROCESSSCHEDULING", new Scenario("System_HM_Table_001", "Module_HM_Table_001", "Partition_018", "Partition_Memory_001", "Module_Schedule_001", "Partition_HM_Table_001", "Connection_Table_001", "ModExt_001"));
 		mpTestScenario.put("005_TESTCOUNTERCALIBRATION", new Scenario("System_HM_Table_001", "Module_HM_Table_001", "Partition_023", "Partition_Memory_001", "Module_Schedule_002", "Partition_HM_Table_001", "Connection_Table_001", "ModExt_001"));
-		mpTestScenario.put("006_RETURNPOINT", new Scenario("System_HM_Table_002", "Module_HM_Table_001", "Partition_006", "Partition_Memory_001", "Module_Schedule_001", "Partition_HM_Table_001", "Connection_Table_001", "ModExt_002"));
+		mpTestScenario.put("006_RETURNPOINT", new Scenario("System_HM_Table_002", "Module_HM_Table_001", "Partition_006", "Partition_Memory_001", "Module_Schedule_002", "Partition_HM_Table_001", "Connection_Table_001", "ModExt_002"));
 		mpTestScenario.put("007_SYSTEMPARTITION", new Scenario("System_HM_Table_003", "Module_HM_Table_002", "Partition_024", "Partition_Memory_001", "Module_Schedule_001", "Partition_HM_Table_002", "Connection_Table_001", "ModExt_001"));
 
 		mpTestScenario.put("101_SETMODULEMODE_IDLE", new Scenario("System_HM_Table_001", "Module_HM_Table_001", "Partition_018", "Partition_Memory_001", "Module_Schedule_001", "Partition_HM_Table_001", "Connection_Table_001", "ModExt_001"));
@@ -279,8 +294,8 @@ public class Tests {
 		mpTestScenario.put("404_HEALTHMONITORING_PROPAGATION_MEMORYVIOLATION", new Scenario("System_HM_Table_003", "Module_HM_Table_002", "Partition_018", "Partition_Memory_001", "Module_Schedule_001", "Partition_HM_Table_002", "Connection_Table_001", "ModExt_001"));
 
 		mpTestScenario.put("501_FLOATINGPOINT", new Scenario("System_HM_Table_001", "Module_HM_Table_001", "Partition_018", "Partition_Memory_001", "Module_Schedule_001", "Partition_HM_Table_001", "Connection_Table_001", "ModExt_001"));
-		mpTestScenario.put("502_SAMPLINGPORT_SENSOR_MODULE1", new Scenario("System_HM_Table_003", "Module_HM_Table_001", "Partition_027", "Partition_Memory_002", "Module_Schedule_005", "Partition_HM_Table_003", "Connection_Table_006", "ModExt_001", new TargetPlatform[] { TargetPlatform.AM335X }));
-		mpTestScenario.put("503_SAMPLINGPORT_SENSOR_MODULE2", new Scenario("System_HM_Table_003", "Module_HM_Table_001", "Partition_028", "Partition_Memory_002", "Module_Schedule_005", "Partition_HM_Table_003", "Connection_Table_007", "ModExt_003", new TargetPlatform[] { TargetPlatform.AM335X }));
+		mpTestScenario.put("502_SAMPLINGPORT_SENSOR_MODULE1", new Scenario("System_HM_Table_003", "Module_HM_Table_001", "Partition_027", "Partition_Memory_002", "Module_Schedule_005", "Partition_HM_Table_003", "Connection_Table_006", "ModExt_001", new TargetPlatform[] { TargetPlatform.ARMV7A_AM335X }));
+		mpTestScenario.put("503_SAMPLINGPORT_SENSOR_MODULE2", new Scenario("System_HM_Table_003", "Module_HM_Table_001", "Partition_028", "Partition_Memory_002", "Module_Schedule_005", "Partition_HM_Table_003", "Connection_Table_007", "ModExt_003", new TargetPlatform[] { TargetPlatform.ARMV7A_AM335X }));
 	}
 
 	/**
@@ -301,8 +316,7 @@ public class Tests {
 	/**
 	 * Scenario getter.
 	 * 
-	 * @param stTest
-	 *            Test.
+	 * @param stTest Test.
 	 */
 	public static Scenario getScenario(String stTest) {
 		return mpTestScenario.get(stTest);
@@ -311,10 +325,8 @@ public class Tests {
 	/**
 	 * Compatible target platform verifier.
 	 * 
-	 * @param stTest
-	 *            Test.
-	 * @param tpTargetPlatform
-	 *            Target platform.
+	 * @param stTest           Test.
+	 * @param tpTargetPlatform Target platform.
 	 */
 	public static boolean isCompatibleTargetPlatform(String stTest, TargetPlatform tpTargetPlatform) throws Throwable {
 
@@ -331,16 +343,30 @@ public class Tests {
 	}
 
 	/**
+	 * Mask directory getter.
+	 * 
+	 * @param stMaskName             Mask name.
+	 * @param blArchitectureSpecific Architecture-specific flag.
+	 * @param blPlatformSpecific     Platform-specific flag.
+	 * @param tpTargetPlatform       Target platform.
+	 */
+	private static String getMaskDirectory(String stMaskName, boolean blArchitectureSpecific, boolean blPlatformSpecific, TargetPlatform tpTargetPlatform) {
+		if (blArchitectureSpecific) {
+			return stMaskName + "_" + tpTargetPlatform.getArchitectureName();
+		} else if (blPlatformSpecific) {
+			return stMaskName + "_" + tpTargetPlatform.name();
+		} else {
+			return stMaskName;
+		}
+	}
+
+	/**
 	 * Push test method.
 	 * 
-	 * @param stTest
-	 *            Test.
-	 * @param tpTargetPlatform
-	 *            Target platform.
-	 * @param flTestModule
-	 *            Test module file. If null default is assumed.
-	 * @param flTestTemplateDirectory
-	 *            Test template directory.
+	 * @param stTest                  Test.
+	 * @param tpTargetPlatform        Target platform.
+	 * @param flTestModule            Test module file. If null default is assumed.
+	 * @param flTestTemplateDirectory Test template directory.
 	 */
 	public static void cmdPushTest(String stTest, TargetPlatform tpTargetPlatform, File flTestModule, File flTestTemplateDirectory) throws Throwable {
 
@@ -367,14 +393,14 @@ public class Tests {
 		flTestTemplateDirectory = (flTestTemplateDirectory != null ? flTestTemplateDirectory : new File(flTargetPlatformOutputDirectory, stTest));
 
 		// Loads scenario masks
-		Mask msSystem_HM_Table = Mask.cmdLoad(new File(flScenarioDirectory, "System_HM_Table" + (tpTargetPlatform.getSpecific_SystemHMTable() ? "_" + tpTargetPlatform.name() : "") + "/" + scScenario.getSystem_HM_Table() + ".msk"));
-		Mask msModule_HM_Table = Mask.cmdLoad(new File(flScenarioDirectory, "Module_HM_Table" + (tpTargetPlatform.getSpecific_ModuleHMTable() ? "_" + tpTargetPlatform.name() : "") + "/" + scScenario.getModule_HM_Table() + ".msk"));
+		Mask msSystem_HM_Table = Mask.cmdLoad(new File(flScenarioDirectory, getMaskDirectory("System_HM_Table", tpTargetPlatform.getArchitectureSpecific_SystemHMTable(), tpTargetPlatform.getPlatformSpecific_SystemHMTable(), tpTargetPlatform) + "/" + scScenario.getSystem_HM_Table() + ".msk"));
+		Mask msModule_HM_Table = Mask.cmdLoad(new File(flScenarioDirectory, getMaskDirectory("Module_HM_Table", tpTargetPlatform.getArchitectureSpecific_ModuleHMTable(), tpTargetPlatform.getPlatformSpecific_ModuleHMTable(), tpTargetPlatform) + "/" + scScenario.getModule_HM_Table() + ".msk"));
 		Mask msPartition = Mask.cmdLoad(new File(flScenarioDirectory, "Partition/" + scScenario.getPartition() + ".msk"));
-		Mask msPartition_Memory = Mask.cmdLoad(new File(flScenarioDirectory, "Partition_Memory" + (tpTargetPlatform.getSpecific_PartitionMemory() ? "_" + tpTargetPlatform.name() : "") + "/" + scScenario.getPartition_Memory() + ".msk"));
+		Mask msPartition_Memory = Mask.cmdLoad(new File(flScenarioDirectory, getMaskDirectory("Partition_Memory", tpTargetPlatform.getArchitectureSpecific_PartitionMemory(), tpTargetPlatform.getPlatformSpecific_PartitionMemory(), tpTargetPlatform) + "/" + scScenario.getPartition_Memory() + ".msk"));
 		Mask msModule_Schedule = Mask.cmdLoad(new File(flScenarioDirectory, "Module_Schedule/" + scScenario.getModule_Schedule() + ".msk"));
-		Mask msPartition_HM_Table = Mask.cmdLoad(new File(flScenarioDirectory, "Partition_HM_Table" + (tpTargetPlatform.getSpecific_PartitionHMTable() ? "_" + tpTargetPlatform.name() : "") + "/" + scScenario.getPartition_HM_Table() + ".msk"));
+		Mask msPartition_HM_Table = Mask.cmdLoad(new File(flScenarioDirectory, getMaskDirectory("Partition_HM_Table", tpTargetPlatform.getArchitectureSpecific_PartitionHMTable(), tpTargetPlatform.getPlatformSpecific_PartitionHMTable(), tpTargetPlatform) + "/" + scScenario.getPartition_HM_Table() + ".msk"));
 		Mask msConnection_Table = Mask.cmdLoad(new File(flScenarioDirectory, "Connection_Table/" + scScenario.getConnection_Table() + ".msk"));
-		Mask msModExt = Mask.cmdLoad(new File(flScenarioDirectory, "ModExt" + (tpTargetPlatform.getSpecific_ModExt() ? "_" + tpTargetPlatform.name() : "") + "/" + scScenario.getModExt() + ".msk"));
+		Mask msModExt = Mask.cmdLoad(new File(flScenarioDirectory, getMaskDirectory("ModExt", tpTargetPlatform.getArchitectureSpecific_ModExt(), tpTargetPlatform.getPlatformSpecific_ModExt(), tpTargetPlatform) + "/" + scScenario.getModExt() + ".msk"));
 
 		// Merges masks
 		Mask msMask = Mask.cmdMerge(msSystem_HM_Table, msModule_HM_Table, msPartition, msPartition_Memory, msModule_Schedule, msPartition_HM_Table, msConnection_Table, msModExt);
@@ -386,7 +412,7 @@ public class Tests {
 		TemplateGenerator tgTemplateGenerator = TemplateGenerator.getInstance(tpTargetPlatform);
 
 		// Generates template
-		List<File> lsFile = tgTemplateGenerator.cmdGenerateTemplate(flTestModule, tpTargetPlatform, flTestTemplateDirectory, ".*", ".*\\.xml$");
+		List<File> lsFile = tgTemplateGenerator.cmdGenerateTemplate(new File[] { flTestModule }, tpTargetPlatform, flTestTemplateDirectory, null, null, null, null);
 
 		// Loads test mask
 		Mask msTest = Mask.cmdLoad(new File(flTemplateDirectory, stTest + ".msk"));
@@ -401,15 +427,16 @@ public class Tests {
 			// Expands
 			msTest.cmdExpand(Language_C.INSTANCE, flFile, flFile);
 		}
+
+		// Generates schedule
+		ScheduleGenerator.cmdGenerateSchedule(flTestModule, "PNG", new File(flTestTemplateDirectory, "module.png"));
 	}
 
 	/**
 	 * Push special test method.
 	 * 
-	 * @param flTestDirectory
-	 *            Test directory.
-	 * @param tpTargetPlatform
-	 *            Target platform.
+	 * @param flTestDirectory  Test directory.
+	 * @param tpTargetPlatform Target platform.
 	 */
 	public static void cmdPushSpecialTest(File flTestDirectory, TargetPlatform tpTargetPlatform) throws Throwable {
 
@@ -420,24 +447,24 @@ public class Tests {
 		TemplateGenerator tgTemplateGenerator = TemplateGenerator.getInstance(tpTargetPlatform);
 
 		// Generates template
-		tgTemplateGenerator.cmdGenerateTemplate(flTestModule, tpTargetPlatform, flTestDirectory, null, null);
+		tgTemplateGenerator.cmdGenerateTemplate(new File[] { flTestModule }, tpTargetPlatform, flTestDirectory, null, null, null, null);
 
 		// Loads artifact
 		Artifact arArtifact = Artifact.cmdLoad(null, new File(flTestDirectory, "Template.art"));
 
 		// Expands artifact
 		arArtifact.cmdExpand(new Language_C(), flTestDirectory, ".*\\.c", "configuration\\.c", true);
+
+		// Generates schedule
+		ScheduleGenerator.cmdGenerateSchedule(flTestModule, "PNG", new File(flTestDirectory, "module.png"));
 	}
 
 	/**
 	 * Pull test method.
 	 * 
-	 * @param stTest
-	 *            Test.
-	 * @param tpTargetPlatform
-	 *            Target platform.
-	 * @param flTestTemplateDirectory
-	 *            Test template directory.
+	 * @param stTest                  Test.
+	 * @param tpTargetPlatform        Target platform.
+	 * @param flTestTemplateDirectory Test template directory.
 	 */
 	public static void cmdPullTest(String stTest, TargetPlatform tpTargetPlatform, File flTestTemplateDirectory) throws Throwable {
 
@@ -477,5 +504,124 @@ public class Tests {
 
 		// Saves mask
 		Mask.cmdSave(msMask, new File(flTemplateDirectory, stTest + ".msk"));
+	}
+
+	/**
+	 * Pull special test method.
+	 * 
+	 * @param flTestDirectory Test directory.
+	 */
+	public static void cmdPullSpecialTest(File flTestDirectory) throws Throwable {
+
+		// Creates artifact
+		Artifact arArtifact = new Artifact(null);
+
+		// Collapses
+		arArtifact.cmdCollapse(Language_C.INSTANCE, flTestDirectory, ".+\\.[ch]", null, false);
+
+		// Saves artifact
+		Artifact.cmdSave(arArtifact, new File(flTestDirectory, "Template.art"));
+	}
+
+	/**
+	 * Test building method.
+	 * 
+	 * @param stTest Test.
+	 */
+	public static void cmdBuildTest(String stTest) throws Throwable {
+
+		// Shows message
+		System.out.println("Making test '" + stTest + "'...");
+
+		// Pushes test
+		Tests.cmdPushTest(stTest, TargetPlatform.ARMV7A_AM335X, new File(Tests.flARINC653Directory, "Application/module.xml"), new File(Tests.flARINC653Directory, "Application"));
+
+		// Output files
+		File flOutputAPP = new File(Tests.flARINC653Directory, "Release/APP");
+		File flOutputAPP_XMODEM = new File(Tests.flARINC653Directory, "Release/APP_XMODEM");
+
+		// Verifies output files
+		if (flOutputAPP.exists()) {
+
+			// Deletes output file
+			if (!flOutputAPP.delete()) {
+				throw new Exception("Output file could not be deleted");
+			}
+		}
+		if (flOutputAPP_XMODEM.exists()) {
+
+			// Deletes output file
+			if (!flOutputAPP_XMODEM.delete()) {
+				throw new Exception("Output file could not be deleted");
+			}
+		}
+
+		// Delays
+		Thread.sleep(1000);
+
+		// Cleans
+		{
+			System.out.println("Cleaning...");
+			Process prProcess;
+			if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+				prProcess = new ProcessBuilder(new String[] { "cmd", "/c", "CLEAN_RELEASE" }).inheritIO().directory(Tests.flARINC653Directory).start();
+			} else if (System.getProperty("os.name").toLowerCase().contains("linux")) {
+				prProcess = new ProcessBuilder(new String[] { "bash", "CLEAN_RELEASE.sh" }).inheritIO().directory(Tests.flARINC653Directory).start();
+			} else {
+				throw new RuntimeException("Operating system not supported");
+			}
+			BufferedReader brOutput = new BufferedReader(new InputStreamReader(prProcess.getInputStream()));
+			while (true) {
+				String stLine = brOutput.readLine();
+				if (stLine == null) {
+					break;
+				}
+				System.out.println(stLine);
+			}
+			brOutput.close();
+			prProcess.waitFor();
+		}
+
+		// Makes
+		{
+			System.out.println("Making...");
+			Process prProcess;
+			if (System.getProperty("os.name").toLowerCase().contains("windows")) {
+				prProcess = new ProcessBuilder(new String[] { "cmd", "/c", "MAKE_RELEASE" }).inheritIO().directory(Tests.flARINC653Directory).start();
+			} else if (System.getProperty("os.name").toLowerCase().contains("linux")) {
+				prProcess = new ProcessBuilder(new String[] { "bash", "MAKE_RELEASE.sh" }).inheritIO().directory(Tests.flARINC653Directory).start();
+			} else {
+				throw new RuntimeException("Operating system not supported");
+			}
+			BufferedReader brOutput = new BufferedReader(new InputStreamReader(prProcess.getInputStream()));
+			while (true) {
+				String stLine = brOutput.readLine();
+				if (stLine == null) {
+					break;
+				}
+				System.out.println(stLine);
+			}
+			brOutput.close();
+			prProcess.waitFor();
+		}
+
+		// Delays
+		Thread.sleep(1000);
+
+		// Copy output files
+		File flOutputCopyAPP = new File("Test/Output/ARMV7A_AM335X/" + stTest + "_APP");
+		File flOutputCopyAPP_XMODEM = new File("Test/Output/ARMV7A_AM335X/" + stTest + "_APP_XMODEM");
+
+		// Removes old copy output files
+		if (flOutputCopyAPP.exists()) {
+			flOutputCopyAPP.delete();
+		}
+		if (flOutputCopyAPP_XMODEM.exists()) {
+			flOutputCopyAPP_XMODEM.delete();
+		}
+
+		// Copies application binaries
+		Files.copy(flOutputAPP.toPath(), flOutputCopyAPP.toPath());
+		Files.copy(flOutputAPP_XMODEM.toPath(), flOutputCopyAPP_XMODEM.toPath());
 	}
 }

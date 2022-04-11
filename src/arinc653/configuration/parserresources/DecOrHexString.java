@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 /**
  * DecOrHex stored as String.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public final class DecOrHexString {
 

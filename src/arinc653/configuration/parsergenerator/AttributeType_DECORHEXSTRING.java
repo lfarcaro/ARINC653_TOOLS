@@ -6,7 +6,7 @@ import java.util.Set;
 /**
  * Attribute type - DECORHEXSTRING.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public class AttributeType_DECORHEXSTRING extends AttributeType {
 

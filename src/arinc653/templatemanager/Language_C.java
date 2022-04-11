@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 /**
  * C language.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public class Language_C extends Language {
 
@@ -16,17 +16,17 @@ public class Language_C extends Language {
 
 	@Override
 	public String getArtifactSnippetPattern(String stArtifactName) {
-		return "^(\\t*)" + Pattern.quote("//") + (stArtifactName != null ? Pattern.quote(" ARTIFACT " + stArtifactName) : "") + Pattern.quote(" SNIPPET ") + "(.+)?$";
+		return "^([\\t ]*)" + Pattern.quote("//") + (stArtifactName != null ? Pattern.quote(" ARTIFACT " + stArtifactName) : "") + Pattern.quote(" SNIPPET ") + "(.+)?$";
 	}
 
 	@Override
 	public String getArtifactSnippetStartPattern(String stArtifactName) {
-		return "^(\\t*)" + Pattern.quote("//") + (stArtifactName != null ? Pattern.quote(" ARTIFACT " + stArtifactName) : "") + Pattern.quote(" SNIPPET_START") + "(?: (.+))?$";
+		return "^([\\t ]*)" + Pattern.quote("//") + (stArtifactName != null ? Pattern.quote(" ARTIFACT " + stArtifactName) : "") + Pattern.quote(" SNIPPET_START") + "(?: (.+))?$";
 	}
 
 	@Override
 	public String getArtifactSnippetEndPattern(String stArtifactName) {
-		return "^(\\t*)" + Pattern.quote("//") + (stArtifactName != null ? Pattern.quote(" ARTIFACT " + stArtifactName) : "") + Pattern.quote(" SNIPPET_END") + "$";
+		return "^([\\t ]*)" + Pattern.quote("//") + (stArtifactName != null ? Pattern.quote(" ARTIFACT " + stArtifactName) : "") + Pattern.quote(" SNIPPET_END") + "$";
 	}
 
 	@Override

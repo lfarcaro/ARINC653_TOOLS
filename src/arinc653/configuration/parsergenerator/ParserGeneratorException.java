@@ -3,7 +3,7 @@ package arinc653.configuration.parsergenerator;
 /**
  * Parser generator exception.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public class ParserGeneratorException extends Exception {
 

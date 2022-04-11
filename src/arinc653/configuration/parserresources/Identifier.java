@@ -3,7 +3,7 @@ package arinc653.configuration.parserresources;
 /**
  * Identifier.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public final class Identifier {
 

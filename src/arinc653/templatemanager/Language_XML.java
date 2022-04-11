@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 /**
  * XML language.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public class Language_XML extends Language {
 
@@ -16,17 +16,17 @@ public class Language_XML extends Language {
 
 	@Override
 	public String getArtifactSnippetPattern(String stArtifactName) {
-		return "^(\\t*)" + Pattern.quote("<!--") + (stArtifactName != null ? Pattern.quote(" ARTIFACT " + stArtifactName) : "") + Pattern.quote(" SNIPPET ") + "(.+)?" + Pattern.quote(" -->") + "$";
+		return "^([\\t ]*)" + Pattern.quote("<!--") + (stArtifactName != null ? Pattern.quote(" ARTIFACT " + stArtifactName) : "") + Pattern.quote(" SNIPPET ") + "(.+)?" + Pattern.quote(" -->") + "$";
 	}
 
 	@Override
 	public String getArtifactSnippetStartPattern(String stArtifactName) {
-		return "^(\\t*)" + Pattern.quote("<!--") + (stArtifactName != null ? Pattern.quote(" ARTIFACT " + stArtifactName) : "") + Pattern.quote(" SNIPPET_START") + "(?: (.+))?" + Pattern.quote(" -->") + "$";
+		return "^([\\t ]*)" + Pattern.quote("<!--") + (stArtifactName != null ? Pattern.quote(" ARTIFACT " + stArtifactName) : "") + Pattern.quote(" SNIPPET_START") + "(?: (.+))?" + Pattern.quote(" -->") + "$";
 	}
 
 	@Override
 	public String getArtifactSnippetEndPattern(String stArtifactName) {
-		return "^(\\t*)" + Pattern.quote("<!--") + (stArtifactName != null ? Pattern.quote(" ARTIFACT " + stArtifactName) : "") + Pattern.quote(" SNIPPET_END") + Pattern.quote(" -->") + "$";
+		return "^([\\t ]*)" + Pattern.quote("<!--") + (stArtifactName != null ? Pattern.quote(" ARTIFACT " + stArtifactName) : "") + Pattern.quote(" SNIPPET_END") + Pattern.quote(" -->") + "$";
 	}
 
 	@Override

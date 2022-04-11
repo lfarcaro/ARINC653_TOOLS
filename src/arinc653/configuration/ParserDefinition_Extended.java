@@ -15,7 +15,7 @@ import arinc653.configuration.parsergenerator.Node;
 /**
  * Class that holds the extended parser definition.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public class ParserDefinition_Extended {
 
@@ -180,48 +180,56 @@ public class ParserDefinition_Extended {
 				Attribute atSuppressModuleIdlePartitionMainLoop = new Attribute(ndModExt$Extension, "SuppressModuleIdlePartitionMainLoop", "SuppressModuleIdlePartitionMainLoop", AttributeType_BOOLEAN.INSTANCE);
 				atSuppressModuleIdlePartitionMainLoop.setRequired(false);
 			}
-			Node ndModExt$Extension_AM335X = new Node(ndModule, "ModExt:Extension_AM335X", "ModExt$Extension_AM335X");
+			Node ndModExt$Extension_System_ARMV7A = new Node(ndModule, "ModExt:Extension_System_ARMV7A", "ModExt$Extension_System_ARMV7A");
 			{
-				Attribute atRAMMemoryPhysicalAddress = new Attribute(ndModExt$Extension_AM335X, "RAMMemoryPhysicalAddress", "RAMMemoryPhysicalAddress", AttributeType_DECORHEXLONG.INSTANCE);
-				Attribute atRAMMemorySizeBytes = new Attribute(ndModExt$Extension_AM335X, "RAMMemorySizeBytes", "RAMMemorySizeBytes", AttributeType_DECORHEXLONG.INSTANCE);
+				Attribute atSystemRAMMemoryPhysicalAddress = new Attribute(ndModExt$Extension_System_ARMV7A, "SystemRAMMemoryPhysicalAddress", "SystemRAMMemoryPhysicalAddress", AttributeType_DECORHEXLONG.INSTANCE);
+				Attribute atSystemRAMMemorySizeBytes = new Attribute(ndModExt$Extension_System_ARMV7A, "SystemRAMMemorySizeBytes", "SystemRAMMemorySizeBytes", AttributeType_DECORHEXLONG.INSTANCE);
 
-				Attribute atSystemBootRegionPhysicalAddress = new Attribute(ndModExt$Extension_AM335X, "SystemBootRegionPhysicalAddress", "SystemBootRegionPhysicalAddress", AttributeType_DECORHEXLONG.INSTANCE);
+				Attribute atSystemBootRegionPhysicalAddress = new Attribute(ndModExt$Extension_System_ARMV7A, "SystemBootRegionPhysicalAddress", "SystemBootRegionPhysicalAddress", AttributeType_DECORHEXLONG.INSTANCE);
 				atSystemBootRegionPhysicalAddress.setRequired(false);
-				Attribute atSystemBootRegionSizeBytes = new Attribute(ndModExt$Extension_AM335X, "SystemBootRegionSizeBytes", "SystemBootRegionSizeBytes", AttributeType_DECORHEXLONG.INSTANCE);
+				Attribute atSystemBootRegionSizeBytes = new Attribute(ndModExt$Extension_System_ARMV7A, "SystemBootRegionSizeBytes", "SystemBootRegionSizeBytes", AttributeType_DECORHEXLONG.INSTANCE);
 
-				Attribute atSystemStackRegionPhysicalAddress = new Attribute(ndModExt$Extension_AM335X, "SystemStackRegionPhysicalAddress", "SystemStackRegionPhysicalAddress", AttributeType_DECORHEXLONG.INSTANCE);
-				atSystemStackRegionPhysicalAddress.setRequired(false);
-				Attribute atSystemStackRegionSizeBytes = new Attribute(ndModExt$Extension_AM335X, "SystemStackRegionSizeBytes", "SystemStackRegionSizeBytes", AttributeType_DECORHEXLONG.INSTANCE);
-
-				Attribute atSystemCodeRegionPhysicalAddress = new Attribute(ndModExt$Extension_AM335X, "SystemCodeRegionPhysicalAddress", "SystemCodeRegionPhysicalAddress", AttributeType_DECORHEXLONG.INSTANCE);
+				Attribute atSystemCodeRegionPhysicalAddress = new Attribute(ndModExt$Extension_System_ARMV7A, "SystemCodeRegionPhysicalAddress", "SystemCodeRegionPhysicalAddress", AttributeType_DECORHEXLONG.INSTANCE);
 				atSystemCodeRegionPhysicalAddress.setRequired(false);
-				Attribute atSystemCodeRegionSizeBytes = new Attribute(ndModExt$Extension_AM335X, "SystemCodeRegionSizeBytes", "SystemCodeRegionSizeBytes", AttributeType_DECORHEXLONG.INSTANCE);
+				Attribute atSystemCodeRegionSizeBytes = new Attribute(ndModExt$Extension_System_ARMV7A, "SystemCodeRegionSizeBytes", "SystemCodeRegionSizeBytes", AttributeType_DECORHEXLONG.INSTANCE);
 
-				Attribute atSystemDataRegionPhysicalAddress = new Attribute(ndModExt$Extension_AM335X, "SystemDataRegionPhysicalAddress", "SystemDataRegionPhysicalAddress", AttributeType_DECORHEXLONG.INSTANCE);
+				Attribute atSystemDataRegionPhysicalAddress = new Attribute(ndModExt$Extension_System_ARMV7A, "SystemDataRegionPhysicalAddress", "SystemDataRegionPhysicalAddress", AttributeType_DECORHEXLONG.INSTANCE);
 				atSystemDataRegionPhysicalAddress.setRequired(false);
-				Attribute atSystemDataRegionSizeBytes = new Attribute(ndModExt$Extension_AM335X, "SystemDataRegionSizeBytes", "SystemDataRegionSizeBytes", AttributeType_DECORHEXLONG.INSTANCE);
+				Attribute atSystemDataRegionSizeBytes = new Attribute(ndModExt$Extension_System_ARMV7A, "SystemDataRegionSizeBytes", "SystemDataRegionSizeBytes", AttributeType_DECORHEXLONG.INSTANCE);
+			}
+			Node ndModExt$Extension_Module_ARMV7A = new Node(ndModule, "ModExt:Extension_Module_ARMV7A", "ModExt$Extension_Module_ARMV7A");
+			{
+				Attribute atModuleStackRegionPhysicalAddress = new Attribute(ndModExt$Extension_Module_ARMV7A, "ModuleStackRegionPhysicalAddress", "ModuleStackRegionPhysicalAddress", AttributeType_DECORHEXLONG.INSTANCE);
+				atModuleStackRegionPhysicalAddress.setRequired(false);
+				Attribute atModuleStackRegionSizeBytes = new Attribute(ndModExt$Extension_Module_ARMV7A, "ModuleStackRegionSizeBytes", "ModuleStackRegionSizeBytes", AttributeType_DECORHEXLONG.INSTANCE);
 
-				Attribute atSystemHeapRegionPhysicalAddress = new Attribute(ndModExt$Extension_AM335X, "SystemHeapRegionPhysicalAddress", "SystemHeapRegionPhysicalAddress", AttributeType_DECORHEXLONG.INSTANCE);
-				atSystemHeapRegionPhysicalAddress.setRequired(false);
-				Attribute atSystemHeapRegionSizeBytes = new Attribute(ndModExt$Extension_AM335X, "SystemHeapRegionSizeBytes", "SystemHeapRegionSizeBytes", AttributeType_DECORHEXLONG.INSTANCE);
-
-				Attribute atSystemFLTranslationTableRegionPhysicalAddress = new Attribute(ndModExt$Extension_AM335X, "SystemFLTranslationTableRegionPhysicalAddress", "SystemFLTranslationTableRegionPhysicalAddress", AttributeType_DECORHEXLONG.INSTANCE);
-				atSystemFLTranslationTableRegionPhysicalAddress.setRequired(false);
-				Attribute atSystemFLTranslationTableRegionSizeBytes = new Attribute(ndModExt$Extension_AM335X, "SystemFLTranslationTableRegionSizeBytes", "SystemFLTranslationTableRegionSizeBytes", AttributeType_DECORHEXLONG.INSTANCE);
-
-				Attribute atSystemSLTranslationTableRegionPhysicalAddress = new Attribute(ndModExt$Extension_AM335X, "SystemSLTranslationTableRegionPhysicalAddress", "SystemSLTranslationTableRegionPhysicalAddress", AttributeType_DECORHEXLONG.INSTANCE);
-				atSystemSLTranslationTableRegionPhysicalAddress.setRequired(false);
-				Attribute atSystemSLTranslationTableRegionSizeBytes = new Attribute(ndModExt$Extension_AM335X, "SystemSLTranslationTableRegionSizeBytes", "SystemSLTranslationTableRegionSizeBytes", AttributeType_DECORHEXLONG.INSTANCE);
-
-				Attribute atModuleCodeRegionPhysicalAddress = new Attribute(ndModExt$Extension_AM335X, "ModuleCodeRegionPhysicalAddress", "ModuleCodeRegionPhysicalAddress", AttributeType_DECORHEXLONG.INSTANCE);
+				Attribute atModuleCodeRegionPhysicalAddress = new Attribute(ndModExt$Extension_Module_ARMV7A, "ModuleCodeRegionPhysicalAddress", "ModuleCodeRegionPhysicalAddress", AttributeType_DECORHEXLONG.INSTANCE);
 				atModuleCodeRegionPhysicalAddress.setRequired(false);
-				Attribute atModuleCodeRegionSizeBytes = new Attribute(ndModExt$Extension_AM335X, "ModuleCodeRegionSizeBytes", "ModuleCodeRegionSizeBytes", AttributeType_DECORHEXLONG.INSTANCE);
+				Attribute atModuleCodeRegionSizeBytes = new Attribute(ndModExt$Extension_Module_ARMV7A, "ModuleCodeRegionSizeBytes", "ModuleCodeRegionSizeBytes", AttributeType_DECORHEXLONG.INSTANCE);
 
-				Attribute atModuleDataRegionPhysicalAddress = new Attribute(ndModExt$Extension_AM335X, "ModuleDataRegionPhysicalAddress", "ModuleDataRegionPhysicalAddress", AttributeType_DECORHEXLONG.INSTANCE);
+				Attribute atModuleDataRegionPhysicalAddress = new Attribute(ndModExt$Extension_Module_ARMV7A, "ModuleDataRegionPhysicalAddress", "ModuleDataRegionPhysicalAddress", AttributeType_DECORHEXLONG.INSTANCE);
 				atModuleDataRegionPhysicalAddress.setRequired(false);
-				Attribute atModuleDataRegionSizeBytes = new Attribute(ndModExt$Extension_AM335X, "ModuleDataRegionSizeBytes", "ModuleDataRegionSizeBytes", AttributeType_DECORHEXLONG.INSTANCE);
+				Attribute atModuleDataRegionSizeBytes = new Attribute(ndModExt$Extension_Module_ARMV7A, "ModuleDataRegionSizeBytes", "ModuleDataRegionSizeBytes", AttributeType_DECORHEXLONG.INSTANCE);
 
-				Attribute atModuleNetworkPhysicalAddress = new Attribute(ndModExt$Extension_AM335X, "ModuleNetworkPhysicalAddress", "ModuleNetworkPhysicalAddress", AttributeType_DECORHEXSTRING.INSTANCE);
+				Attribute atModuleHeapRegionPhysicalAddress = new Attribute(ndModExt$Extension_Module_ARMV7A, "ModuleHeapRegionPhysicalAddress", "ModuleHeapRegionPhysicalAddress", AttributeType_DECORHEXLONG.INSTANCE);
+				atModuleHeapRegionPhysicalAddress.setRequired(false);
+				Attribute atModuleHeapRegionSizeBytes = new Attribute(ndModExt$Extension_Module_ARMV7A, "ModuleHeapRegionSizeBytes", "ModuleHeapRegionSizeBytes", AttributeType_DECORHEXLONG.INSTANCE);
+
+				Attribute atModuleFLTranslationTableRegionPhysicalAddress = new Attribute(ndModExt$Extension_Module_ARMV7A, "ModuleFLTranslationTableRegionPhysicalAddress", "ModuleFLTranslationTableRegionPhysicalAddress", AttributeType_DECORHEXLONG.INSTANCE);
+				atModuleFLTranslationTableRegionPhysicalAddress.setRequired(false);
+				Attribute atModuleFLTranslationTableRegionSizeBytes = new Attribute(ndModExt$Extension_Module_ARMV7A, "ModuleFLTranslationTableRegionSizeBytes", "ModuleFLTranslationTableRegionSizeBytes", AttributeType_DECORHEXLONG.INSTANCE);
+
+				Attribute atModuleSLTranslationTableRegionPhysicalAddress = new Attribute(ndModExt$Extension_Module_ARMV7A, "ModuleSLTranslationTableRegionPhysicalAddress", "ModuleSLTranslationTableRegionPhysicalAddress", AttributeType_DECORHEXLONG.INSTANCE);
+				atModuleSLTranslationTableRegionPhysicalAddress.setRequired(false);
+				Attribute atModuleSLTranslationTableRegionSizeBytes = new Attribute(ndModExt$Extension_Module_ARMV7A, "ModuleSLTranslationTableRegionSizeBytes", "ModuleSLTranslationTableRegionSizeBytes", AttributeType_DECORHEXLONG.INSTANCE);
+			}
+			Node ndModExt$Extension_Module_ARMV7A_AM335X = new Node(ndModule, "ModExt:Extension_Module_ARMV7A_AM335X", "ModExt$Extension_Module_ARMV7A_AM335X");
+			{
+				Attribute atModuleNetworkPhysicalAddress = new Attribute(ndModExt$Extension_Module_ARMV7A_AM335X, "ModuleNetworkPhysicalAddress", "ModuleNetworkPhysicalAddress", AttributeType_DECORHEXSTRING.INSTANCE);
+			}
+			Node ndModExt$Extension_Module_ARMV7A_Z7000 = new Node(ndModule, "ModExt:Extension_Module_ARMV7A_Z7000", "ModExt$Extension_Module_ARMV7A_Z7000");
+			{
+				// No attributes yet
 			}
 		}
 		return ndModule;

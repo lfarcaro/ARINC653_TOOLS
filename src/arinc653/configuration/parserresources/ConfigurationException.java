@@ -3,7 +3,7 @@ package arinc653.configuration.parserresources;
 /**
  * Configuration exception.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public class ConfigurationException extends Exception {
 

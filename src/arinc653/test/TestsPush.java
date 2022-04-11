@@ -11,7 +11,7 @@ import arinc653.configuration.tools.TargetPlatform;
 /**
  * Test pushing class.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public class TestsPush {
 
@@ -54,12 +54,12 @@ public class TestsPush {
 			}
 
 			// Pushes special tests
-			Tests.cmdPushSpecialTest(new File(Tests.flSpecialTestDirectory_AM335X, "QUEUINGPORT_PSEUDO_MODULE1"), TargetPlatform.AM335X);
-			Tests.cmdPushSpecialTest(new File(Tests.flSpecialTestDirectory_AM335X, "QUEUINGPORT_PSEUDO_MODULE2"), TargetPlatform.AM335X);
-			Tests.cmdPushSpecialTest(new File(Tests.flSpecialTestDirectory_AM335X, "QUEUINGPORT_PSEUDO_MODULE3"), TargetPlatform.AM335X);
-			Tests.cmdPushSpecialTest(new File(Tests.flSpecialTestDirectory_AM335X, "SAMPLINGPORT_PSEUDO_MODULE1"), TargetPlatform.AM335X);
-			Tests.cmdPushSpecialTest(new File(Tests.flSpecialTestDirectory_AM335X, "SAMPLINGPORT_PSEUDO_MODULE2"), TargetPlatform.AM335X);
-			Tests.cmdPushSpecialTest(new File(Tests.flSpecialTestDirectory_AM335X, "SAMPLINGPORT_PSEUDO_MODULE3"), TargetPlatform.AM335X);
+			Tests.cmdPushSpecialTest(new File(Tests.flSpecialTestDirectory_ARMV7A_AM335X, "QUEUINGPORT_PSEUDO_MODULE1"), TargetPlatform.ARMV7A_AM335X);
+			Tests.cmdPushSpecialTest(new File(Tests.flSpecialTestDirectory_ARMV7A_AM335X, "QUEUINGPORT_PSEUDO_MODULE2"), TargetPlatform.ARMV7A_AM335X);
+			Tests.cmdPushSpecialTest(new File(Tests.flSpecialTestDirectory_ARMV7A_AM335X, "QUEUINGPORT_PSEUDO_MODULE3"), TargetPlatform.ARMV7A_AM335X);
+			Tests.cmdPushSpecialTest(new File(Tests.flSpecialTestDirectory_ARMV7A_AM335X, "SAMPLINGPORT_PSEUDO_MODULE1"), TargetPlatform.ARMV7A_AM335X);
+			Tests.cmdPushSpecialTest(new File(Tests.flSpecialTestDirectory_ARMV7A_AM335X, "SAMPLINGPORT_PSEUDO_MODULE2"), TargetPlatform.ARMV7A_AM335X);
+			Tests.cmdPushSpecialTest(new File(Tests.flSpecialTestDirectory_ARMV7A_AM335X, "SAMPLINGPORT_PSEUDO_MODULE3"), TargetPlatform.ARMV7A_AM335X);
 		} catch (Throwable t) {
 
 			// Prints error

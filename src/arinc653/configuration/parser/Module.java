@@ -74,9 +74,24 @@ public class Module {
 	public static final String NODENAME_MODEXT$EXTENSION = "ModExt:Extension";
 
 	/**
-	 * ModExt:Extension_AM335X node name.
+	 * ModExt:Extension_Module_ARMV7A node name.
 	 */
-	public static final String NODENAME_MODEXT$EXTENSION_AM335X = "ModExt:Extension_AM335X";
+	public static final String NODENAME_MODEXT$EXTENSION_MODULE_ARMV7A = "ModExt:Extension_Module_ARMV7A";
+
+	/**
+	 * ModExt:Extension_Module_ARMV7A_AM335X node name.
+	 */
+	public static final String NODENAME_MODEXT$EXTENSION_MODULE_ARMV7A_AM335X = "ModExt:Extension_Module_ARMV7A_AM335X";
+
+	/**
+	 * ModExt:Extension_Module_ARMV7A_Z7000 node name.
+	 */
+	public static final String NODENAME_MODEXT$EXTENSION_MODULE_ARMV7A_Z7000 = "ModExt:Extension_Module_ARMV7A_Z7000";
+
+	/**
+	 * ModExt:Extension_System_ARMV7A node name.
+	 */
+	public static final String NODENAME_MODEXT$EXTENSION_SYSTEM_ARMV7A = "ModExt:Extension_System_ARMV7A";
 
 	/**
 	 * Mod_HM_Ext:Extension node name.
@@ -374,6 +389,26 @@ public class Module {
 	public static final String ATTRIBUTENAME_MODULEDATAREGIONSIZEBYTES = "ModuleDataRegionSizeBytes";
 
 	/**
+	 * ModuleFLTranslationTableRegionPhysicalAddress attribute name.
+	 */
+	public static final String ATTRIBUTENAME_MODULEFLTRANSLATIONTABLEREGIONPHYSICALADDRESS = "ModuleFLTranslationTableRegionPhysicalAddress";
+
+	/**
+	 * ModuleFLTranslationTableRegionSizeBytes attribute name.
+	 */
+	public static final String ATTRIBUTENAME_MODULEFLTRANSLATIONTABLEREGIONSIZEBYTES = "ModuleFLTranslationTableRegionSizeBytes";
+
+	/**
+	 * ModuleHeapRegionPhysicalAddress attribute name.
+	 */
+	public static final String ATTRIBUTENAME_MODULEHEAPREGIONPHYSICALADDRESS = "ModuleHeapRegionPhysicalAddress";
+
+	/**
+	 * ModuleHeapRegionSizeBytes attribute name.
+	 */
+	public static final String ATTRIBUTENAME_MODULEHEAPREGIONSIZEBYTES = "ModuleHeapRegionSizeBytes";
+
+	/**
 	 * ModuleId attribute name.
 	 */
 	public static final String ATTRIBUTENAME_MODULEID = "ModuleId";
@@ -387,6 +422,26 @@ public class Module {
 	 * ModuleNetworkPhysicalAddress attribute name.
 	 */
 	public static final String ATTRIBUTENAME_MODULENETWORKPHYSICALADDRESS = "ModuleNetworkPhysicalAddress";
+
+	/**
+	 * ModuleSLTranslationTableRegionPhysicalAddress attribute name.
+	 */
+	public static final String ATTRIBUTENAME_MODULESLTRANSLATIONTABLEREGIONPHYSICALADDRESS = "ModuleSLTranslationTableRegionPhysicalAddress";
+
+	/**
+	 * ModuleSLTranslationTableRegionSizeBytes attribute name.
+	 */
+	public static final String ATTRIBUTENAME_MODULESLTRANSLATIONTABLEREGIONSIZEBYTES = "ModuleSLTranslationTableRegionSizeBytes";
+
+	/**
+	 * ModuleStackRegionPhysicalAddress attribute name.
+	 */
+	public static final String ATTRIBUTENAME_MODULESTACKREGIONPHYSICALADDRESS = "ModuleStackRegionPhysicalAddress";
+
+	/**
+	 * ModuleStackRegionSizeBytes attribute name.
+	 */
+	public static final String ATTRIBUTENAME_MODULESTACKREGIONSIZEBYTES = "ModuleStackRegionSizeBytes";
 
 	/**
 	 * ModuleVersion attribute name.
@@ -457,16 +512,6 @@ public class Module {
 	 * QueuingDiscipline attribute name.
 	 */
 	public static final String ATTRIBUTENAME_QUEUINGDISCIPLINE = "QueuingDiscipline";
-
-	/**
-	 * RAMMemoryPhysicalAddress attribute name.
-	 */
-	public static final String ATTRIBUTENAME_RAMMEMORYPHYSICALADDRESS = "RAMMemoryPhysicalAddress";
-
-	/**
-	 * RAMMemorySizeBytes attribute name.
-	 */
-	public static final String ATTRIBUTENAME_RAMMEMORYSIZEBYTES = "RAMMemorySizeBytes";
 
 	/**
 	 * RefreshRateSeconds attribute name.
@@ -559,49 +604,19 @@ public class Module {
 	public static final String ATTRIBUTENAME_SYSTEMDATAREGIONSIZEBYTES = "SystemDataRegionSizeBytes";
 
 	/**
-	 * SystemFLTranslationTableRegionPhysicalAddress attribute name.
-	 */
-	public static final String ATTRIBUTENAME_SYSTEMFLTRANSLATIONTABLEREGIONPHYSICALADDRESS = "SystemFLTranslationTableRegionPhysicalAddress";
-
-	/**
-	 * SystemFLTranslationTableRegionSizeBytes attribute name.
-	 */
-	public static final String ATTRIBUTENAME_SYSTEMFLTRANSLATIONTABLEREGIONSIZEBYTES = "SystemFLTranslationTableRegionSizeBytes";
-
-	/**
-	 * SystemHeapRegionPhysicalAddress attribute name.
-	 */
-	public static final String ATTRIBUTENAME_SYSTEMHEAPREGIONPHYSICALADDRESS = "SystemHeapRegionPhysicalAddress";
-
-	/**
-	 * SystemHeapRegionSizeBytes attribute name.
-	 */
-	public static final String ATTRIBUTENAME_SYSTEMHEAPREGIONSIZEBYTES = "SystemHeapRegionSizeBytes";
-
-	/**
 	 * SystemPartition attribute name.
 	 */
 	public static final String ATTRIBUTENAME_SYSTEMPARTITION = "SystemPartition";
 
 	/**
-	 * SystemSLTranslationTableRegionPhysicalAddress attribute name.
+	 * SystemRAMMemoryPhysicalAddress attribute name.
 	 */
-	public static final String ATTRIBUTENAME_SYSTEMSLTRANSLATIONTABLEREGIONPHYSICALADDRESS = "SystemSLTranslationTableRegionPhysicalAddress";
+	public static final String ATTRIBUTENAME_SYSTEMRAMMEMORYPHYSICALADDRESS = "SystemRAMMemoryPhysicalAddress";
 
 	/**
-	 * SystemSLTranslationTableRegionSizeBytes attribute name.
+	 * SystemRAMMemorySizeBytes attribute name.
 	 */
-	public static final String ATTRIBUTENAME_SYSTEMSLTRANSLATIONTABLEREGIONSIZEBYTES = "SystemSLTranslationTableRegionSizeBytes";
-
-	/**
-	 * SystemStackRegionPhysicalAddress attribute name.
-	 */
-	public static final String ATTRIBUTENAME_SYSTEMSTACKREGIONPHYSICALADDRESS = "SystemStackRegionPhysicalAddress";
-
-	/**
-	 * SystemStackRegionSizeBytes attribute name.
-	 */
-	public static final String ATTRIBUTENAME_SYSTEMSTACKREGIONSIZEBYTES = "SystemStackRegionSizeBytes";
+	public static final String ATTRIBUTENAME_SYSTEMRAMMEMORYSIZEBYTES = "SystemRAMMemorySizeBytes";
 
 	/**
 	 * SystemState attribute name.
@@ -709,9 +724,24 @@ public class Module {
 	private List<ModExt$Extension> lsModExt$Extension = new LinkedList<ModExt$Extension>();
 
 	/**
-	 * ModExt:Extension_AM335X node list.
+	 * ModExt:Extension_System_ARMV7A node list.
 	 */
-	private List<ModExt$Extension_AM335X> lsModExt$Extension_AM335X = new LinkedList<ModExt$Extension_AM335X>();
+	private List<ModExt$Extension_System_ARMV7A> lsModExt$Extension_System_ARMV7A = new LinkedList<ModExt$Extension_System_ARMV7A>();
+
+	/**
+	 * ModExt:Extension_Module_ARMV7A node list.
+	 */
+	private List<ModExt$Extension_Module_ARMV7A> lsModExt$Extension_Module_ARMV7A = new LinkedList<ModExt$Extension_Module_ARMV7A>();
+
+	/**
+	 * ModExt:Extension_Module_ARMV7A_AM335X node list.
+	 */
+	private List<ModExt$Extension_Module_ARMV7A_AM335X> lsModExt$Extension_Module_ARMV7A_AM335X = new LinkedList<ModExt$Extension_Module_ARMV7A_AM335X>();
+
+	/**
+	 * ModExt:Extension_Module_ARMV7A_Z7000 node list.
+	 */
+	private List<ModExt$Extension_Module_ARMV7A_Z7000> lsModExt$Extension_Module_ARMV7A_Z7000 = new LinkedList<ModExt$Extension_Module_ARMV7A_Z7000>();
 
 	/**
 	 * Constructor.
@@ -1098,28 +1128,103 @@ public class Module {
 	}
 
 	/**
-	 * ModExt:Extension_AM335X adder.
+	 * ModExt:Extension_System_ARMV7A adder.
 	 * 
-	 * @param ndModExt$Extension_AM335X
-	 *            ModExt:Extension_AM335X.
+	 * @param ndModExt$Extension_System_ARMV7A
+	 *            ModExt:Extension_System_ARMV7A.
 	 */
-	public boolean addModExt$Extension_AM335X(ModExt$Extension_AM335X ndModExt$Extension_AM335X) {
+	public boolean addModExt$Extension_System_ARMV7A(ModExt$Extension_System_ARMV7A ndModExt$Extension_System_ARMV7A) {
 
 		// Verifies node
-		if (ndModExt$Extension_AM335X == null) {
+		if (ndModExt$Extension_System_ARMV7A == null) {
 			return false;
 		}
 
 		// Adds node
-		lsModExt$Extension_AM335X.add(ndModExt$Extension_AM335X);
+		lsModExt$Extension_System_ARMV7A.add(ndModExt$Extension_System_ARMV7A);
 		return true;
 	}
 
 	/**
-	 * ModExt:Extension_AM335X list getter.
+	 * ModExt:Extension_System_ARMV7A list getter.
 	 */
-	public List<ModExt$Extension_AM335X> getModExt$Extension_AM335XList() {
-		return new LinkedList<ModExt$Extension_AM335X>(this.lsModExt$Extension_AM335X);
+	public List<ModExt$Extension_System_ARMV7A> getModExt$Extension_System_ARMV7AList() {
+		return new LinkedList<ModExt$Extension_System_ARMV7A>(this.lsModExt$Extension_System_ARMV7A);
+	}
+
+	/**
+	 * ModExt:Extension_Module_ARMV7A adder.
+	 * 
+	 * @param ndModExt$Extension_Module_ARMV7A
+	 *            ModExt:Extension_Module_ARMV7A.
+	 */
+	public boolean addModExt$Extension_Module_ARMV7A(ModExt$Extension_Module_ARMV7A ndModExt$Extension_Module_ARMV7A) {
+
+		// Verifies node
+		if (ndModExt$Extension_Module_ARMV7A == null) {
+			return false;
+		}
+
+		// Adds node
+		lsModExt$Extension_Module_ARMV7A.add(ndModExt$Extension_Module_ARMV7A);
+		return true;
+	}
+
+	/**
+	 * ModExt:Extension_Module_ARMV7A list getter.
+	 */
+	public List<ModExt$Extension_Module_ARMV7A> getModExt$Extension_Module_ARMV7AList() {
+		return new LinkedList<ModExt$Extension_Module_ARMV7A>(this.lsModExt$Extension_Module_ARMV7A);
+	}
+
+	/**
+	 * ModExt:Extension_Module_ARMV7A_AM335X adder.
+	 * 
+	 * @param ndModExt$Extension_Module_ARMV7A_AM335X
+	 *            ModExt:Extension_Module_ARMV7A_AM335X.
+	 */
+	public boolean addModExt$Extension_Module_ARMV7A_AM335X(ModExt$Extension_Module_ARMV7A_AM335X ndModExt$Extension_Module_ARMV7A_AM335X) {
+
+		// Verifies node
+		if (ndModExt$Extension_Module_ARMV7A_AM335X == null) {
+			return false;
+		}
+
+		// Adds node
+		lsModExt$Extension_Module_ARMV7A_AM335X.add(ndModExt$Extension_Module_ARMV7A_AM335X);
+		return true;
+	}
+
+	/**
+	 * ModExt:Extension_Module_ARMV7A_AM335X list getter.
+	 */
+	public List<ModExt$Extension_Module_ARMV7A_AM335X> getModExt$Extension_Module_ARMV7A_AM335XList() {
+		return new LinkedList<ModExt$Extension_Module_ARMV7A_AM335X>(this.lsModExt$Extension_Module_ARMV7A_AM335X);
+	}
+
+	/**
+	 * ModExt:Extension_Module_ARMV7A_Z7000 adder.
+	 * 
+	 * @param ndModExt$Extension_Module_ARMV7A_Z7000
+	 *            ModExt:Extension_Module_ARMV7A_Z7000.
+	 */
+	public boolean addModExt$Extension_Module_ARMV7A_Z7000(ModExt$Extension_Module_ARMV7A_Z7000 ndModExt$Extension_Module_ARMV7A_Z7000) {
+
+		// Verifies node
+		if (ndModExt$Extension_Module_ARMV7A_Z7000 == null) {
+			return false;
+		}
+
+		// Adds node
+		lsModExt$Extension_Module_ARMV7A_Z7000.add(ndModExt$Extension_Module_ARMV7A_Z7000);
+		return true;
+	}
+
+	/**
+	 * ModExt:Extension_Module_ARMV7A_Z7000 list getter.
+	 */
+	public List<ModExt$Extension_Module_ARMV7A_Z7000> getModExt$Extension_Module_ARMV7A_Z7000List() {
+		return new LinkedList<ModExt$Extension_Module_ARMV7A_Z7000>(this.lsModExt$Extension_Module_ARMV7A_Z7000);
 	}
 
 	/**
@@ -1328,18 +1433,66 @@ public class Module {
 			}
 
 			// Verifies node
-			if (Module.NODENAME_MODEXT$EXTENSION_AM335X.equals(ndChildNode.getNodeName())) {
+			if (Module.NODENAME_MODEXT$EXTENSION_SYSTEM_ARMV7A.equals(ndChildNode.getNodeName())) {
 
 				// Loads child
-				ModExt$Extension_AM335X ndModExt$Extension_AM335X = ModExt$Extension_AM335X.cmdLoad(ndChildNode, ndModule);
+				ModExt$Extension_System_ARMV7A ndModExt$Extension_System_ARMV7A = ModExt$Extension_System_ARMV7A.cmdLoad(ndChildNode, ndModule);
 
 				// Verifies child
-				if (ndModExt$Extension_AM335X == null) {
-					throw new ConfigurationException("Error while loading a ModExt:Extension_AM335X node (ARINC_653_Module child)");
+				if (ndModExt$Extension_System_ARMV7A == null) {
+					throw new ConfigurationException("Error while loading a ModExt:Extension_System_ARMV7A node (ARINC_653_Module child)");
 				}
 
 				// Adds child
-				ndModule.addModExt$Extension_AM335X(ndModExt$Extension_AM335X);
+				ndModule.addModExt$Extension_System_ARMV7A(ndModExt$Extension_System_ARMV7A);
+				continue;
+			}
+
+			// Verifies node
+			if (Module.NODENAME_MODEXT$EXTENSION_MODULE_ARMV7A.equals(ndChildNode.getNodeName())) {
+
+				// Loads child
+				ModExt$Extension_Module_ARMV7A ndModExt$Extension_Module_ARMV7A = ModExt$Extension_Module_ARMV7A.cmdLoad(ndChildNode, ndModule);
+
+				// Verifies child
+				if (ndModExt$Extension_Module_ARMV7A == null) {
+					throw new ConfigurationException("Error while loading a ModExt:Extension_Module_ARMV7A node (ARINC_653_Module child)");
+				}
+
+				// Adds child
+				ndModule.addModExt$Extension_Module_ARMV7A(ndModExt$Extension_Module_ARMV7A);
+				continue;
+			}
+
+			// Verifies node
+			if (Module.NODENAME_MODEXT$EXTENSION_MODULE_ARMV7A_AM335X.equals(ndChildNode.getNodeName())) {
+
+				// Loads child
+				ModExt$Extension_Module_ARMV7A_AM335X ndModExt$Extension_Module_ARMV7A_AM335X = ModExt$Extension_Module_ARMV7A_AM335X.cmdLoad(ndChildNode, ndModule);
+
+				// Verifies child
+				if (ndModExt$Extension_Module_ARMV7A_AM335X == null) {
+					throw new ConfigurationException("Error while loading a ModExt:Extension_Module_ARMV7A_AM335X node (ARINC_653_Module child)");
+				}
+
+				// Adds child
+				ndModule.addModExt$Extension_Module_ARMV7A_AM335X(ndModExt$Extension_Module_ARMV7A_AM335X);
+				continue;
+			}
+
+			// Verifies node
+			if (Module.NODENAME_MODEXT$EXTENSION_MODULE_ARMV7A_Z7000.equals(ndChildNode.getNodeName())) {
+
+				// Loads child
+				ModExt$Extension_Module_ARMV7A_Z7000 ndModExt$Extension_Module_ARMV7A_Z7000 = ModExt$Extension_Module_ARMV7A_Z7000.cmdLoad(ndChildNode, ndModule);
+
+				// Verifies child
+				if (ndModExt$Extension_Module_ARMV7A_Z7000 == null) {
+					throw new ConfigurationException("Error while loading a ModExt:Extension_Module_ARMV7A_Z7000 node (ARINC_653_Module child)");
+				}
+
+				// Adds child
+				ndModule.addModExt$Extension_Module_ARMV7A_Z7000(ndModExt$Extension_Module_ARMV7A_Z7000);
 				continue;
 			}
 
@@ -1601,11 +1754,35 @@ public class Module {
 		}
 
 		// Iterates children
-		Iterator<ModExt$Extension_AM335X> itModExt$Extension_AM335X = ndModule.getModExt$Extension_AM335XList().iterator();
-		while (itModExt$Extension_AM335X.hasNext()) {
+		Iterator<ModExt$Extension_System_ARMV7A> itModExt$Extension_System_ARMV7A = ndModule.getModExt$Extension_System_ARMV7AList().iterator();
+		while (itModExt$Extension_System_ARMV7A.hasNext()) {
 
 			// Appends child
-			elModule.appendChild(ModExt$Extension_AM335X.cmdSave(elModule, itModExt$Extension_AM335X.next()));
+			elModule.appendChild(ModExt$Extension_System_ARMV7A.cmdSave(elModule, itModExt$Extension_System_ARMV7A.next()));
+		}
+
+		// Iterates children
+		Iterator<ModExt$Extension_Module_ARMV7A> itModExt$Extension_Module_ARMV7A = ndModule.getModExt$Extension_Module_ARMV7AList().iterator();
+		while (itModExt$Extension_Module_ARMV7A.hasNext()) {
+
+			// Appends child
+			elModule.appendChild(ModExt$Extension_Module_ARMV7A.cmdSave(elModule, itModExt$Extension_Module_ARMV7A.next()));
+		}
+
+		// Iterates children
+		Iterator<ModExt$Extension_Module_ARMV7A_AM335X> itModExt$Extension_Module_ARMV7A_AM335X = ndModule.getModExt$Extension_Module_ARMV7A_AM335XList().iterator();
+		while (itModExt$Extension_Module_ARMV7A_AM335X.hasNext()) {
+
+			// Appends child
+			elModule.appendChild(ModExt$Extension_Module_ARMV7A_AM335X.cmdSave(elModule, itModExt$Extension_Module_ARMV7A_AM335X.next()));
+		}
+
+		// Iterates children
+		Iterator<ModExt$Extension_Module_ARMV7A_Z7000> itModExt$Extension_Module_ARMV7A_Z7000 = ndModule.getModExt$Extension_Module_ARMV7A_Z7000List().iterator();
+		while (itModExt$Extension_Module_ARMV7A_Z7000.hasNext()) {
+
+			// Appends child
+			elModule.appendChild(ModExt$Extension_Module_ARMV7A_Z7000.cmdSave(elModule, itModExt$Extension_Module_ARMV7A_Z7000.next()));
 		}
 
 		// Returns element

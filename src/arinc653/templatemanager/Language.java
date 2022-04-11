@@ -3,7 +3,7 @@ package arinc653.templatemanager;
 /**
  * Language.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public abstract class Language {
 

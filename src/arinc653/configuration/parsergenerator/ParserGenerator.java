@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 /**
  * Parser generator.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public class ParserGenerator {
 
@@ -1494,8 +1494,8 @@ public class ParserGenerator {
 		try {
 
 			// Prints
-			pwFile.println("package " + stPackage + ";");
-			pwFile.println();
+			pwFile.print("package " + stPackage + ";" + "\n");
+			pwFile.print("\n");
 
 			// Verifies imports
 			if (!stImport.isEmpty()) {
@@ -1511,11 +1511,11 @@ public class ParserGenerator {
 				while (itImport.hasNext()) {
 
 					// Prints
-					pwFile.println("import " + itImport.next() + ";");
+					pwFile.print("import " + itImport.next() + ";" + "\n");
 				}
 
 				// Prints
-				pwFile.println();
+				pwFile.print("\n");
 			}
 
 			// Iterates class
@@ -1523,7 +1523,7 @@ public class ParserGenerator {
 			while (itClass.hasNext()) {
 
 				// Prints
-				pwFile.println(itClass.next());
+				pwFile.print(itClass.next() + "\n");
 			}
 		} finally {
 

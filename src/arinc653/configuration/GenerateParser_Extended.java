@@ -6,7 +6,7 @@ import arinc653.configuration.parsergenerator.ParserGenerator;
 /**
  * Class for generating the parser - Extended.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public class GenerateParser_Extended {
 

@@ -16,7 +16,7 @@ import arinc653.configuration.parsergenerator.Node;
 /**
  * Class that holds the basic parser definition.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public class ParserDefinition_Basic {
 

@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * Node.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public class Node {
 

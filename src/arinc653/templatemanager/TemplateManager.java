@@ -5,7 +5,7 @@ import java.io.File;
 /**
  * Template manager.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public class TemplateManager {
 

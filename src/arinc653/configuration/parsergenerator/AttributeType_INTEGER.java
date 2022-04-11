@@ -6,7 +6,7 @@ import java.util.Set;
 /**
  * Attribute type - INTEGER.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public class AttributeType_INTEGER extends AttributeType {
 

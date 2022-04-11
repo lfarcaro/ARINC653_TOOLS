@@ -12,7 +12,7 @@ import java.util.Set;
 /**
  * Attribute type - ENUMERATION.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public class AttributeType_ENUMERATION extends AttributeType {
 
@@ -79,8 +79,8 @@ public class AttributeType_ENUMERATION extends AttributeType {
 		try {
 
 			// Prints
-			pwFile.println("package " + pgParserGenerator.stPackage + ";");
-			pwFile.println();
+			pwFile.print("package " + pgParserGenerator.stPackage + ";" + "\n");
+			pwFile.print("\n");
 
 			// Verifies imports
 			if (!stImport.isEmpty()) {
@@ -96,11 +96,11 @@ public class AttributeType_ENUMERATION extends AttributeType {
 				while (itImport.hasNext()) {
 
 					// Prints
-					pwFile.println("import " + itImport.next() + ";");
+					pwFile.print("import " + itImport.next() + ";" + "\n");
 				}
 
 				// Prints
-				pwFile.println();
+				pwFile.print("\n");
 			}
 
 			// Iterates class
@@ -108,7 +108,7 @@ public class AttributeType_ENUMERATION extends AttributeType {
 			while (itClass.hasNext()) {
 
 				// Prints
-				pwFile.println(itClass.next());
+				pwFile.print(itClass.next() + "\n");
 			}
 		} finally {
 

@@ -20,7 +20,7 @@ import java.util.regex.Pattern;
 /**
  * Mask.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public class Mask {
 
@@ -200,7 +200,7 @@ public class Mask {
 				while (itFile.hasNext()) {
 
 					// Writes file
-					pwPrintWriter.println(itFile.next());
+					pwPrintWriter.print(itFile.next() + "\n");
 				}
 			} finally {
 
@@ -370,7 +370,7 @@ public class Mask {
 				while (itFile.hasNext()) {
 
 					// Writes file
-					pwPrintWriter.println(itFile.next());
+					pwPrintWriter.print(itFile.next() + "\n");
 				}
 			} finally {
 
@@ -528,7 +528,7 @@ public class Mask {
 		try {
 
 			// Writes header
-			pwPrintWriter.println("MASK_START");
+			pwPrintWriter.print("MASK_START" + "\n");
 
 			// Creates snippet name list
 			List<String> lsSnippetName = new LinkedList<String>(msMask.getSnippetNames());
@@ -547,22 +547,22 @@ public class Mask {
 				Snippet snSnippet = msMask.getSnippet(stSnippetName);
 
 				// Writes snippet
-				pwPrintWriter.println("SNIPPET_START " + stSnippetName);
+				pwPrintWriter.print("SNIPPET_START " + stSnippetName + "\n");
 
 				// Iterates snippet
 				Iterator<String> itSnippet = snSnippet.getValue().iterator();
 				while (itSnippet.hasNext()) {
 
 					// Writes snippet
-					pwPrintWriter.println(itSnippet.next());
+					pwPrintWriter.print(itSnippet.next() + "\n");
 				}
 
 				// Writes snippet
-				pwPrintWriter.println("SNIPPET_END");
+				pwPrintWriter.print("SNIPPET_END" + "\n");
 			}
 
 			// Writes mask
-			pwPrintWriter.println("MASK_END");
+			pwPrintWriter.print("MASK_END" + "\n");
 		} finally {
 
 			// Closes writer

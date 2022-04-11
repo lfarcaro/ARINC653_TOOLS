@@ -6,7 +6,7 @@ import java.util.Set;
 /**
  * Attribute type - STRING.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public class AttributeType_STRING extends AttributeType {
 

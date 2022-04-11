@@ -3,7 +3,7 @@ package arinc653.configuration.parserresources;
 /**
  * DecOrHex stored as Long.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public final class DecOrHexLong {
 

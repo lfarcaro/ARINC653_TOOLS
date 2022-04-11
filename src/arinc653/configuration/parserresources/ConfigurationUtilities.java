@@ -9,7 +9,7 @@ import org.w3c.dom.Node;
 /**
  * Configuration utilities.
  * 
- * @author Luís Fernando Arcaro
+ * @author LuÃ­s Fernando Arcaro
  */
 public class ConfigurationUtilities {
 
