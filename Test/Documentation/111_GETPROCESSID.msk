@@ -1,20 +1,20 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-Cada tarefa repetidamente atribui um diferente padr„o aos \acp{LED}, invoca \textbf{GET\_PROCESS\_ID} para os processos PROCESS1 e PROCESS2, verifica o resultado e, caso uma falha seja detectada, entra em um laÁo infinito. Os padrıes de \acp{LED} utilizados pelas tarefas s„o os seguintes:
+Cada tarefa repetidamente atribui um diferente padr√£o aos \acp{LED}, invoca \textbf{GET\_PROCESS\_ID} para os processos PROCESS1 e PROCESS2, verifica o resultado e, caso uma falha seja detectada, entra em um la√ßo infinito. Os padr√µes de \acp{LED} utilizados pelas tarefas s√£o os seguintes:
 
 \begin{itemize*}
-\item{Processo PROCESS1 da partiÁ„o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
-\item{Processo PROCESS2 da partiÁ„o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{Processo ocioso da partiÁ„o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partiÁ„o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{Processo ocioso da partiÁ„o PARTITION3: \textbf{LED1} ligado, \textbf{LED2} ligado;}
-\item{PartiÁ„o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\item{Processo PROCESS1 da parti√ß√£o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da parti√ß√£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION3: \textbf{LED1} ligado, \textbf{LED2} ligado;}
+\item{Parti√ß√£o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-Os \acp{LED} devem apresentar repetidamente o padr„o de escalonamento (nenhum laÁo infinito deve ser alcanÁado).
+Os \acp{LED} devem apresentar repetidamente o padr√£o de escalonamento (nenhum la√ßo infinito deve ser alcan√ßado).
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar o correto funcionamento do serviÁo \textbf{GET\_PROCESS\_ID}.
+Demonstrar o correto funcionamento do servi√ßo \textbf{GET\_PROCESS\_ID}.
 SNIPPET_END
 MASK_END

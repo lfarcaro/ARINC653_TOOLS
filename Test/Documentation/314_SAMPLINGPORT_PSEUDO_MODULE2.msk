@@ -1,13 +1,13 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-Os processos denominados PROCESS1 das partiÁıes PARTITION1, PARTITION2 e PARTITION3 escrevem em portas de amostragem a cada 250ms, enquanto os processos denominados PROCESS2 dessas mesmas partiÁıes leem de portas de amostragem a cada 500ms e, se um valor v·lido È lido, piscam o \textit{LED1} e, em caso contr·rio, piscam o \textit{LED2}. As tabelas de conex„o dos mÛdulos envolvidos neste teste definem que o processo PROCESS1 de todas as partiÁıes escreve na porta que È lida pelo processo PROCESS2 da partiÁ„o de mesmo nome no mÛdulo oposto. Este teste deve ser utilizado em conjunto com o teste \textbf{SAMPLINGPORT\_PSEUDO\_MODULE1}.
+Os processos denominados PROCESS1 das parti√ß√µes PARTITION1, PARTITION2 e PARTITION3 escrevem em portas de amostragem a cada 250ms, enquanto os processos denominados PROCESS2 dessas mesmas parti√ß√µes leem de portas de amostragem a cada 500ms e, se um valor v√°lido √© lido, piscam o \textit{LED1} e, em caso contr√°rio, piscam o \textit{LED2}. As tabelas de conex√£o dos m√≥dulos envolvidos neste teste definem que o processo PROCESS1 de todas as parti√ß√µes escreve na porta que √© lida pelo processo PROCESS2 da parti√ß√£o de mesmo nome no m√≥dulo oposto. Este teste deve ser utilizado em conjunto com o teste \textbf{SAMPLINGPORT\_PSEUDO\_MODULE1}.
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-Enquanto os mÛdulos estiverem \textbf{desconectados}, o \textbf{LED2} deve piscar trÍs vezes a cada 500ms (uma vez para cada partiÁ„o), pois as portas de destino n„o estar„o sendo atualizadas e, portanto, seus valores ser„o considerados inv·lidos.
+Enquanto os m√≥dulos estiverem \textbf{desconectados}, o \textbf{LED2} deve piscar tr√™s vezes a cada 500ms (uma vez para cada parti√ß√£o), pois as portas de destino n√£o estar√£o sendo atualizadas e, portanto, seus valores ser√£o considerados inv√°lidos.
 
-Enquanto os mÛdulos estiverem \textbf{conectados}, o \textbf{LED1} deve piscar trÍs vezes a cada 500ms (uma vez para cada partiÁ„o), pois as portas de destino estar„o sendo atualizadas a cada 250ms e, portanto, seus valores ser„o considerados v·lidos.
+Enquanto os m√≥dulos estiverem \textbf{conectados}, o \textbf{LED1} deve piscar tr√™s vezes a cada 500ms (uma vez para cada parti√ß√£o), pois as portas de destino estar√£o sendo atualizadas a cada 250ms e, portanto, seus valores ser√£o considerados v√°lidos.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar o correto funcionamento de portas de amostragem (mecanismo de comunicaÁ„o interpartiÁ„o) conectadas a partiÁıes de dois mÛdulos diferentes (utilizado em conjunto com o teste \textbf{SAMPLINGPORT\_PSEUDO\_MODULE1}).
+Demonstrar o correto funcionamento de portas de amostragem (mecanismo de comunica√ß√£o interparti√ß√£o) conectadas a parti√ß√µes de dois m√≥dulos diferentes (utilizado em conjunto com o teste \textbf{SAMPLINGPORT\_PSEUDO\_MODULE1}).
 SNIPPET_END
 MASK_END

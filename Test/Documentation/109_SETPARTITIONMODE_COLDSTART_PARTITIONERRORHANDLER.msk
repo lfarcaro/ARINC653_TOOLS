@@ -1,20 +1,20 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-Cada tarefa repetidamente atribui um diferente padrão aos \acp{LED}. Após algumas liberações o processo PROCESS1 entra em um laço infinito, perdendo assim seu \textit{deadline} e fazendo com que o processo tratador de erros da partição PARTITION1 seja iniciado. O processo tratador de erros atribui o modo de operação da partição para \textbf{COLD\_START}, reiniciando-a. Mais tarde, os processos ociosos das partições PARTITION2 e PARTITION3 também atribuem o modo de suas partições para \textbf{COLD\_START}, nessa ordem e em momentos diferentes. Os processos padrão de todas as partições verificam se as variáveis globais da partição têm seus valores iniciais corretos, alterando seus valores em caso positivo e entrando em um laço infinito em caso negativo, e verificando assim se os dados das partições são corretamente restaurados pelo \ac{SO} quando de sua reinicialização. Os padrões de \acp{LED} utilizados pelas tarefas são os seguintes:
+Cada tarefa repetidamente atribui um diferente padrÃ£o aos \acp{LED}. ApÃ³s algumas liberaÃ§Ãµes o processo PROCESS1 entra em um laÃ§o infinito, perdendo assim seu \textit{deadline} e fazendo com que o processo tratador de erros da partiÃ§Ã£o PARTITION1 seja iniciado. O processo tratador de erros atribui o modo de operaÃ§Ã£o da partiÃ§Ã£o para \textbf{COLD\_START}, reiniciando-a. Mais tarde, os processos ociosos das partiÃ§Ãµes PARTITION2 e PARTITION3 tambÃ©m atribuem o modo de suas partiÃ§Ãµes para \textbf{COLD\_START}, nessa ordem e em momentos diferentes. Os processos padrÃ£o de todas as partiÃ§Ãµes verificam se as variÃ¡veis globais da partiÃ§Ã£o tÃªm seus valores iniciais corretos, alterando seus valores em caso positivo e entrando em um laÃ§o infinito em caso negativo, e verificando assim se os dados das partiÃ§Ãµes sÃ£o corretamente restaurados pelo \ac{SO} quando de sua reinicializaÃ§Ã£o. Os padrÃµes de \acp{LED} utilizados pelas tarefas sÃ£o os seguintes:
 
 \begin{itemize*}
-\item{Processo PROCESS1 da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
-\item{Processo PROCESS2 da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{Processo ocioso da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{Processo ocioso da partição PARTITION3: \textbf{LED1} ligado, \textbf{LED2} ligado;}
-\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\item{Processo PROCESS1 da partiÃ§Ã£o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da partiÃ§Ã£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partiÃ§Ã£o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partiÃ§Ã£o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partiÃ§Ã£o PARTITION3: \textbf{LED1} ligado, \textbf{LED2} ligado;}
+\item{PartiÃ§Ã£o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-Os \acp{LED} devem inicialmente apresentar repetidamente o padrão de escalonamento. Após algum tempo as partições PARTITION1, PARTITION2 e PARTITION3 devem ser reiniciadas, nessa ordem e em diferentes momentos, e continuar exibindo o mesmo padrão novamente. Pequenas interrupções devem ser percebidas no padrão geral, durante a reinicialização das partições, e nenhuma das partições deve deixar de ser executada. Antes da reinicialização da partição PARTITION1, deve ser possível perceber que o padrão do processo PROCESS1 é exibido por um período relativamente longo, causando a perda de \textit{deadline} que leva à reinicialização da partição.
+Os \acp{LED} devem inicialmente apresentar repetidamente o padrÃ£o de escalonamento. ApÃ³s algum tempo as partiÃ§Ãµes PARTITION1, PARTITION2 e PARTITION3 devem ser reiniciadas, nessa ordem e em diferentes momentos, e continuar exibindo o mesmo padrÃ£o novamente. Pequenas interrupÃ§Ãµes devem ser percebidas no padrÃ£o geral, durante a reinicializaÃ§Ã£o das partiÃ§Ãµes, e nenhuma das partiÃ§Ãµes deve deixar de ser executada. Antes da reinicializaÃ§Ã£o da partiÃ§Ã£o PARTITION1, deve ser possÃ­vel perceber que o padrÃ£o do processo PROCESS1 Ã© exibido por um perÃ­odo relativamente longo, causando a perda de \textit{deadline} que leva Ã  reinicializaÃ§Ã£o da partiÃ§Ã£o.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar o correto funcionamento do serviço \textbf{SET\_PARTITION\_MODE} quando solicitada transição para o modo de operação \textbf{COLD\_START} a partir de um processo tratador de erros.
+Demonstrar o correto funcionamento do serviÃ§o \textbf{SET\_PARTITION\_MODE} quando solicitada transiÃ§Ã£o para o modo de operaÃ§Ã£o \textbf{COLD\_START} a partir de um processo tratador de erros.
 SNIPPET_END
 MASK_END

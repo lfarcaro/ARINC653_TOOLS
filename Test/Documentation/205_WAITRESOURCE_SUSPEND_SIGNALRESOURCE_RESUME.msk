@@ -1,11 +1,11 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-O processo PROCESS2 repetidamente aguarda por um recurso por tempo indeterminado (até que seja liberado), e então pisca o \textbf{LED2}. A cada liberação o processo PROCESS1 pisca o \textbf{LED1} e, a cada $n$ liberações, alternadamente suspende o processo PROCESS2, libera o recurso ou continua o processo PROCESS2 (nessa ordem).
+O processo PROCESS2 repetidamente aguarda por um recurso por tempo indeterminado (atÃ© que seja liberado), e entÃ£o pisca o \textbf{LED2}. A cada liberaÃ§Ã£o o processo PROCESS1 pisca o \textbf{LED1} e, a cada $n$ liberaÃ§Ãµes, alternadamente suspende o processo PROCESS2, libera o recurso ou continua o processo PROCESS2 (nessa ordem).
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-O \textbf{LED1} deve piscar a cada 500ms, e o \textbf{LED2} deve piscar a cada $3n$ liberações do processo PROCESS1. Em outras palavras, o \textbf{LED2} só deve piscar depois que o processo PROCESS1 continuar a execução do processo PROCESS2, pois quando o recurso é liberado esse processo ainda encontra-se suspenso.
+O \textbf{LED1} deve piscar a cada 500ms, e o \textbf{LED2} deve piscar a cada $3n$ liberaÃ§Ãµes do processo PROCESS1. Em outras palavras, o \textbf{LED2} sÃ³ deve piscar depois que o processo PROCESS1 continuar a execuÃ§Ã£o do processo PROCESS2, pois quando o recurso Ã© liberado esse processo ainda encontra-se suspenso.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar o correto funcionamento da utilização conjunta dos serviços \textbf{WAIT\_RESOURCE}, \textbf{SIGNAL\_RESOURCE}, \textbf{SUSPEND} e \textbf{RESUME} quando um processo é liberado da espera pelo recurso enquanto encontra-se suspenso, situação na qual esse deve permanecer suspenso até que seja continuado por outro processo.
+Demonstrar o correto funcionamento da utilizaÃ§Ã£o conjunta dos serviÃ§os \textbf{WAIT\_RESOURCE}, \textbf{SIGNAL\_RESOURCE}, \textbf{SUSPEND} e \textbf{RESUME} quando um processo Ã© liberado da espera pelo recurso enquanto encontra-se suspenso, situaÃ§Ã£o na qual esse deve permanecer suspenso atÃ© que seja continuado por outro processo.
 SNIPPET_END
 MASK_END

@@ -1,11 +1,11 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-A cada liberaÁ„o o processo PROCESS1 pisca o \textbf{LED1}, espera pelo sem·foro SEMAPHORE1, cede o processamento (atravÈs do serviÁo \textbf{TIMED\_WAIT}), espera pelo sem·foro SEMAPHORE2, pisca o \textbf{LED1} novamente e libera ambos os sem·foros. A cada liberaÁ„o o processo PROCESS2 pisca o \textbf{LED2}, espera pelo sem·foro SEMAPHORE2, cede o processamento (atravÈs do serviÁo \textbf{TIMED\_WAIT}), espera pelo sem·foro SEMAPHORE1, pisca o \textbf{LED2} novamente e libera ambos os sem·foros.
+A cada libera√ß√£o o processo PROCESS1 pisca o \textbf{LED1}, espera pelo sem√°foro SEMAPHORE1, cede o processamento (atrav√©s do servi√ßo \textbf{TIMED\_WAIT}), espera pelo sem√°foro SEMAPHORE2, pisca o \textbf{LED1} novamente e libera ambos os sem√°foros. A cada libera√ß√£o o processo PROCESS2 pisca o \textbf{LED2}, espera pelo sem√°foro SEMAPHORE2, cede o processamento (atrav√©s do servi√ßo \textbf{TIMED\_WAIT}), espera pelo sem√°foro SEMAPHORE1, pisca o \textbf{LED2} novamente e libera ambos os sem√°foros.
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-Este exemplo causa um \textit{deadlock}, pois o processo PROCESS1 adquire o sem·foro SEMAPHORE1 e o processo PROCESS2 adquire o sem·foro SEMAPHORE2, e portanto o processo PROCESS1 aguardar· por tempo indeterminado por SEMAPHORE2 e o processo PROCESS2 aguardar· por tempo indeterminado por SEMAPHORE1. Portanto, inicialmente os \acp{LED} devem piscar uma vez e, ent„o, ambos devem desligar permanentemente.
+Este exemplo causa um \textit{deadlock}, pois o processo PROCESS1 adquire o sem√°foro SEMAPHORE1 e o processo PROCESS2 adquire o sem√°foro SEMAPHORE2, e portanto o processo PROCESS1 aguardar√° por tempo indeterminado por SEMAPHORE2 e o processo PROCESS2 aguardar√° por tempo indeterminado por SEMAPHORE1. Portanto, inicialmente os \acp{LED} devem piscar uma vez e, ent√£o, ambos devem desligar permanentemente.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar a ocorrÍncia de \textit{deadlock} atravÈs da utilizaÁ„o de sem·foros (mecanismo de comunicaÁ„o intrapartiÁ„o).
+Demonstrar a ocorr√™ncia de \textit{deadlock} atrav√©s da utiliza√ß√£o de sem√°foros (mecanismo de comunica√ß√£o intraparti√ß√£o).
 SNIPPET_END
 MASK_END

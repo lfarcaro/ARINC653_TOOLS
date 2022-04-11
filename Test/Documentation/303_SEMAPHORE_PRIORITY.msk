@@ -1,11 +1,11 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-Os processos PROCESS1 e PROCESS2 repetidamente esperam no sem·foro e ent„o piscam o \textbf{LED1} e o \textbf{LED2} (respectivamente). O processo ocioso da partiÁ„o PARTITION1 repetidamente obtÈm o identificador do sem·foro por seu nome, aguarda durante um perÌodo curto, libera o sem·foro e, finalmente, obtÈm e verifica o estado do sem·foro.
+Os processos PROCESS1 e PROCESS2 repetidamente esperam no sem√°foro e ent√£o piscam o \textbf{LED1} e o \textbf{LED2} (respectivamente). O processo ocioso da parti√ß√£o PARTITION1 repetidamente obt√©m o identificador do sem√°foro por seu nome, aguarda durante um per√≠odo curto, libera o sem√°foro e, finalmente, obt√©m e verifica o estado do sem√°foro.
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-O sem·foro tem valor inicial 2, portanto espera-se que inicialmente o \textbf{LED1} pisque duas vezes seguidas (visualmente percebido como se piscasse apenas uma vez), j· que o processo PROCESS1 possui a maior prioridade e, portanto, o processo PROCESS2 n„o È iniciado atÈ que PROCESS1 seja bloqueado. ApÛs algum tempo o sem·foro È liberado e, assim, o \textbf{LED1} deve piscar mais uma vez (j· que o processo PROCESS1 consumiu os dois recursos iniciais do sem·foro e solicitou aguardo por mais um, quando foi bloqueado). Mais tarde o sem·foro È liberado novamente e, uma vez que sua polÌtica de enfileiramento È por prioridade, o \textbf{LED1} deve piscar novamente. A partir deste ponto, o \textbf{LED1} deve piscar a cada vez que o sem·foro È liberado, e o \textbf{LED2} nunca deve ser ligado.
+O sem√°foro tem valor inicial 2, portanto espera-se que inicialmente o \textbf{LED1} pisque duas vezes seguidas (visualmente percebido como se piscasse apenas uma vez), j√° que o processo PROCESS1 possui a maior prioridade e, portanto, o processo PROCESS2 n√£o √© iniciado at√© que PROCESS1 seja bloqueado. Ap√≥s algum tempo o sem√°foro √© liberado e, assim, o \textbf{LED1} deve piscar mais uma vez (j√° que o processo PROCESS1 consumiu os dois recursos iniciais do sem√°foro e solicitou aguardo por mais um, quando foi bloqueado). Mais tarde o sem√°foro √© liberado novamente e, uma vez que sua pol√≠tica de enfileiramento √© por prioridade, o \textbf{LED1} deve piscar novamente. A partir deste ponto, o \textbf{LED1} deve piscar a cada vez que o sem√°foro √© liberado, e o \textbf{LED2} nunca deve ser ligado.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar a utilizaÁ„o e o correto funcionamento de sem·foros (mecanismo de comunicaÁ„o intrapartiÁ„o) quando empregado enfileiramento de processos por prioridade.
+Demonstrar a utiliza√ß√£o e o correto funcionamento de sem√°foros (mecanismo de comunica√ß√£o intraparti√ß√£o) quando empregado enfileiramento de processos por prioridade.
 SNIPPET_END
 MASK_END

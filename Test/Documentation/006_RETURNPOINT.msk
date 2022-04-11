@@ -1,23 +1,23 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-Os processos PROCESS1 e PROCESS2 piscam o \textbf{LED1}, disparam um erro de aplicaÁ„o, desligam ambos os \acp{LED} e ent„o retornam. O processo tratador de erros da partiÁ„o PARTITION1 pisca o \textbf{LED2}, lÍ todas as entradas de erro, dispara um erro de aplicaÁ„o, desliga ambos os \acp{LED} e ent„o retorna. Os processos ociosos de partiÁıes, apÛs a inicializaÁ„o, disparam um erro de aplicaÁ„o, desligam ambos os \acp{LED} e ent„o retornam. Os padrıes de \acp{LED} utilizados pelas tarefas s„o os seguintes:
+Os processos PROCESS1 e PROCESS2 piscam o \textbf{LED1}, disparam um erro de aplica√ß√£o, desligam ambos os \acp{LED} e ent√£o retornam. O processo tratador de erros da parti√ß√£o PARTITION1 pisca o \textbf{LED2}, l√™ todas as entradas de erro, dispara um erro de aplica√ß√£o, desliga ambos os \acp{LED} e ent√£o retorna. Os processos ociosos de parti√ß√µes, ap√≥s a inicializa√ß√£o, disparam um erro de aplica√ß√£o, desligam ambos os \acp{LED} e ent√£o retornam. Os padr√µes de \acp{LED} utilizados pelas tarefas s√£o os seguintes:
 
 \begin{itemize*}
-\item{Processo PROCESS1 da partiÁ„o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
-\item{Processo PROCESS2 da partiÁ„o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partiÁ„o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{Processo tratador de erros da partiÁ„o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{Processo ocioso da partiÁ„o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{Processo tratador de erros da partiÁ„o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{Processo ocioso da partiÁ„o PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{Processo tratador de erros da partiÁ„o PARTITION3: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{PartiÁ„o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\item{Processo PROCESS1 da parti√ß√£o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da parti√ß√£o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo tratador de erros da parti√ß√£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo tratador de erros da parti√ß√£o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo tratador de erros da parti√ß√£o PARTITION3: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Parti√ß√£o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-O comportamento deste teste deve ser verificado atravÈs de depuraÁ„o a nÌvel de instruÁıes de m·quina. Todas as tarefas, ao retornar, devem alcanÁar o ponto de retorno correspondente e, assim, executar o tratamento adequado. Visualmente, os \acp{LED} devem piscar rapidamente antes que todas as tarefas sejam concluÌdas, e ent„o os \acp{LED} devem ficar permanentemente desligados.
+O comportamento deste teste deve ser verificado atrav√©s de depura√ß√£o a n√≠vel de instru√ß√µes de m√°quina. Todas as tarefas, ao retornar, devem alcan√ßar o ponto de retorno correspondente e, assim, executar o tratamento adequado. Visualmente, os \acp{LED} devem piscar rapidamente antes que todas as tarefas sejam conclu√≠das, e ent√£o os \acp{LED} devem ficar permanentemente desligados.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Garantir que os pontos de retorno, que s„o funÁıes alcanÁadas quando os mÈtodos que implementam as tarefas do sistema terminam ou retornam, s„o corretamente executados.
+Garantir que os pontos de retorno, que s√£o fun√ß√µes alcan√ßadas quando os m√©todos que implementam as tarefas do sistema terminam ou retornam, s√£o corretamente executados.
 SNIPPET_END
 MASK_END

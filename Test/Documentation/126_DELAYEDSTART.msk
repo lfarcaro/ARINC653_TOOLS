@@ -1,30 +1,30 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-O processo PROCESS1 é iniciado com atraso de 2s, e o processo PROCESS2 com atraso de 5s, evitando que esses sejam liberados em fase. Os padrões de \acp{LED} utilizados pelas tarefas são os seguintes:
+O processo PROCESS1 Ã© iniciado com atraso de 2s, e o processo PROCESS2 com atraso de 5s, evitando que esses sejam liberados em fase. Os padrÃµes de \acp{LED} utilizados pelas tarefas sÃ£o os seguintes:
 
 \begin{itemize*}
-\item{Processo PROCESS1 da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
-\item{Processo PROCESS2 da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{Processo ocioso da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partição PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\item{Processo PROCESS1 da partiÃ§Ã£o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da partiÃ§Ã£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partiÃ§Ã£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partiÃ§Ã£o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partiÃ§Ã£o PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{PartiÃ§Ã£o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-A seguinte sequência de padrões deve ser exibida repetidamente, iniciando a partir do início do segundo período da partição PARTITION1 (que inicia 500ms após a inicialização do módulo):
+A seguinte sequÃªncia de padrÃµes deve ser exibida repetidamente, iniciando a partir do inÃ­cio do segundo perÃ­odo da partiÃ§Ã£o PARTITION1 (que inicia 500ms apÃ³s a inicializaÃ§Ã£o do mÃ³dulo):
 
 \begin{itemize*}
-\item{Ambos \acp{LED} desligados por 2s (atraso de início de PROCESS1);}
-\item{Apenas \textbf{LED1} ligado por um curto período (PROCESS1);}
-\item{Ambos \acp{LED} desligados até 5s a partir do início da sequência (atraso de início de PROCESS2);}
-\item{Apenas \textbf{LED2} ligado por um curto período (PROCESS2);}
-\item{Ambos \acp{LED} desligados até 7s a partir do início da sequência;}
-\item{Apenas \textbf{LED1} ligado por um curto período (PROCESS1);}
-\item{Ambos \acp{LED} desligados até 10s a partir do início da sequência.}
+\item{Ambos \acp{LED} desligados por 2s (atraso de inÃ­cio de PROCESS1);}
+\item{Apenas \textbf{LED1} ligado por um curto perÃ­odo (PROCESS1);}
+\item{Ambos \acp{LED} desligados atÃ© 5s a partir do inÃ­cio da sequÃªncia (atraso de inÃ­cio de PROCESS2);}
+\item{Apenas \textbf{LED2} ligado por um curto perÃ­odo (PROCESS2);}
+\item{Ambos \acp{LED} desligados atÃ© 7s a partir do inÃ­cio da sequÃªncia;}
+\item{Apenas \textbf{LED1} ligado por um curto perÃ­odo (PROCESS1);}
+\item{Ambos \acp{LED} desligados atÃ© 10s a partir do inÃ­cio da sequÃªncia.}
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar o correto funcionamento do serviço \textbf{DELAYED\_START}.
+Demonstrar o correto funcionamento do serviÃ§o \textbf{DELAYED\_START}.
 SNIPPET_END
 MASK_END

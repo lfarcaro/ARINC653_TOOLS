@@ -1,11 +1,11 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-Os processos PROCESS1 e PROCESS2 repetidamente leem a \textit{blackboard}, verificam a mensagem lida e então piscam o \textbf{LED1} e o \textbf{LED2} (respectivamente). O processo ocioso da partição PARTITION1 repetidamente obtém o identificador da \textit{blackboard} por seu nome, aguarda durante um período de duração média, alternadamente mostra uma mensagem na \textit{blackboard} ou limpa-a, e finalmente obtém e verifica o estado da \textit{blackboard}.
+Os processos PROCESS1 e PROCESS2 repetidamente leem a \textit{blackboard}, verificam a mensagem lida e entÃ£o piscam o \textbf{LED1} e o \textbf{LED2} (respectivamente). O processo ocioso da partiÃ§Ã£o PARTITION1 repetidamente obtÃ©m o identificador da \textit{blackboard} por seu nome, aguarda durante um perÃ­odo de duraÃ§Ã£o mÃ©dia, alternadamente mostra uma mensagem na \textit{blackboard} ou limpa-a, e finalmente obtÃ©m e verifica o estado da \textit{blackboard}.
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-A \textit{blackboard} inicia vazia, portanto inicialmente nenhum dos \acp{LED} deve piscar. Após algum tempo a \textit{blackboard} é escrita e, portanto, o \textbf{LED1} e o \textbf{LED2} devem piscar de acordo com a escala de processos. Mais tarde, a \textit{blackboard} é limpa e, portanto, ambos os \acp{LED} devem permanecer desligados, reiniciando a sequência.
+A \textit{blackboard} inicia vazia, portanto inicialmente nenhum dos \acp{LED} deve piscar. ApÃ³s algum tempo a \textit{blackboard} Ã© escrita e, portanto, o \textbf{LED1} e o \textbf{LED2} devem piscar de acordo com a escala de processos. Mais tarde, a \textit{blackboard} Ã© limpa e, portanto, ambos os \acp{LED} devem permanecer desligados, reiniciando a sequÃªncia.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar a utilização e o correto funcionamento de \textit{blackboards} (mecanismo de comunicação intrapartição).
+Demonstrar a utilizaÃ§Ã£o e o correto funcionamento de \textit{blackboards} (mecanismo de comunicaÃ§Ã£o intrapartiÃ§Ã£o).
 SNIPPET_END
 MASK_END

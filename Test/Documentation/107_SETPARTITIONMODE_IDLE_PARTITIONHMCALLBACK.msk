@@ -1,20 +1,20 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-Cada tarefa repetidamente atribui um diferente padr„o aos \acp{LED}. ApÛs algumas liberaÁıes o processo PROCESS1 entra em um laÁo infinito, perdendo assim seu \textit{deadline} e fazendo com que o processo tratador de erros da partiÁ„o PARTITION1 seja iniciado. O processo tratador de erros dispara um erro de aplicaÁ„o, fazendo com que o \textit{HM callback} da partiÁ„o seja iniciado. O \textit{HM callback} atribui o modo de operaÁ„o da partiÁ„o para \textbf{IDLE}, parando qualquer processamento nela. Mais tarde, os processos ociosos das partiÁıes PARTITION2 e PARTITION3 tambÈm atribuem o modo de suas partiÁıes para \textbf{IDLE}, nessa ordem e em momentos diferentes. Os padrıes de \acp{LED} utilizados pelas tarefas s„o os seguintes:
+Cada tarefa repetidamente atribui um diferente padr√£o aos \acp{LED}. Ap√≥s algumas libera√ß√µes o processo PROCESS1 entra em um la√ßo infinito, perdendo assim seu \textit{deadline} e fazendo com que o processo tratador de erros da parti√ß√£o PARTITION1 seja iniciado. O processo tratador de erros dispara um erro de aplica√ß√£o, fazendo com que o \textit{HM callback} da parti√ß√£o seja iniciado. O \textit{HM callback} atribui o modo de opera√ß√£o da parti√ß√£o para \textbf{IDLE}, parando qualquer processamento nela. Mais tarde, os processos ociosos das parti√ß√µes PARTITION2 e PARTITION3 tamb√©m atribuem o modo de suas parti√ß√µes para \textbf{IDLE}, nessa ordem e em momentos diferentes. Os padr√µes de \acp{LED} utilizados pelas tarefas s√£o os seguintes:
 
 \begin{itemize*}
-\item{Processo PROCESS1 da partiÁ„o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
-\item{Processo PROCESS2 da partiÁ„o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{Processo ocioso da partiÁ„o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partiÁ„o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{Processo ocioso da partiÁ„o PARTITION3: \textbf{LED1} ligado, \textbf{LED2} ligado;}
-\item{PartiÁ„o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\item{Processo PROCESS1 da parti√ß√£o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da parti√ß√£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION3: \textbf{LED1} ligado, \textbf{LED2} ligado;}
+\item{Parti√ß√£o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-Os \acp{LED} devem, inicialmente, apresentar repetidamente o padr„o de escalonamento. ApÛs algum tempo o padr„o do processo PROCESS1 deve ser exibido por um perÌodo relativamente longo (causando uma perda de \textit{deadline}), e ent„o as partiÁıes PARTITION1, PARTITION2 e PARTITION3 s„o paradas, nessa ordem e em diferentes momentos. O padr„o apresentado nos \acp{LED} deve refletir esses eventos, e finalmente apenas a partiÁ„o ociosa deve permanecer em execuÁ„o e, portanto, ambos os \acp{LED} devem ficar permanentemente desligados.
+Os \acp{LED} devem, inicialmente, apresentar repetidamente o padr√£o de escalonamento. Ap√≥s algum tempo o padr√£o do processo PROCESS1 deve ser exibido por um per√≠odo relativamente longo (causando uma perda de \textit{deadline}), e ent√£o as parti√ß√µes PARTITION1, PARTITION2 e PARTITION3 s√£o paradas, nessa ordem e em diferentes momentos. O padr√£o apresentado nos \acp{LED} deve refletir esses eventos, e finalmente apenas a parti√ß√£o ociosa deve permanecer em execu√ß√£o e, portanto, ambos os \acp{LED} devem ficar permanentemente desligados.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar o correto funcionamento do serviÁo \textbf{SET\_PARTITION\_MODE} quando solicitada transiÁ„o para o modo de operaÁ„o \textbf{IDLE} a partir de um \textit{HM callback} de partiÁ„o.
+Demonstrar o correto funcionamento do servi√ßo \textbf{SET\_PARTITION\_MODE} quando solicitada transi√ß√£o para o modo de opera√ß√£o \textbf{IDLE} a partir de um \textit{HM callback} de parti√ß√£o.
 SNIPPET_END
 MASK_END

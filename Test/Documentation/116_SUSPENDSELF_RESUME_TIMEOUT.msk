@@ -1,20 +1,20 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-O processo PROCESS1 inicia e imediatamente solicita sua prÛpria suspens„o por no m·ximo 500ms, enquanto a cada liberaÁ„o o processo PROCESS2 pisca o \textbf{LED2}. O processo ocioso da partiÁ„o PARTITION1 repetidamente aguarda um longo perÌodo e ent„o libera o processo PROCESS1, que pisca o \textbf{LED1} e suspende novamente por no m·ximo 500ms, reiniciando a sequÍncia. Os padrıes de \acp{LED} utilizados pelas tarefas s„o os seguintes:
+O processo PROCESS1 inicia e imediatamente solicita sua pr√≥pria suspens√£o por no m√°ximo 500ms, enquanto a cada libera√ß√£o o processo PROCESS2 pisca o \textbf{LED2}. O processo ocioso da parti√ß√£o PARTITION1 repetidamente aguarda um longo per√≠odo e ent√£o libera o processo PROCESS1, que pisca o \textbf{LED1} e suspende novamente por no m√°ximo 500ms, reiniciando a sequ√™ncia. Os padr√µes de \acp{LED} utilizados pelas tarefas s√£o os seguintes:
 
 \begin{itemize*}
-\item{Processo PROCESS1 da partiÁ„o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
-\item{Processo PROCESS2 da partiÁ„o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{Processo ocioso da partiÁ„o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partiÁ„o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partiÁ„o PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{PartiÁ„o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\item{Processo PROCESS1 da parti√ß√£o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da parti√ß√£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Parti√ß√£o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-O \textbf{LED2} deve piscar aproximadamente a cada 250ms, podendo variar porque o processo PROCESS1 pode interromper o processo PROCESS2, e a cada 500ms ou menos o \textbf{LED1} deve piscar. Quando o \textbf{LED1} pisca precisamente 500ms apÛs a ˙ltima vez em que foi ligado o processo PROCESS1 foi continuado pela expiraÁ„o do tempo de suspens„o, e quando pisca em um tempo menor que esse o processo PROCESS1 foi continuado pelo processo padr„o da partiÁ„o PARTITION1. Esse comportamento deve ser repetido indefinidamente.
+O \textbf{LED2} deve piscar aproximadamente a cada 250ms, podendo variar porque o processo PROCESS1 pode interromper o processo PROCESS2, e a cada 500ms ou menos o \textbf{LED1} deve piscar. Quando o \textbf{LED1} pisca precisamente 500ms ap√≥s a √∫ltima vez em que foi ligado o processo PROCESS1 foi continuado pela expira√ß√£o do tempo de suspens√£o, e quando pisca em um tempo menor que esse o processo PROCESS1 foi continuado pelo processo padr√£o da parti√ß√£o PARTITION1. Esse comportamento deve ser repetido indefinidamente.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar o correto funcionamento da utilizaÁ„o conjunta dos serviÁos \textbf{SUSPEND\_SELF} (com suspens„o por tempo limitado) e \textbf{RESUME}.
+Demonstrar o correto funcionamento da utiliza√ß√£o conjunta dos servi√ßos \textbf{SUSPEND\_SELF} (com suspens√£o por tempo limitado) e \textbf{RESUME}.
 SNIPPET_END
 MASK_END

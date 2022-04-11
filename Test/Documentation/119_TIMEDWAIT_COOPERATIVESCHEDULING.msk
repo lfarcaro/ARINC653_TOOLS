@@ -1,25 +1,25 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-O processo PROCESS1 liga o \textbf{LED1} por um longo perÌodo e ent„o cede o processamento ao processo PROCESS2, que tambÈm liga o \textbf{LED2} por um longo perÌodo e ent„o cede o processamento ao processo PROCESS1. Os padrıes de \acp{LED} utilizados pelas tarefas s„o os seguintes:
+O processo PROCESS1 liga o \textbf{LED1} por um longo per√≠odo e ent√£o cede o processamento ao processo PROCESS2, que tamb√©m liga o \textbf{LED2} por um longo per√≠odo e ent√£o cede o processamento ao processo PROCESS1. Os padr√µes de \acp{LED} utilizados pelas tarefas s√£o os seguintes:
 
 \begin{itemize*}
-\item{Processo PROCESS1 da partiÁ„o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
-\item{Processo PROCESS2 da partiÁ„o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{Processo ocioso da partiÁ„o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partiÁ„o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partiÁ„o PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{PartiÁ„o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\item{Processo PROCESS1 da parti√ß√£o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da parti√ß√£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Parti√ß√£o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-A seguinte sequÍncia de padrıes de \acp{LED} deve ser exibida repetidamente:
+A seguinte sequ√™ncia de padr√µes de \acp{LED} deve ser exibida repetidamente:
 
 \begin{itemize*}
-\item{\textbf{LED1} piscando de acordo com o padr„o de escalonamento por algum tempo;}
-\item{\textbf{LED2} piscando de acordo com o padr„o de escalonamento por algum tempo.}
+\item{\textbf{LED1} piscando de acordo com o padr√£o de escalonamento por algum tempo;}
+\item{\textbf{LED2} piscando de acordo com o padr√£o de escalonamento por algum tempo.}
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar o funcionamento do serviÁo \textbf{TIMED\_WAIT} para a realizaÁ„o de escalonamento cooperativo, que baseia-se na cess„o volunt·ria de recursos de processamento \citeX[p.6-6]{arpaci2012} e que È possÌvel quando dois ou mais processos possuem a mesma prioridade.
+Demonstrar o funcionamento do servi√ßo \textbf{TIMED\_WAIT} para a realiza√ß√£o de escalonamento cooperativo, que baseia-se na cess√£o volunt√°ria de recursos de processamento \citeX[p.6-6]{arpaci2012} e que √© poss√≠vel quando dois ou mais processos possuem a mesma prioridade.
 SNIPPET_END
 MASK_END

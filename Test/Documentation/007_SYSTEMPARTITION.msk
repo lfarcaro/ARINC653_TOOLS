@@ -1,18 +1,18 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-A cada liberação o processo PROCESS1 escreve na saída padrão informações sobre as partições e os processos do módulo, e a cada liberação o processo PROCESS2 escreve nessa mesma saída o horário atual do módulo. Os padrões de \acp{LED} repetidamente atribuídos pelas demais tarefas são os seguintes:
+A cada liberaÃ§Ã£o o processo PROCESS1 escreve na saÃ­da padrÃ£o informaÃ§Ãµes sobre as partiÃ§Ãµes e os processos do mÃ³dulo, e a cada liberaÃ§Ã£o o processo PROCESS2 escreve nessa mesma saÃ­da o horÃ¡rio atual do mÃ³dulo. Os padrÃµes de \acp{LED} repetidamente atribuÃ­dos pelas demais tarefas sÃ£o os seguintes:
 
 \begin{itemize*}
-\item{Processo ocioso da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{Processo ocioso da partição PARTITION3: \textbf{LED1} ligado, \textbf{LED2} ligado;}
-\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\item{Processo ocioso da partiÃ§Ã£o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partiÃ§Ã£o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partiÃ§Ã£o PARTITION3: \textbf{LED1} ligado, \textbf{LED2} ligado;}
+\item{PartiÃ§Ã£o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-Os \acp{LED} devem apresentar repetidamente o padrão de escalonamento do módulo. Na saída padrão deve ser exibido o horário atual do módulo na frequência de liberação do processo PROCESS2, e informações sobre as partições e processos a cada liberação do processo PROCESS1.
+Os \acp{LED} devem apresentar repetidamente o padrÃ£o de escalonamento do mÃ³dulo. Na saÃ­da padrÃ£o deve ser exibido o horÃ¡rio atual do mÃ³dulo na frequÃªncia de liberaÃ§Ã£o do processo PROCESS2, e informaÃ§Ãµes sobre as partiÃ§Ãµes e processos a cada liberaÃ§Ã£o do processo PROCESS1.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar a utilização e o correto funcionamento de partições de sistema que acessam dados do núcleo do \ac{SO}.
+Demonstrar a utilizaÃ§Ã£o e o correto funcionamento de partiÃ§Ãµes de sistema que acessam dados do nÃºcleo do \ac{SO}.
 SNIPPET_END
 MASK_END

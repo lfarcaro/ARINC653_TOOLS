@@ -1,11 +1,11 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-Os processos PROCESS1 e PROCESS2 repetidamente esperam pelo evento, piscam o \textbf{LED1} e o \textbf{LED2} (respectivamente) e aguardam 500ms e 250ms (respectivamente). O processo ocioso da partição PARTITION1 repetidamente obtém o identificador do evento por seu nome, aguarda durante um período longo, alternadamente habilita ou desabilita o evento (atribui seu estado para \textit{up} ou \textit{down}, respectivamente) e, finalmente, obtém e verifica o estado do evento.
+Os processos PROCESS1 e PROCESS2 repetidamente esperam pelo evento, piscam o \textbf{LED1} e o \textbf{LED2} (respectivamente) e aguardam 500ms e 250ms (respectivamente). O processo ocioso da partiÃ§Ã£o PARTITION1 repetidamente obtÃ©m o identificador do evento por seu nome, aguarda durante um perÃ­odo longo, alternadamente habilita ou desabilita o evento (atribui seu estado para \textit{up} ou \textit{down}, respectivamente) e, finalmente, obtÃ©m e verifica o estado do evento.
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-Inicialmente o evento encontra-se em estado \textit{down}, portanto ambos os \acp{LED} devem permanecer desligados. Após algum tempo o evento é ativado (assume estado \textit{up}) e, portanto, o \textbf{LED1} deve piscar aproximadamente a cada 500ms e o \textbf{LED2} aproximadamente a cada 250ms. Mais tarde o evento é restaurado, voltando ao estado \textit{down}, e portanto ambos os processos devem terminar o processamento atual e bloquear, reiniciando a sequência.
+Inicialmente o evento encontra-se em estado \textit{down}, portanto ambos os \acp{LED} devem permanecer desligados. ApÃ³s algum tempo o evento Ã© ativado (assume estado \textit{up}) e, portanto, o \textbf{LED1} deve piscar aproximadamente a cada 500ms e o \textbf{LED2} aproximadamente a cada 250ms. Mais tarde o evento Ã© restaurado, voltando ao estado \textit{down}, e portanto ambos os processos devem terminar o processamento atual e bloquear, reiniciando a sequÃªncia.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar a utilização e o correto funcionamento de eventos (mecanismo de comunicação intrapartição).
+Demonstrar a utilizaÃ§Ã£o e o correto funcionamento de eventos (mecanismo de comunicaÃ§Ã£o intrapartiÃ§Ã£o).
 SNIPPET_END
 MASK_END

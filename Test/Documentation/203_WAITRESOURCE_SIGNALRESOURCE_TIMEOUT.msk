@@ -1,20 +1,20 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-O processo PROCESS1 repetidamente aguarda por um recurso por no m·ximo 500ms ou atÈ que seja liberado, e ent„o pisca o \textbf{LED1}. O processo PROCESS2 repetidamente pisca o \textbf{LED2} a cada 250ms e, apÛs $n$ iteraÁıes, libera o mesmo recurso. Os padrıes de \acp{LED} utilizados pelas tarefas s„o os seguintes:
+O processo PROCESS1 repetidamente aguarda por um recurso por no m√°ximo 500ms ou at√© que seja liberado, e ent√£o pisca o \textbf{LED1}. O processo PROCESS2 repetidamente pisca o \textbf{LED2} a cada 250ms e, ap√≥s $n$ itera√ß√µes, libera o mesmo recurso. Os padr√µes de \acp{LED} utilizados pelas tarefas s√£o os seguintes:
 
 \begin{itemize*}
-\item{Processo PROCESS1 da partiÁ„o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
-\item{Processo PROCESS2 da partiÁ„o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{Processo ocioso da partiÁ„o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partiÁ„o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partiÁ„o PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{PartiÁ„o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\item{Processo PROCESS1 da parti√ß√£o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da parti√ß√£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Parti√ß√£o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-O \textbf{LED2} deve piscar aproximadamente a cada 250ms, e o \textbf{LED1} a cada 500ms ou menos. Quando o \textbf{LED1} pisca exatamente 500ms apÛs ser desligado, o processo PROCESS1 foi liberado pela expiraÁ„o do tempo limite de espera pelo recurso, e quando pisca em um intervalo menor que esse o recurso foi liberado pelo processo PROCESS2.
+O \textbf{LED2} deve piscar aproximadamente a cada 250ms, e o \textbf{LED1} a cada 500ms ou menos. Quando o \textbf{LED1} pisca exatamente 500ms ap√≥s ser desligado, o processo PROCESS1 foi liberado pela expira√ß√£o do tempo limite de espera pelo recurso, e quando pisca em um intervalo menor que esse o recurso foi liberado pelo processo PROCESS2.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar o correto funcionamento da utilizaÁ„o conjunta dos serviÁos internos \textbf{WAIT\_RESOURCE} (com espera por tempo limitado) e \textbf{SIGNAL\_RESOURCE}.
+Demonstrar o correto funcionamento da utiliza√ß√£o conjunta dos servi√ßos internos \textbf{WAIT\_RESOURCE} (com espera por tempo limitado) e \textbf{SIGNAL\_RESOURCE}.
 SNIPPET_END
 MASK_END

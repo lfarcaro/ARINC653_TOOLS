@@ -1,25 +1,25 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-O processo PROCESS1 repetidamente obtÈm o identificador do \textit{buffer} por seu nome, envia uma mensagem nele e, finalmente, obtÈm e verifica seu estado. Os processos PROCESS2 e PROCESS3 repetidamente recebem uma mensagem do \textit{buffer} e ent„o piscam o \textbf{LED1} e o \textbf{LED2} (respectivamente).
+O processo PROCESS1 repetidamente obt√©m o identificador do \textit{buffer} por seu nome, envia uma mensagem nele e, finalmente, obt√©m e verifica seu estado. Os processos PROCESS2 e PROCESS3 repetidamente recebem uma mensagem do \textit{buffer} e ent√£o piscam o \textbf{LED1} e o \textbf{LED2} (respectivamente).
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-O seguinte comportamento deve ser observado ao longo dos primeiros 2s de execuÁ„o:
+O seguinte comportamento deve ser observado ao longo dos primeiros 2s de execu√ß√£o:
 
 \begin{itemize*}
-\item{No tempo 0ms o processo PROCESS1 envia uma mensagem, que ser· consumida pelo processo PROCESS2 logo depois que o processo PROCESS1 aguardar por seu prÛximo perÌodo (fazendo com que o \textbf{LED1} pisque), e quando o processo PROCESS2 esperar por seu prÛximo perÌodo o processo PROCESS3 tenta receber uma mensagem mas o \textit{buffer} est· vazio, portanto o processo PROCESS3 ser· bloqueado;}
+\item{No tempo 0ms o processo PROCESS1 envia uma mensagem, que ser√° consumida pelo processo PROCESS2 logo depois que o processo PROCESS1 aguardar por seu pr√≥ximo per√≠odo (fazendo com que o \textbf{LED1} pisque), e quando o processo PROCESS2 esperar por seu pr√≥ximo per√≠odo o processo PROCESS3 tenta receber uma mensagem mas o \textit{buffer} est√° vazio, portanto o processo PROCESS3 ser√° bloqueado;}
 \item{No tempo 250ms o processo PROCESS1 envia outra mensagem, liberando o processo PROCESS3 (fazendo com que o \textbf{LED2} pisque);}
-\item{No tempo 500ms o processo PROCESS1 envia uma nova mensagem, que ser· consumida pelo processo PROCESS2 logo depois que o processo PROCESS1 aguardar por seu prÛximo perÌodo (fazendo com que o \textbf{LED1} pisque novamente);}
-\item{No tempo 750ms o processo PROCESS1 envia mais uma mensagem, porÈm nenhum processo aguarda por ela e portanto nenhum \ac{LED} È acionado;}
+\item{No tempo 500ms o processo PROCESS1 envia uma nova mensagem, que ser√° consumida pelo processo PROCESS2 logo depois que o processo PROCESS1 aguardar por seu pr√≥ximo per√≠odo (fazendo com que o \textbf{LED1} pisque novamente);}
+\item{No tempo 750ms o processo PROCESS1 envia mais uma mensagem, por√©m nenhum processo aguarda por ela e portanto nenhum \ac{LED} √© acionado;}
 \item{No tempo 1000ms o processo PROCESS1 envia mais uma mensagem, e portanto os processos PROCESS2 e PROCESS3 consomem mensagens (piscando o \textbf{LED1} e, em seguida, o \textbf{LED2});}
 \item{No tempo 1250ms o processo PROCESS1 envia mais uma mensagem;}
 \item{No tempo 1500ms o processo PROCESS1 envia mais uma mensagem e o processo PROCESS2 consome uma das mensagens enfileiradas (piscando o \textbf{LED1});}
 \item{No tempo 1750ms o processo PROCESS1 envia mais uma mensagem;}
-\item{No tempo 2000ms mais uma mensagem È enviada e os processos PROCESS2 e PROCESS3 consomem duas mensagens, piscando o \textbf{LED1} e, depois, o \textbf{LED2}.}
+\item{No tempo 2000ms mais uma mensagem √© enviada e os processos PROCESS2 e PROCESS3 consomem duas mensagens, piscando o \textbf{LED1} e, depois, o \textbf{LED2}.}
 \end{itemize*}
 
-Uma vez que o processo PROCESS1 envia uma nova mensagem a cada 250ms e os processos PROCESS2 e PROCESS3, que as consomem, tÍm perÌodos mais longos que esse, o \textit{buffer} ir· em algum momento ser completamente preenchido. Portanto, o comportamento a ser observado a longo prazo nos \acp{LED} È o padr„o imposto pelo escalonamento do conjunto de processos da partiÁ„o PARTITION1.
+Uma vez que o processo PROCESS1 envia uma nova mensagem a cada 250ms e os processos PROCESS2 e PROCESS3, que as consomem, t√™m per√≠odos mais longos que esse, o \textit{buffer} ir√° em algum momento ser completamente preenchido. Portanto, o comportamento a ser observado a longo prazo nos \acp{LED} √© o padr√£o imposto pelo escalonamento do conjunto de processos da parti√ß√£o PARTITION1.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar a utilizaÁ„o e o correto funcionamento de \textit{buffers} (mecanismo de comunicaÁ„o intrapartiÁ„o).
+Demonstrar a utiliza√ß√£o e o correto funcionamento de \textit{buffers} (mecanismo de comunica√ß√£o intraparti√ß√£o).
 SNIPPET_END
 MASK_END

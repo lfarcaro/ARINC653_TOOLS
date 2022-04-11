@@ -1,12 +1,12 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-Os seguintes padrıes s„o repetidamente atribuÌdos pelas tarefas do mÛdulo aos \acp{LED}:
+Os seguintes padr√µes s√£o repetidamente atribu√≠dos pelas tarefas do m√≥dulo aos \acp{LED}:
 
 \begin{itemize*}
-\item{Processo ocioso da partiÁ„o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partiÁ„o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{Processo ocioso da partiÁ„o PARTITION3: \textbf{LED1} ligado, \textbf{LED2} ligado;}
-\item{PartiÁ„o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\item{Processo ocioso da parti√ß√£o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION3: \textbf{LED1} ligado, \textbf{LED2} ligado;}
+\item{Parti√ß√£o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
@@ -16,13 +16,13 @@ Os \acp{LED} devem apresentar, repetidamente, o seguinte comportamento:
 \item{Apenas \textbf{LED1} ligado durante 25ms (PARTITION1);}
 \item{Apenas \textbf{LED2} ligado durante 10ms (PARTITION2);}
 \item{Ambos \acp{LED} ligados durante 10ms (PARTITION3);}
-\item{Ambos \acp{LED} desligados durante 5ms (partiÁ„o ociosa);}
+\item{Ambos \acp{LED} desligados durante 5ms (parti√ß√£o ociosa);}
 \item{Apenas \textbf{LED1} ligado durante 25ms (PARTITION1);}
 \item{Apenas \textbf{LED2} ligado durante 10ms (PARTITION2);}
-\item{Ambos \acp{LED} desligados durante 15ms (partiÁ„o ociosa).}
+\item{Ambos \acp{LED} desligados durante 15ms (parti√ß√£o ociosa).}
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar a corretude temporal do escalonamento de partiÁıes em velocidade adequada ao escalonamento de processos.
+Demonstrar a corretude temporal do escalonamento de parti√ß√µes em velocidade adequada ao escalonamento de processos.
 SNIPPET_END
 MASK_END

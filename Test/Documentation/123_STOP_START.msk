@@ -1,20 +1,20 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-A cada liberação o processo PROCESS2 pisca o \textbf{LED2}. A cada liberação o processo PROCESS1 pisca o \textbf{LED1} e, a cada $n$ liberações, invoca alternadamente os serviços \textbf{STOP} ou \textbf{START} para o processo PROCESS2. Os padrões de \acp{LED} utilizados pelas tarefas são os seguintes:
+A cada liberaÃ§Ã£o o processo PROCESS2 pisca o \textbf{LED2}. A cada liberaÃ§Ã£o o processo PROCESS1 pisca o \textbf{LED1} e, a cada $n$ liberaÃ§Ãµes, invoca alternadamente os serviÃ§os \textbf{STOP} ou \textbf{START} para o processo PROCESS2. Os padrÃµes de \acp{LED} utilizados pelas tarefas sÃ£o os seguintes:
 
 \begin{itemize*}
-\item{Processo PROCESS1 da partição PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
-\item{Processo PROCESS2 da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{Processo ocioso da partição PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partição PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partição PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{Partição ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\item{Processo PROCESS1 da partiÃ§Ã£o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da partiÃ§Ã£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da partiÃ§Ã£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partiÃ§Ã£o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da partiÃ§Ã£o PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{PartiÃ§Ã£o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-O \textbf{LED1} deve piscar a cada 500ms, e o \textbf{LED2} deve piscar algumas vezes durante as primeiras $n$ liberações do processo PROCESS1 e permanecer desligado durante as próximas $n$, voltando então a piscar e reiniciando a sequência, que deve ser repetida indefinidamente.
+O \textbf{LED1} deve piscar a cada 500ms, e o \textbf{LED2} deve piscar algumas vezes durante as primeiras $n$ liberaÃ§Ãµes do processo PROCESS1 e permanecer desligado durante as prÃ³ximas $n$, voltando entÃ£o a piscar e reiniciando a sequÃªncia, que deve ser repetida indefinidamente.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar o correto funcionamento da utilização conjunta dos serviços \textbf{STOP} e \textbf{START}.
+Demonstrar o correto funcionamento da utilizaÃ§Ã£o conjunta dos serviÃ§os \textbf{STOP} e \textbf{START}.
 SNIPPET_END
 MASK_END

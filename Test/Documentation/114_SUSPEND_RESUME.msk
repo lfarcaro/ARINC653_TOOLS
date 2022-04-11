@@ -1,22 +1,22 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-A cada liberaÁ„o o processo PROCESS1 liga o \textbf{LED1} durante um curto perÌodo, e alternadamente suspende ou continua o processo PROCESS2, que repetidamente liga o \textbf{LED2}. Os padrıes de \acp{LED} utilizados pelas tarefas s„o os seguintes:
+A cada libera√ß√£o o processo PROCESS1 liga o \textbf{LED1} durante um curto per√≠odo, e alternadamente suspende ou continua o processo PROCESS2, que repetidamente liga o \textbf{LED2}. Os padr√µes de \acp{LED} utilizados pelas tarefas s√£o os seguintes:
 
 \begin{itemize*}
-\item{Processo PROCESS1 da partiÁ„o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
-\item{Processo PROCESS2 da partiÁ„o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{Processo ocioso da partiÁ„o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partiÁ„o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partiÁ„o PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{PartiÁ„o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\item{Processo PROCESS1 da parti√ß√£o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da parti√ß√£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Parti√ß√£o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-O \textbf{LED2} deve permanecer ligado durante todo o tempo alocado ‡ partiÁ„o PARTITION1 atÈ que o processo PROCESS1 seja liberado, suspendendo o processo PROCESS2 e permanecendo, portanto, o \textbf{LED2} desligado atÈ que PROCESS1 seja liberado novamente, continuando PROCESS2 e reiniciando a sequÍncia. Essa sequÍncia deve ser repetida indefinidamente.
+O \textbf{LED2} deve permanecer ligado durante todo o tempo alocado √† parti√ß√£o PARTITION1 at√© que o processo PROCESS1 seja liberado, suspendendo o processo PROCESS2 e permanecendo, portanto, o \textbf{LED2} desligado at√© que PROCESS1 seja liberado novamente, continuando PROCESS2 e reiniciando a sequ√™ncia. Essa sequ√™ncia deve ser repetida indefinidamente.
 
-NOTA: Quando o mÛdulo È ativado o processo PROCESS2 deve iniciar sua execuÁ„o antes do processo PROCESS1, j· que processos aperiÛdicos s„o liberados imediatamente que iniciados e processos periÛdicos s„o liberados apenas no inÌcio do prÛximo perÌodo da partiÁ„o.
+NOTA: Quando o m√≥dulo √© ativado o processo PROCESS2 deve iniciar sua execu√ß√£o antes do processo PROCESS1, j√° que processos aperi√≥dicos s√£o liberados imediatamente que iniciados e processos peri√≥dicos s√£o liberados apenas no in√≠cio do pr√≥ximo per√≠odo da parti√ß√£o.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar o correto funcionamento da utilizaÁ„o conjunta dos serviÁos \textbf{SUSPEND} e \textbf{RESUME}.
+Demonstrar o correto funcionamento da utiliza√ß√£o conjunta dos servi√ßos \textbf{SUSPEND} e \textbf{RESUME}.
 SNIPPET_END
 MASK_END

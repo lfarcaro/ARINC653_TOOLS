@@ -1,11 +1,11 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-O processo PROCESS1 da partiÁ„o PARTITION1 escreve em uma porta de amostragem a cada 500ms, enquanto os processos PROCESS1 das partiÁıes PARTITION2 e PARTITION3 leem de portas de amostragem a cada 250ms e, se o valor È v·lido, piscam o \textit{LED1} e, se inv·lido, piscam o \textit{LED2}.
+O processo PROCESS1 da parti√ß√£o PARTITION1 escreve em uma porta de amostragem a cada 500ms, enquanto os processos PROCESS1 das parti√ß√µes PARTITION2 e PARTITION3 leem de portas de amostragem a cada 250ms e, se o valor √© v√°lido, piscam o \textit{LED1} e, se inv√°lido, piscam o \textit{LED2}.
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-Os \acp{LED} devem piscar duas vezes alternadamente a cada 250ms (uma vez para a partiÁ„o PARTITION2 e outra para a partiÁ„o PARTITION3). Isso porque a porta È escrita a cada 500ms mas seu perÌodo de atualizaÁ„o È de 250ms e, por isso, o valor lido apenas È considerado v·lido a cada 500ms.
+Os \acp{LED} devem piscar duas vezes alternadamente a cada 250ms (uma vez para a parti√ß√£o PARTITION2 e outra para a parti√ß√£o PARTITION3). Isso porque a porta √© escrita a cada 500ms mas seu per√≠odo de atualiza√ß√£o √© de 250ms e, por isso, o valor lido apenas √© considerado v√°lido a cada 500ms.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar o correto funcionamento de portas de amostragem (mecanismo de comunicaÁ„o interpartiÁ„o) conectadas a partiÁıes do mesmo mÛdulo.
+Demonstrar o correto funcionamento de portas de amostragem (mecanismo de comunica√ß√£o interparti√ß√£o) conectadas a parti√ß√µes do mesmo m√≥dulo.
 SNIPPET_END
 MASK_END

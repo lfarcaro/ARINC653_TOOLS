@@ -1,11 +1,11 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-Todas as tarefas do módulo executam operações sobre variáveis numéricas de ponto flutuante (soma, subtração, multiplicação e divisão) e, se algum erro for detectado no resultado dessas operações, essas entram em um laço infinito ligando ambos os \acp{LED}.
+Todas as tarefas do mÃ³dulo executam operaÃ§Ãµes sobre variÃ¡veis numÃ©ricas de ponto flutuante (soma, subtraÃ§Ã£o, multiplicaÃ§Ã£o e divisÃ£o) e, se algum erro for detectado no resultado dessas operaÃ§Ãµes, essas entram em um laÃ§o infinito ligando ambos os \acp{LED}.
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-Nenhum \ac{LED} deve ser acionado durante a execução do teste.
+Nenhum \ac{LED} deve ser acionado durante a execuÃ§Ã£o do teste.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar a corretude do procedimento de salvamento e restauração de contexto do coprocessador de ponto flutuante (caso um esteja sendo utilizado).
+Demonstrar a corretude do procedimento de salvamento e restauraÃ§Ã£o de contexto do coprocessador de ponto flutuante (caso um esteja sendo utilizado).
 SNIPPET_END
 MASK_END

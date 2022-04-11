@@ -1,11 +1,11 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-O processo PROCESS1 da partição PARTITION1 inicializa a entrada \ac{ADC} do processador chamada \textbf{AIN5} (pino \textbf{P9.36} da plataforma \textit{BeagleBone}) e então, a cada 100ms, lê uma amostra gerada por esse dispositivo, escreve-a na porta de amostragem e pisca o \textbf{LED1}. Este teste deve ser utilizado em conjunto com o teste \textbf{SAMPLINGPORT\_SENSOR\_MODULE2}.
+O processo PROCESS1 da partiÃ§Ã£o PARTITION1 inicializa a entrada \ac{ADC} do processador chamada \textbf{AIN5} (pino \textbf{P9.36} da plataforma \textit{BeagleBone}) e entÃ£o, a cada 100ms, lÃª uma amostra gerada por esse dispositivo, escreve-a na porta de amostragem e pisca o \textbf{LED1}. Este teste deve ser utilizado em conjunto com o teste \textbf{SAMPLINGPORT\_SENSOR\_MODULE2}.
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
 O \textbf{LED1} deve piscar a cada 100ms.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar a utilização prática de portas de amostragem (mecanismo de comunicação interpartição) conectadas a partições de dois módulos diferentes para transmissão de amostras de um sensor (utilizado em conjunto com o teste \textbf{SAMPLINGPORT\_SENSOR\_MODULE2}).
+Demonstrar a utilizaÃ§Ã£o prÃ¡tica de portas de amostragem (mecanismo de comunicaÃ§Ã£o interpartiÃ§Ã£o) conectadas a partiÃ§Ãµes de dois mÃ³dulos diferentes para transmissÃ£o de amostras de um sensor (utilizado em conjunto com o teste \textbf{SAMPLINGPORT\_SENSOR\_MODULE2}).
 SNIPPET_END
 MASK_END

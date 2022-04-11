@@ -1,11 +1,11 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-A partição ociosa, os processos ociosos e os processos de aplicação de todas as partições repetidamente verificam o estado atual do sistema. Após $n$ liberações, o processo PROCESS1 lança um erro de aplicação que faz com que o processo tratador de erros da partição PARTITION1 seja iniciado. O processo tratador de erros da partição PARTITION1 verifica o estado atual do sistema e lança um erro de aplicação, causando a inicialização do \textit{HM callback} da partição. O \textit{HM callback} da partição PARTITION1 verifica o estado atual do sistema e lança um erro de aplicação, fazendo com que o \textit{HM callback} do módulo seja iniciado. O \textit{HM callback} do módulo verifica o estado atual do sistema e lança um erro de aplicação, fazendo com que a ação definida para tratamento desse tipo de erro a nível de sistema seja imediatamente executada, no caso a reinicialização do módulo, fazendo com que a sequência seja repetida indefinidamente. Caso um estado inválido seja detectado por qualquer uma das tarefas, a tarefa passa a executar um laço infinito ligando ambos os \acp{LED}.
+A partiÃ§Ã£o ociosa, os processos ociosos e os processos de aplicaÃ§Ã£o de todas as partiÃ§Ãµes repetidamente verificam o estado atual do sistema. ApÃ³s $n$ liberaÃ§Ãµes, o processo PROCESS1 lanÃ§a um erro de aplicaÃ§Ã£o que faz com que o processo tratador de erros da partiÃ§Ã£o PARTITION1 seja iniciado. O processo tratador de erros da partiÃ§Ã£o PARTITION1 verifica o estado atual do sistema e lanÃ§a um erro de aplicaÃ§Ã£o, causando a inicializaÃ§Ã£o do \textit{HM callback} da partiÃ§Ã£o. O \textit{HM callback} da partiÃ§Ã£o PARTITION1 verifica o estado atual do sistema e lanÃ§a um erro de aplicaÃ§Ã£o, fazendo com que o \textit{HM callback} do mÃ³dulo seja iniciado. O \textit{HM callback} do mÃ³dulo verifica o estado atual do sistema e lanÃ§a um erro de aplicaÃ§Ã£o, fazendo com que a aÃ§Ã£o definida para tratamento desse tipo de erro a nÃ­vel de sistema seja imediatamente executada, no caso a reinicializaÃ§Ã£o do mÃ³dulo, fazendo com que a sequÃªncia seja repetida indefinidamente. Caso um estado invÃ¡lido seja detectado por qualquer uma das tarefas, a tarefa passa a executar um laÃ§o infinito ligando ambos os \acp{LED}.
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-Nenhum \ac{LED} deve ser acionado durante a execução do teste.
+Nenhum \ac{LED} deve ser acionado durante a execuÃ§Ã£o do teste.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar a corretude dos estados do sistema detectados pelo núcleo do \ac{SO}, que são empregados pelo mecanismo de monitoramento (\textit{health monitoring}) do \ac{SO}.
+Demonstrar a corretude dos estados do sistema detectados pelo nÃºcleo do \ac{SO}, que sÃ£o empregados pelo mecanismo de monitoramento (\textit{health monitoring}) do \ac{SO}.
 SNIPPET_END
 MASK_END

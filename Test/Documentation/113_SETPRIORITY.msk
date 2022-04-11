@@ -1,20 +1,20 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-A cada liberaÁ„o os processos PROCESS1 e PROCESS2 atribuem um diferente padr„o aos \acp{LED} por um curto perÌodo. ApÛs algumas liberaÁıes, o processo PROCESS1 atribui a prioridade do processo PROCESS2 para um valor maior que sua prioridade, e apÛs mais algumas liberaÁıes restaura a prioridade original desse processo. Os padrıes de \acp{LED} utilizados pelas tarefas s„o os seguintes:
+A cada libera√ß√£o os processos PROCESS1 e PROCESS2 atribuem um diferente padr√£o aos \acp{LED} por um curto per√≠odo. Ap√≥s algumas libera√ß√µes, o processo PROCESS1 atribui a prioridade do processo PROCESS2 para um valor maior que sua prioridade, e ap√≥s mais algumas libera√ß√µes restaura a prioridade original desse processo. Os padr√µes de \acp{LED} utilizados pelas tarefas s√£o os seguintes:
 
 \begin{itemize*}
-\item{Processo PROCESS1 da partiÁ„o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
-\item{Processo PROCESS2 da partiÁ„o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{Processo ocioso da partiÁ„o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partiÁ„o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partiÁ„o PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{PartiÁ„o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\item{Processo PROCESS1 da parti√ß√£o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da parti√ß√£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION3: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Parti√ß√£o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-Durante a execuÁ„o dos processos com as prioridades originais, o \textbf{LED1} deve piscar precisamente a cada 500ms e o \textbf{LED2} deve piscar uma vez logo apÛs o \textbf{LED1} e outra 250ms apÛs o \textbf{LED1} ser ligado. ApÛs a alteraÁ„o da prioridade do processo PROCESS2 o \textbf{LED2} deve piscar precisamente a cada 250ms, enquanto o \textbf{LED1} deve piscar uma vez sim e uma vez n„o logo apÛs o \textbf{LED2}. Em outras palavras, a ordem na qual os \acp{LED} piscam quando os processos PROCESS1 e PROCESS2 est„o em fase deve ser invertida quando a prioridade do processo PROCESS2 È alterada.
+Durante a execu√ß√£o dos processos com as prioridades originais, o \textbf{LED1} deve piscar precisamente a cada 500ms e o \textbf{LED2} deve piscar uma vez logo ap√≥s o \textbf{LED1} e outra 250ms ap√≥s o \textbf{LED1} ser ligado. Ap√≥s a altera√ß√£o da prioridade do processo PROCESS2 o \textbf{LED2} deve piscar precisamente a cada 250ms, enquanto o \textbf{LED1} deve piscar uma vez sim e uma vez n√£o logo ap√≥s o \textbf{LED2}. Em outras palavras, a ordem na qual os \acp{LED} piscam quando os processos PROCESS1 e PROCESS2 est√£o em fase deve ser invertida quando a prioridade do processo PROCESS2 √© alterada.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar o correto funcionamento do serviÁo \textbf{SET\_PRIORITY}.
+Demonstrar o correto funcionamento do servi√ßo \textbf{SET\_PRIORITY}.
 SNIPPET_END
 MASK_END

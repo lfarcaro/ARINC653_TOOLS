@@ -1,17 +1,17 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-A cada liberação o processo PROCESS2 recebe uma mensagem do \textit{buffer} e pisca o \textbf{LED2}, podendo bloquear caso esse encontre-se vazio. O processo PROCESS1 mantém um contador de liberações, e possui um diferente comportamento de acordo com o valor desse contador:
+A cada liberaÃ§Ã£o o processo PROCESS2 recebe uma mensagem do \textit{buffer} e pisca o \textbf{LED2}, podendo bloquear caso esse encontre-se vazio. O processo PROCESS1 mantÃ©m um contador de liberaÃ§Ãµes, e possui um diferente comportamento de acordo com o valor desse contador:
 
 \begin{itemize*}
-\item{Nas 20 primeiras liberações, envia uma mensagem no \textit{buffer}, podendo bloquear caso esse encontre-se cheio, e pisca o \textbf{LED1};}
-\item{Entre as liberações 20 e 99, não executa qualquer ação;}
-\item{Na liberação de número 100, reinicia a sequência atribuindo zero ao contador de liberações.}
+\item{Nas 20 primeiras liberaÃ§Ãµes, envia uma mensagem no \textit{buffer}, podendo bloquear caso esse encontre-se cheio, e pisca o \textbf{LED1};}
+\item{Entre as liberaÃ§Ãµes 20 e 99, nÃ£o executa qualquer aÃ§Ã£o;}
+\item{Na liberaÃ§Ã£o de nÃºmero 100, reinicia a sequÃªncia atribuindo zero ao contador de liberaÃ§Ãµes.}
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-Inicialmente o \textbf{LED1} deve piscar a cada 100ms e o \textbf{LED2} a cada 500ms até que o \textit{buffer} esteja cheio. Então ambos os \acp{LED} devem piscar a cada 500ms até que o processo PROCESS1 pare de enviar mensagens no \textit{buffer}, quando o \textbf{LED1} parará de piscar. Depois disso, o \textbf{LED2} deve piscar a cada 500ms até que o \textit{buffer} esvazie, quando ambos os \acp{LED} devem permanecer desligados até que a sequência seja reiniciada. Esse comportamento deve ser repetido indefinidamente.
+Inicialmente o \textbf{LED1} deve piscar a cada 100ms e o \textbf{LED2} a cada 500ms atÃ© que o \textit{buffer} esteja cheio. EntÃ£o ambos os \acp{LED} devem piscar a cada 500ms atÃ© que o processo PROCESS1 pare de enviar mensagens no \textit{buffer}, quando o \textbf{LED1} pararÃ¡ de piscar. Depois disso, o \textbf{LED2} deve piscar a cada 500ms atÃ© que o \textit{buffer} esvazie, quando ambos os \acp{LED} devem permanecer desligados atÃ© que a sequÃªncia seja reiniciada. Esse comportamento deve ser repetido indefinidamente.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar o correto funcionamento de \textit{buffers} (mecanismo de comunicação intrapartição) quando a fila de mensagens encontra-se cheia ou vazia.
+Demonstrar o correto funcionamento de \textit{buffers} (mecanismo de comunicaÃ§Ã£o intrapartiÃ§Ã£o) quando a fila de mensagens encontra-se cheia ou vazia.
 SNIPPET_END
 MASK_END

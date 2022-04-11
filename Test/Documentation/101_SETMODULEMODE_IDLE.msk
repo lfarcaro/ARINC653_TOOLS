@@ -1,20 +1,20 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-ApÛs um determinado n˙mero de liberaÁıes, o processo PROCESS2 da partiÁ„o PARTITION1 atribui o modo de operaÁ„o do mÛdulo para \textbf{IDLE}, parando sua execuÁ„o. Os padrıes de \acp{LED} utilizados pelas tarefas s„o os seguintes:
+Ap√≥s um determinado n√∫mero de libera√ß√µes, o processo PROCESS2 da parti√ß√£o PARTITION1 atribui o modo de opera√ß√£o do m√≥dulo para \textbf{IDLE}, parando sua execu√ß√£o. Os padr√µes de \acp{LED} utilizados pelas tarefas s√£o os seguintes:
 
 \begin{itemize*}
-\item{Processo PROCESS1 da partiÁ„o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
-\item{Processo PROCESS2 da partiÁ„o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{Processo ocioso da partiÁ„o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partiÁ„o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{Processo ocioso da partiÁ„o PARTITION3: \textbf{LED1} ligado, \textbf{LED2} ligado;}
-\item{PartiÁ„o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\item{Processo PROCESS1 da parti√ß√£o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo PROCESS2 da parti√ß√£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION2: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION3: \textbf{LED1} ligado, \textbf{LED2} ligado;}
+\item{Parti√ß√£o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-Os \acp{LED} devem apresentar repetidamente o padr„o de escalonamento atÈ que o mÛdulo seja parado, sendo ent„o exibido permanentemente o padr„o do processo PROCESS2 ou ambos os \acp{LED} desligados, dependendo da forma como a parada do mÛdulo È implementada.
+Os \acp{LED} devem apresentar repetidamente o padr√£o de escalonamento at√© que o m√≥dulo seja parado, sendo ent√£o exibido permanentemente o padr√£o do processo PROCESS2 ou ambos os \acp{LED} desligados, dependendo da forma como a parada do m√≥dulo √© implementada.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar o correto funcionamento do serviÁo \textbf{SET\_MODULE\_MODE} quando solicitada transiÁ„o para o modo de operaÁ„o \textbf{IDLE}.
+Demonstrar o correto funcionamento do servi√ßo \textbf{SET\_MODULE\_MODE} quando solicitada transi√ß√£o para o modo de opera√ß√£o \textbf{IDLE}.
 SNIPPET_END
 MASK_END

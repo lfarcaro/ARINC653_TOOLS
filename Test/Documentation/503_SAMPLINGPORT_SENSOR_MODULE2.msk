@@ -1,13 +1,13 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-O processo PROCESS1 da partiÁ„o PARTITION1 inicializa a saÌda \ac{PWM} do processador chamada \textbf{EHRPWM1A} (pino \textbf{P9.14} da plataforma \textit{BeagleBone}) e ent„o, a cada 100ms, lÍ a amostra atual da porta de amostragem e, se v·lida, atribui o \textit{duty cycle} da saÌda \ac{PWM} de acordo com a amostra e pisca o \textbf{LED1}, sen„o atribui \textit{duty cycle} zero e pisca o \textbf{LED2}. Este teste deve ser utilizado em conjunto com o teste \textbf{SAMPLINGPORT\_SENSOR\_MODULE1}.
+O processo PROCESS1 da parti√ß√£o PARTITION1 inicializa a sa√≠da \ac{PWM} do processador chamada \textbf{EHRPWM1A} (pino \textbf{P9.14} da plataforma \textit{BeagleBone}) e ent√£o, a cada 100ms, l√™ a amostra atual da porta de amostragem e, se v√°lida, atribui o \textit{duty cycle} da sa√≠da \ac{PWM} de acordo com a amostra e pisca o \textbf{LED1}, sen√£o atribui \textit{duty cycle} zero e pisca o \textbf{LED2}. Este teste deve ser utilizado em conjunto com o teste \textbf{SAMPLINGPORT\_SENSOR\_MODULE1}.
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-Enquanto os mÛdulos estiverem \textbf{desconectados} o \textbf{LED2} deve piscar a cada 100ms, pois a porta de amostragem n„o estar· sendo atualizada e, portanto, seu valor ser· considerado inv·lido.
+Enquanto os m√≥dulos estiverem \textbf{desconectados} o \textbf{LED2} deve piscar a cada 100ms, pois a porta de amostragem n√£o estar√° sendo atualizada e, portanto, seu valor ser√° considerado inv√°lido.
 
-Enquanto os mÛdulos estiverem \textbf{conectados} o \textbf{LED1} deve piscar a cada 100ms e o \textit{duty cycle} da saÌda \ac{PWM} deve variar de acordo com as amostras coletadas pelo mÛdulo emissor, pois a porta de amostragem estar· sendo atualizada e, portanto, seu valor ser· considerado v·lido.
+Enquanto os m√≥dulos estiverem \textbf{conectados} o \textbf{LED1} deve piscar a cada 100ms e o \textit{duty cycle} da sa√≠da \ac{PWM} deve variar de acordo com as amostras coletadas pelo m√≥dulo emissor, pois a porta de amostragem estar√° sendo atualizada e, portanto, seu valor ser√° considerado v√°lido.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar a utilizaÁ„o pr·tica de portas de amostragem (mecanismo de comunicaÁ„o interpartiÁ„o) conectadas a partiÁıes de dois mÛdulos diferentes para transmiss„o de amostras de um sensor (utilizado em conjunto com o teste \textbf{SAMPLINGPORT\_SENSOR\_MODULE1}).
+Demonstrar a utiliza√ß√£o pr√°tica de portas de amostragem (mecanismo de comunica√ß√£o interparti√ß√£o) conectadas a parti√ß√µes de dois m√≥dulos diferentes para transmiss√£o de amostras de um sensor (utilizado em conjunto com o teste \textbf{SAMPLINGPORT\_SENSOR\_MODULE1}).
 SNIPPET_END
 MASK_END

@@ -1,11 +1,11 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-O processo PROCESS1 repetidamente obtÈm o identificador do \textit{buffer} por seu nome, envia uma mensagem nele com limite de tempo de 250ms, pisca o \textbf{LED1} e, finalmente, obtÈm e verifica o estado do \textit{buffer}. O processo PROCESS2 repetidamente recebe uma mensagem do \textit{buffer} e ent„o pisca o \textbf{LED2}.
+O processo PROCESS1 repetidamente obt√©m o identificador do \textit{buffer} por seu nome, envia uma mensagem nele com limite de tempo de 250ms, pisca o \textbf{LED1} e, finalmente, obt√©m e verifica o estado do \textit{buffer}. O processo PROCESS2 repetidamente recebe uma mensagem do \textit{buffer} e ent√£o pisca o \textbf{LED2}.
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-O \textbf{LED2} deve piscar aproximadamente a cada 1000ms, enquanto o \textbf{LED1} deve piscar no mÌnimo a cada 250ms, podendo piscar antes caso o processo PROCESS2 receba uma mensagem. Esse comportamento deve ser repetido indefinidamente.
+O \textbf{LED2} deve piscar aproximadamente a cada 1000ms, enquanto o \textbf{LED1} deve piscar no m√≠nimo a cada 250ms, podendo piscar antes caso o processo PROCESS2 receba uma mensagem. Esse comportamento deve ser repetido indefinidamente.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar a utilizaÁ„o e o correto funcionamento de \textit{buffers} (mecanismo de comunicaÁ„o intrapartiÁ„o) com espera pelo envio de mensagens por tempo limitado.
+Demonstrar a utiliza√ß√£o e o correto funcionamento de \textit{buffers} (mecanismo de comunica√ß√£o intraparti√ß√£o) com espera pelo envio de mensagens por tempo limitado.
 SNIPPET_END
 MASK_END

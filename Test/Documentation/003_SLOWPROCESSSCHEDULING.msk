@@ -1,6 +1,6 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-Os processos ociosos das partições e a partição ociosa repetidamente desligam ambos os \acp{LED}, enquanto os processos da partição PARTITION1, a cada liberação, atribuem os seguintes padrões aos \acp{LED} por um curto período:
+Os processos ociosos das partiÃ§Ãµes e a partiÃ§Ã£o ociosa repetidamente desligam ambos os \acp{LED}, enquanto os processos da partiÃ§Ã£o PARTITION1, a cada liberaÃ§Ã£o, atribuem os seguintes padrÃµes aos \acp{LED} por um curto perÃ­odo:
 
 \begin{itemize*}
 \item{PROCESS1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
@@ -8,17 +8,17 @@ Os processos ociosos das partições e a partição ociosa repetidamente desligam am
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-A partir do início do segundo período da partição PARTITION1 (que inicia 2s após a inicialização do sistema), os \acp{LED} devem apresentar repetidamente o seguinte comportamento:
+A partir do inÃ­cio do segundo perÃ­odo da partiÃ§Ã£o PARTITION1 (que inicia 2s apÃ³s a inicializaÃ§Ã£o do sistema), os \acp{LED} devem apresentar repetidamente o seguinte comportamento:
 
 \begin{itemize*}
-\item{Apenas \textbf{LED1} ligado por um curto período (PROCESS1);}
-\item{Apenas \textbf{LED2} ligado por um curto período (PROCESS2);}
-\item{Ambos \acp{LED} desligados até 4s a partir do início da sequência;}
-\item{Apenas \textbf{LED1} ligado por um curto período (PROCESS1);}
-\item{Ambos \acp{LED} desligados até 8s a partir do início da sequência.}
+\item{Apenas \textbf{LED1} ligado por um curto perÃ­odo (PROCESS1);}
+\item{Apenas \textbf{LED2} ligado por um curto perÃ­odo (PROCESS2);}
+\item{Ambos \acp{LED} desligados atÃ© 4s a partir do inÃ­cio da sequÃªncia;}
+\item{Apenas \textbf{LED1} ligado por um curto perÃ­odo (PROCESS1);}
+\item{Ambos \acp{LED} desligados atÃ© 8s a partir do inÃ­cio da sequÃªncia.}
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar a corretude temporal do escalonamento de processos de uma partição em velocidade visualmente observável através de \acp{LED}.
+Demonstrar a corretude temporal do escalonamento de processos de uma partiÃ§Ã£o em velocidade visualmente observÃ¡vel atravÃ©s de \acp{LED}.
 SNIPPET_END
 MASK_END

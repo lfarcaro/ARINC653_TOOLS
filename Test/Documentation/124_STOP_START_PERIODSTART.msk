@@ -1,18 +1,18 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-A cada liberaÁ„o o processo PROCESS1 liga o \textbf{LED1} e entra em um laÁo infinito, perdendo seu \textit{deadline} e fazendo com que o processo tratador de erros da partiÁ„o PARTITION1 seja iniciado. O processo tratador de erros liga o \textbf{LED2} e reinicia o processo PROCESS1. Os padrıes de \acp{LED} utilizados pelas tarefas s„o os seguintes:
+A cada libera√ß√£o o processo PROCESS1 liga o \textbf{LED1} e entra em um la√ßo infinito, perdendo seu \textit{deadline} e fazendo com que o processo tratador de erros da parti√ß√£o PARTITION1 seja iniciado. O processo tratador de erros liga o \textbf{LED2} e reinicia o processo PROCESS1. Os padr√µes de \acp{LED} utilizados pelas tarefas s√£o os seguintes:
 
 \begin{itemize*}
-\item{Processo PROCESS1 da partiÁ„o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
-\item{Processo ocioso da partiÁ„o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
-\item{Processo tratador de erros da partiÁ„o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
-\item{PartiÁ„o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
+\item{Processo PROCESS1 da parti√ß√£o PARTITION1: \textbf{LED1} ligado, \textbf{LED2} desligado;}
+\item{Processo ocioso da parti√ß√£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} desligado;}
+\item{Processo tratador de erros da parti√ß√£o PARTITION1: \textbf{LED1} desligado, \textbf{LED2} ligado;}
+\item{Parti√ß√£o ociosa: \textbf{LED1} desligado, \textbf{LED2} desligado.}
 \end{itemize*}
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-Um osciloscÛpio deve ser utilizado para verificar que o momentos nos quais o \textbf{LED1} È ligado est„o corretamente alinhados em relaÁ„o ‡ escala da partiÁ„o PARTITION1, levando em conta as janelas de tempo de inÌcio de perÌodo. Visualmente nenhuma observaÁ„o È conclusiva.
+Um oscilosc√≥pio deve ser utilizado para verificar que o momentos nos quais o \textbf{LED1} √© ligado est√£o corretamente alinhados em rela√ß√£o √† escala da parti√ß√£o PARTITION1, levando em conta as janelas de tempo de in√≠cio de per√≠odo. Visualmente nenhuma observa√ß√£o √© conclusiva.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar a corretude do momento da primeira liberaÁ„o de processos periÛdicos, levando em conta as janelas de tempo de inÌcio de perÌodo da partiÁ„o.
+Demonstrar a corretude do momento da primeira libera√ß√£o de processos peri√≥dicos, levando em conta as janelas de tempo de in√≠cio de per√≠odo da parti√ß√£o.
 SNIPPET_END
 MASK_END

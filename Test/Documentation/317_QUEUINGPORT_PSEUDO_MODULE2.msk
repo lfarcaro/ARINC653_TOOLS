@@ -1,13 +1,13 @@
 MASK_START
 SNIPPET_START DESCRIPTION
-Os processos denominados PROCESS1 das partições PARTITION1, PARTITION2 e PARTITION3 enviam em portas de amostragem a cada 500ms, enquanto os processos denominados PROCESS2 dessas mesmas partições solicitam recebimento em portas de amostragem também a cada 500ms com limite de tempo de 100ms e, se um valor válido é recebido, piscam o \textit{LED1} e, em caso contrário, piscam o \textit{LED2}. As tabelas de conexão dos módulos envolvidos neste teste definem que o processo PROCESS1 de todas as partições envia na porta em que o processo PROCESS2 da partição de mesmo nome no módulo oposto solicita recebimento. Este teste deve ser utilizado em conjunto com o teste \textbf{QUEUINGPORT\_PSEUDO\_MODULE1}.
+Os processos denominados PROCESS1 das partiÃ§Ãµes PARTITION1, PARTITION2 e PARTITION3 enviam em portas de amostragem a cada 500ms, enquanto os processos denominados PROCESS2 dessas mesmas partiÃ§Ãµes solicitam recebimento em portas de amostragem tambÃ©m a cada 500ms com limite de tempo de 100ms e, se um valor vÃ¡lido Ã© recebido, piscam o \textit{LED1} e, em caso contrÃ¡rio, piscam o \textit{LED2}. As tabelas de conexÃ£o dos mÃ³dulos envolvidos neste teste definem que o processo PROCESS1 de todas as partiÃ§Ãµes envia na porta em que o processo PROCESS2 da partiÃ§Ã£o de mesmo nome no mÃ³dulo oposto solicita recebimento. Este teste deve ser utilizado em conjunto com o teste \textbf{QUEUINGPORT\_PSEUDO\_MODULE1}.
 SNIPPET_END
 SNIPPET_START EXPECTED_BEHAVIOR
-Enquanto os módulos estiverem \textbf{desconectados}, o \textbf{LED2} deve piscar três vezes a cada 500ms (uma vez para cada partição), pois as portas de destino não estarão sendo alimentadas e, portanto, as solicitações de recebimento expirarão.
+Enquanto os mÃ³dulos estiverem \textbf{desconectados}, o \textbf{LED2} deve piscar trÃªs vezes a cada 500ms (uma vez para cada partiÃ§Ã£o), pois as portas de destino nÃ£o estarÃ£o sendo alimentadas e, portanto, as solicitaÃ§Ãµes de recebimento expirarÃ£o.
 
-Enquanto os módulos estiverem \textbf{conectados}, o \textbf{LED1} deve piscar três vezes a cada 500ms (uma vez para cada partição), pois as portas de destino estarão sendo alimentadas e, portanto, as mensagens serão recebidas com sucesso.
+Enquanto os mÃ³dulos estiverem \textbf{conectados}, o \textbf{LED1} deve piscar trÃªs vezes a cada 500ms (uma vez para cada partiÃ§Ã£o), pois as portas de destino estarÃ£o sendo alimentadas e, portanto, as mensagens serÃ£o recebidas com sucesso.
 SNIPPET_END
 SNIPPET_START OBJECTIVE
-Demonstrar o correto funcionamento de portas de enfileiramento (mecanismo de comunicação interpartição) conectadas a partições de dois módulos diferentes (utilizado em conjunto com o teste \textbf{QUEUINGPORT\_PSEUDO\_MODULE1}).
+Demonstrar o correto funcionamento de portas de enfileiramento (mecanismo de comunicaÃ§Ã£o interpartiÃ§Ã£o) conectadas a partiÃ§Ãµes de dois mÃ³dulos diferentes (utilizado em conjunto com o teste \textbf{QUEUINGPORT\_PSEUDO\_MODULE1}).
 SNIPPET_END
 MASK_END
