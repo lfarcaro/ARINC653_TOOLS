@@ -1,0 +1,20 @@
+MASK_START
+SNIPPET_START MODEXT
+<ModExt:Extension DefaultStackSize="256"/>
+<ModExt:Extension_System_ARMV7A
+	SystemRAMMemoryPhysicalAddress="0x80000000"
+	SystemRAMMemorySizeBytes="0x10000000"
+	SystemBootRegionSizeBytes="0x00001000"
+	SystemCodeRegionSizeBytes="0x00020000"
+	SystemDataRegionSizeBytes="0x00004000"/>
+<ModExt:Extension_Module_ARMV7A
+	ModuleStackRegionSizeBytes="0x00004000"
+	ModuleCodeRegionSizeBytes="0x00001000"
+	ModuleDataRegionSizeBytes="0x00001000"
+	ModuleHeapRegionSizeBytes="0x00100000"
+	ModuleFLTranslationTableRegionSizeBytes="0x00100000"
+	ModuleSLTranslationTableRegionSizeBytes="0x00100000"/>
+<ModExt:Extension_Module_ARMV7A_AM335X
+	ModuleNetworkPhysicalAddress="0x00000001010101011010"/>
+SNIPPET_END
+MASK_END
